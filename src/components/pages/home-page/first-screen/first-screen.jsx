@@ -4,6 +4,7 @@ import TextTruncate from 'react-text-truncate';
 import ReactWOW from 'react-wow';
 import firstScreenBg from './images/firstScreenBg1.svg';
 import firstScreenIcon from './images/firstScreenIcon.svg';
+import chip from './images/chip.svg';
 import style from './first-screen.module.scss';
 
 const FirstScreen = () => {
@@ -22,6 +23,13 @@ const FirstScreen = () => {
                 <img
                     className={style.firstScreen__icon}
                     src={firstScreenIcon}
+                    alt="firstScreenIcon"
+                />
+            </ReactWOW>
+            <ReactWOW animation="bounceInDown" delay="1s">
+                <img
+                    className={style.firstScreen__chip}
+                    src={chip}
                     alt="firstScreenIcon"
                 />
             </ReactWOW>
@@ -47,7 +55,7 @@ const FirstScreen = () => {
                             </div>
                         </div>
                     </ReactWOW>
-                    <ReactWOW animation="fadeInRight" delay="0.10s">
+                    <ReactWOW animation="fadeInLeft" delay="0.10s">
                         <div>
                             <div className={style.firstScreen__leftSide_subtitle}>
                                 <TextTruncate

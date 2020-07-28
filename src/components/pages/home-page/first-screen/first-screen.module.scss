@@ -34,6 +34,21 @@
         }
     }
 
+    &__chip {
+        position: absolute;
+        width: 10vw;
+        left: 4vw;
+        top: 32%;
+        z-index: 999;
+
+        @media only screen and (max-width: 767px) {
+            width: 90.45vw;
+            height: 81vw;
+            display: flex;
+            margin-top: 5vw;
+        }
+    }
+
     &__leftSide {
         width: 50%;
         max-width: 50%;
