@@ -1,13 +1,8 @@
 import React, { Fragment } from 'react';
 import ReactWOW from 'react-wow';
-import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-import Button from '../../../small-components/button';
-import orangeButton from '../../../assets/images/orangeButton.svg';
 import workPrinciplesBg from './images/workPrinciplesBg.svg';
-import workPrinciplesIcon1 from './images/workPrinciplesIcon1.svg';
-import workPrinciplesIcon2 from './images/workPrinciplesIcon2.svg';
 import principleWorkIcon from './images/principleWorkIcon.svg';
 
 import style from './work-principles.module.scss';
@@ -17,15 +12,6 @@ const WorkPrinciples = () => {
 
     const workPrinciplesBgStyle = {
         backgroundImage: `url(${workPrinciplesBg})`,
-    };
-
-    const orangeButtonStyle = {
-        backgroundImage: `url(${orangeButton})`,
-        backgroundSize: 'cover',
-    };
-
-    const getStartde = () => {
-        message.success('Coming soon.', 2);
     };
 
     return (
@@ -134,58 +120,6 @@ const WorkPrinciples = () => {
                             </div>
                         </ReactWOW>
                     </div>
-                    <ReactWOW animation="fadeInUp" delay="0.05s">
-                        <div className={style.workPrinciples__buttonWrapper}>
-                            <Button
-                                style={orangeButtonStyle}
-                                onClick={() => getStartde()}
-                                type="button"
-                                className={style.workPrinciples__getStartde}
-                            >
-                                {t('principleOfWork.begin')}
-                            </Button>
-                            <div
-                                className={
-                                    style.workPrinciples__buttonWrapper_iconsWrapper
-                                }
-                            >
-                                <div>
-                                    <img
-                                        className={
-                                            style.workPrinciples__buttonWrapper_icons
-                                        }
-                                        src={workPrinciplesIcon1}
-                                        alt="workPrinciplesIcon1"
-                                    />
-                                    <p
-                                        className={
-                                            style.workPrinciples__buttonWrapper_text
-                                        }
-                                    >
-                                        {t('principleOfWork.quick')} <br />{' '}
-                                        {t('principleOfWork.payouts')}
-                                    </p>
-                                </div>
-                                <div>
-                                    <img
-                                        className={
-                                            style.workPrinciples__buttonWrapper_icons
-                                        }
-                                        src={workPrinciplesIcon2}
-                                        alt="workPrinciplesIcon2"
-                                    />
-                                    <p
-                                        className={
-                                            style.workPrinciples__buttonWrapper_text
-                                        }
-                                    >
-                                        {t('principleOfWork.completely')} <br />{' '}
-                                        {t('principleOfWork.safe')}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </ReactWOW>
                 </div>
             </div>
         </Fragment>
