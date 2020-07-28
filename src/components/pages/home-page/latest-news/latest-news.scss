@@ -1,0 +1,52 @@
+.newsSlickSlider {
+    margin: 0 15vw;
+}
+
+/* the slides */
+.slick-slide {
+    margin: 0 30px;
+}
+/* the parent */
+.slick-list {
+    margin: 0 -30px;
+}
+
+.slickSlider {
+    &__arrowPrev {
+        position: absolute;
+        bottom: 8vw;
+        right: 52%;
+        z-index: 9999;
+        cursor: pointer;
+
+        &:hover {
+            .slickRect {
+                fill: #2c3769;
+                stroke: #2c3769;
+            }
+
+            .slickPath {
+                fill: #2c3769;
+            }
+        }
+    }
+
+    &__arrowNext {
+        position: absolute;
+        bottom: 8vw;
+        left: 52%;
+        z-index: 9999;
+        cursor: pointer;
+
+        &:hover {
+            .slickRect {
+                fill: #2c3769;
+                stroke: #2c3769;
+            }
+
+            .slickPath {
+                fill: #2c3769;
+            }
+        }
+    }
+}

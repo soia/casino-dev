@@ -7,6 +7,7 @@ import WorkPrinciples from './work-principles';
 import SmartContract from './smart-contract';
 import Referals from './referals';
 import AirDrop from './airDrop';
+import LatestNews from './latest-news';
 
 const HomePage = () => (
     <Fragment>
@@ -18,6 +19,7 @@ const HomePage = () => (
         <SmartContract />
         <Referals />
         <AirDrop />
+        <LatestNews />
     </Fragment>
 );
 

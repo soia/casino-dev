@@ -18,6 +18,9 @@
     "newGames": {
         "title": "New games"
     },
+    "latestNews": {
+        "title": "Latest news"
+    },
     "advantages": {
         "title": "Advantages",
         "content1": "Guarantee of payment of interest. In case of victory, the player will definitely receive a win, all payments are made through the blockchain and each transaction can be tracked.",
