@@ -1,0 +1,18 @@
+@import '../../assets/styles/variables';
+
+.listItem {
+    //     margin-right: 4.9rem;
+    //     margin-bottom: 2rem;
+    //     font-style: normal;
+    //     font-weight: bold;
+    //     font-size: 2rem;
+    //     line-height: 2.6rem;
+    //     &:last-child {
+    //         margin-right: 0;
+    //     }
+    list-style: none;
+    text-decoration: none;
+}
+.active {
+    background-color: red;
+}

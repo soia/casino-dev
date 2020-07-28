@@ -1,0 +1,57 @@
+@import '../../assets/styles/variables';
+.select {
+    width: 4.5rem;
+    padding: 0.5rem;
+    position: relative;
+    &:hover {
+        cursor: pointer;
+    }
+    svg {
+        min-width: 20px;
+        min-height: 20px;
+        position: relative;
+        top: 2px;
+    }
+    &__dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 4.5rem;
+        padding: 0.5rem;
+        overflow: hidden;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background: $textDark;
+    }
+    &__open {
+        svg {
+            transform: rotate(180deg);
+            // transition: all 0.22s;
+        }
+    }
+
+    &__option {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: $white;
+        text-align: left;
+        &:hover {
+            box-shadow: 1px 0 1px $white;
+        }
+    }
+}
+
+.select__visual {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: $white;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

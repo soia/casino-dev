@@ -1,0 +1,120 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixin';
+
+.allGames {
+    position: relative;
+    background: #d8d6ed;
+    padding: 4.7vw 0 8vw;
+
+    @media only screen and (max-width: 767px) {
+        padding: 10.8vw 12.15vw 20vw;
+    }
+
+    &__title {
+        font-family: $DrukTextWide-Medium;
+        font-size: $desctop48px;
+        line-height: $desctop48px;
+        color: #2c3769;
+        text-align: center;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 6.48vw;
+            line-height: 9.18vw;
+            margin-bottom: 8.1vw;
+        }
+    }
+
+    &__wrapper {
+        padding: $desctop60px $desctop245px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 767px) {
+            flex-direction: column;
+            padding: 0;
+        }
+
+        &_item {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin-bottom: 2vw;
+            width: 30%;
+
+            &:hover {
+                transform: scale(1.1);
+
+                .allGames__wrapper_button {
+                    opacity: 1;
+                }
+
+                .allGames__wrapper_mask {
+                    opacity: 0.68;
+                }
+            }
+        }
+
+        &_img {
+            width: 100%;
+            height: 100%;
+            border-radius: 1vw;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        &_mask {
+            background: #000000;
+            mix-blend-mode: normal;
+            opacity: 0;
+            position: absolute;
+            z-index: 1;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            top: 0;
+            border-radius: 1vw;
+        }
+
+        &_button {
+            position: absolute;
+            right: 1.5vw;
+            bottom: 1.5vw;
+            font-family: $DrukTextWide-Bold;
+            border: none;
+            background-color: transparent;
+            min-width: 8vw;
+            width: fit-content;
+            height: 3vw;
+            outline: none;
+            cursor: pointer;
+            font-size: $desctop12px;
+            line-height: $desctop12px;
+            text-align: center;
+            letter-spacing: $desctop1px;
+            text-transform: uppercase;
+            color: $white;
+            opacity: 0;
+            transition: opacity 0.25s;
+            z-index: 999;
+        }
+    }
+
+    &_coin {
+        position: absolute;
+        width: 16vw;
+        height: 16vw;
+        bottom: -9vw;
+        right: 2vw;
+        z-index: 10;
+
+        @media only screen and (max-width: 767px) {
+            width: 35vw;
+            height: 35vw;
+            bottom: -21vw;
+            right: 3vw;
+        }
+    }
+}

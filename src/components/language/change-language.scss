@@ -1,0 +1,165 @@
+@import '../assets/styles/variables';
+
+.flag-select.change-language-flags {
+    padding: 0;
+
+    .flag-options {
+        background: $white;
+        box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1);
+        border-radius: 0.1vw;
+        border: none;
+        padding: 1.6vw 2.6vw 0;
+        right: 0.3vw;
+        display: flex;
+        font-family: $DrukTextWide-Bold;
+        top: 3.75vw;
+        font-size: 0.7vw !important;
+        letter-spacing: 0.05vw;
+        color: $textDarkLight;
+        transition: all 0.25s;
+        margin: 0;
+        overflow: visible;
+        width: 13.8vw;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 767px) {
+            padding: 5.6vw;
+            width: 50vw;
+            top: 14.75vw;
+       }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            right: 0;
+            top: 0vw;
+            box-sizing: border-box;
+            border: 1em solid $white;
+            border-color: transparent transparent $white $white;
+            transform-origin: 0 0;
+            transform: rotate(-225deg);
+            box-shadow: -6.5px 5px 10px -3.95px rgba(0, 0, 0, 0.1);
+
+            @media only screen and (max-width: 767px) {
+                border: 2vw solid $white;
+           }
+        }
+    }
+
+    .selected--flag--option {
+        display: flex;
+        padding: 0;
+    }
+
+    .arrow-down {
+        color: $black;
+        font-size: 1.7vw;
+        margin-left: 0.55vw;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        display: none;
+    }
+
+    .country-flag {
+        display: flex;
+        align-items: center;
+        width: fit-content !important;
+        width: -moz-max-content!important;
+        height: 100% !important;
+
+        @media only screen and (max-width: 767px) {
+            align-items: center;
+        }
+    }
+}
+
+#root .flag-select {
+
+    img {
+        width: calc(1.6vw - 0.1vw) !important;
+        height: calc(1.6vw - 0.1vw) !important;
+        border-radius: 50%;
+        object-fit: cover;
+        position: static !important;
+        border: 0.1vw solid transparent;
+        transition: all 0.25s;
+
+        @media only screen and (max-width: 767px) {
+            width: $mobile20px !important;
+            border-radius: inherit;
+            object-fit: initial;
+            height: $mobile20px !important;
+        }
+    }
+
+    .flag-option:hover {
+        background: transparent !important;
+        color: #007aff;
+        transition: all 0.25s;
+    }
+
+    .flag-option:hover img {
+        border: 0.1vw solid transparent;
+    }
+
+    .flag-option.has-label {
+        padding: 0 !important;
+        margin: 0 !important;
+
+        &:not(:nth-child(2)) {
+            margin: 0px 1.6vw 1.6vw 0px !important;
+        }
+
+        margin-bottom: 1.6vw !important;
+
+        .country-flag {
+            @media only screen and (max-width: 767px) {
+                align-items: inherit;
+           }
+        }
+
+        .country-flag .country-label {
+            color: #2C3769 !important;
+
+            @media only screen and (max-width: 767px) {
+                font-size: $mobile12px;
+                width: 10vw;
+                display: flex;
+                align-items: center;
+                margin-left: 2vw;
+                padding-top: 1vw !important;
+            }
+        }
+    }
+
+    .flag-option .country-label {
+        padding: 0 0 0 0.5vw !important;
+        width: 2vw;
+    }
+
+    .country-flag .country-label {
+        color: $white;
+        font-family: $CoreSansGRegular;
+        font-size: 1vw;
+        line-height: 1vw;
+        padding-top: 1px;
+        letter-spacing: 1px;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 3.2vw;
+        }
+    }
+}
+
+.animationSelectLang .flag-select .selected--flag--option .country-label {
+    font-size: 0.8vw !important;
+    line-height: 0.8vw;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    font-family: $DrukTextWide-Bold;
+    color: $white;
+}

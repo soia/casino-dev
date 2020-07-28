@@ -1,0 +1,79 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixin';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw $desctop120px;
+    position: relative;
+    z-index: 9999;
+    background: $blueGradient;
+    border-bottom: $desctop2px solid rgba(149, 252, 253, 0.1);
+    z-index: 1;
+    width: 100%;
+
+    @media only screen and (max-width: 767px) {
+        padding: $mobile30px $mobile42px;
+    }
+
+    &__login,
+    &__signUp {
+        font-family: $DrukTextWide-Bold;
+        border: none;
+        background-color: transparent;
+        width: $desctop220px;
+        height: $desctop48px;
+        outline: none;
+        cursor: pointer;
+        font-size: $desctop12px;
+        line-height: $desctop12px;
+        text-align: center;
+        letter-spacing: $desctop1px;
+        text-transform: uppercase;
+        color: #B0AED3;
+    }
+
+    &__login {
+        margin-right: $desctop25px;
+    }
+
+    &__signUp {
+        margin-right: $desctop100px;
+    }
+
+    &__logo {
+        font-family: $DrukTextWide-Super;
+        font-size: 1vw;
+        margin-right: 2vw;
+        line-height: $desctop30px;
+        text-align: center;
+        letter-spacing: $desctop2px;
+        text-transform: uppercase;
+        color: $white;
+        text-decoration: none;
+        margin-right: auto;
+
+        @media only screen and (max-width: 767px) {
+            font-size: $mobile18px;
+            line-height: $mobile18px;
+            letter-spacing: 2px;
+        }
+
+        img {
+            width: 15.32vw;
+            height: 2.5vw;
+
+            @media only screen and (max-width: 767px) {
+                width: 45vw;
+                height: 8vw;
+            }
+        }
+    }
+
+    &__rightSide {
+        display: flex;
+        align-items: center;
+        margin-left: 5vw;
+    }
+}

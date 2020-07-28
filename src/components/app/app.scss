@@ -1,0 +1,86 @@
+@import '../assets/styles/variables';
+@import '../assets/styles/reset.scss';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $bodyColor;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    font-family: $CoreSansGRegular;
+    min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// remove arrows for input type number
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+// custom scrollbar
+
+::-webkit-scrollbar {
+    width: 0.7vw;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #222;
+}
+
+// custom scrollbar
+
+// hide transparent on focus
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.ant-message {
+    font-family: $CoreSansGRegular;
+    color: $greyLight;
+    font-size: $desctop16px;
+    z-index: 9999999;
+
+    @media only screen and (max-width: 767px) {
+        font-size: 3.5vw;
+    }
+}
+
+// remove input number arrows firefox
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+// remove input number arrows firefox

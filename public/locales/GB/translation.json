@@ -1,0 +1,81 @@
+{
+    "header": {
+        "about": "About",
+        "contact": "Contacts",
+        "signIn": "Sign in",
+        "registration": "Registration"
+    },
+    "firstScreen": {
+        "title": "Game token",
+        "subtitle": "The best solution for casino's tokens  from CNGame Casino and the partner exchange Coinsbit, one of the world's leading cryptocurrency exchanges! The guarantee of payment of payoffs, the absence of intermediaries and banks and all the advantages of cryptocurrency are combined in the game token of the future - CNG!",
+        "beginToPlay": "Begin to play",
+        "scrollDown": "Scroll down"
+    },
+    "allGames": {
+        "title": "All games",
+        "play": "Play"
+    },
+    "newGames": {
+        "title": "New games"
+    },
+    "advantages": {
+        "title": "Advantages",
+        "content1": "Guarantee of payment of interest. In case of victory, the player will definitely receive a win, all payments are made through the blockchain and each transaction can be tracked.",
+        "content2": "Lack of intermediaries and banks. Direct interaction between the player and the casino when transferring cryptocurrency.",
+        "content3": "Casinos operate on a global network, as does the blockchain platform. There are no boundaries characteristic of fiat money."
+    },
+    "principleOfWork": {
+        "title": "The principle of work",
+        "principleOfWork": "Principle of work",
+        "content1": "CNGame Casino will work exclusively on the CNG token, players will be able to play using the CNG token.",
+        "content2": "All CNG tokens will be implemented through AirDrop and the referral program on the Coinsbit crypto exchange.",
+        "content3": "Users who receive these tokens will be able to play with them at CNGame Casino or sell them after the end of the sale of CNG tokens on the Coinsbit cryptocurrency exchange.",
+        "begin": "Begin",
+        "quick": "Quick",
+        "payouts": "Payouts",
+        "completely": "Completely",
+        "safe": "safe"
+    },
+    "tokenImplementation": {
+        "title": "CNG Token Implementation",
+        "content1": "Preparing to launch a token",
+        "content2": "Token sale through the referral program and AirDrop on the Coinsbit exchange.",
+        "content3": "Preparation for the opening of trading and the accrual of tokens.",
+        "content4": "Launch of trading on the CNG token on the Coinsbit exchange.",
+        "content5": "Token integration at CNGame Casino and preparations for the launch of the platform.",
+        "content6": "Launch and opening of CNGame Casino."
+    },
+    "termsOfAirDrop": {
+        "title": "CNG Token",
+        "titleSecond": "Referral Program",
+        "subTitle": "Registration -",
+        "subTitleSecond": "$ 300",
+        "subTitleThird": "in CNG"
+    },
+    "referals": {
+        "title": "Take part in AirDrop and referral program",
+        "referralProgram": "Referral program",
+        "link": "Referral link"
+    },
+    "footer": {
+        "company": "Company",
+        "aboutUs": "About us",
+        "faq": "FAQ",
+        "benefits": "Benefits",
+        "gameToken": "CNG.Game token",
+        "principleOfOperation": "Principle of operation",
+        "tokenImplementation": "CNG Token Implementation",
+        "extension": "Extension",
+        "support": "Support",
+        "privacyPolice": "Privacy police",
+        "helpCenter": "Help Center"
+    },
+    "smartContractAddress": {
+        "title": "Smart Contract Address",
+        "address": "address"
+    },
+    "error": {
+        "title": "Something went wrong."
+    },
+    "pageNotFound": "Page not found"
+}

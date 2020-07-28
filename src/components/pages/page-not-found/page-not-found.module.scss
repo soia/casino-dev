@@ -1,0 +1,33 @@
+@import '../.././assets/styles/variables';
+
+.pageNotFound {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: calc(100vh - 25vw);
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        height: 100vh;
+        position: absolute;
+        top: -10vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @media only screen and (max-width: 767px) {
+        height: 75vh;
+    }
+
+    img {
+        margin: 0 auto;
+        width: 11vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            width: 75%;
+        }
+
+        @media only screen and (max-width: 767px) {
+            width: 50vw;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@import '../../assets/styles/variables';
+
+.button {
+    outline: none;
+    // max-width: 14.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 1.7rem 1rem;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    /* identical to box height, or 100% */
+    text-align: center;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    color: $white;
+    border: 1px solid $greenLight;
+    bord &:active {
+        outline: none;
+    }
+    &:hover {
+        cursor: pointer;
+        background: $greenGradient;
+    }
+}
+.active {
+    background-color: #23c9ff;
+    border: 1px solid #5eb2f2;
+    box-shadow: 0px 0 2px 0px #c0c0c0;
+}
+.green-gradient {
+    background: linear-gradient(0deg, #00c99c, #00c99c);
+    color: $textDark;
+}

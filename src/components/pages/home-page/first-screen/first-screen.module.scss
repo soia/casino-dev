@@ -1,0 +1,99 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixin';
+
+.firstScreen {
+    display: flex;
+    justify-content: space-between;
+    background: $blueGradient;
+    background-color: #251B7B;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 $desctop245px;
+    margin-top: 6.4vw;
+
+    @media only screen and (max-width: 767px) {
+        min-height: auto;
+        height: initial;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    &__icon {
+        position: absolute;
+        right: 11vw;
+        width: 45vw;
+        top: 3.5vw;
+        z-index: 999;
+
+        @media only screen and (max-width: 767px) {
+            width: 90.45vw;
+            height: 81vw;
+            display: flex;
+            margin-top: 5vw;
+        }
+    }
+
+    &__leftSide {
+        width: 50%;
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 4.5vw;
+        padding-bottom: 5.10vw;
+
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 12.15vw;
+        }
+
+        &_title {
+            font-family: $DrukTextWide-Medium;
+            margin-bottom: 1.2vw;
+            font-size: $desctop40px;
+            line-height: $desctop60px;
+
+            @media only screen and (max-width: 767px) {
+                margin-bottom: 1.2vw;
+                font-size: 6.48vw;
+                line-height: 6.48vw;
+                white-space: nowrap;
+            }
+
+            &:first-child {
+                span {
+                    color: #95FCFD;
+                }
+            }
+
+            span {
+                color: $white;
+            }
+        }
+
+        &_titleWrapper {
+            display: flex;
+
+            @media only screen and (max-width: 767px) {
+                margin-top: 6vw;
+            }
+        }
+
+        &_subtitle, {
+            font-family: $CoreSansGRegular;
+            color: $white;
+            font-size: $desctop24px;
+            line-height: $desctop45px;
+            width: 80%;
+
+            @media only screen and (max-width: 767px) {
+                width: 100%;
+                font-size: 4.32vw;
+                line-height: 9.72vw;
+                margin-bottom: 9.72vw;
+            }
+        }
+    }
+}
