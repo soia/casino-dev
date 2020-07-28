@@ -2,6 +2,10 @@
     margin: 0 15vw;
 }
 
+.slick-slider {
+    height: 30vw;
+}
+
 /* the slides */
 .slick-slide {
     margin: 0 30px;
@@ -14,7 +18,7 @@
 .slickSlider {
     &__arrowPrev {
         position: absolute;
-        bottom: 8vw;
+        bottom: 3vw;
         right: 52%;
         z-index: 9999;
         cursor: pointer;
@@ -33,7 +37,7 @@
 
     &__arrowNext {
         position: absolute;
-        bottom: 8vw;
+        bottom: 3vw;
         left: 52%;
         z-index: 9999;
         cursor: pointer;

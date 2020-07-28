@@ -40,6 +40,7 @@ const Header = () => {
     const regtangleButtonStyle = {
         backgroundImage: `url(${rectangleGrey})`,
         backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
     };
 
     const openLogin = () => {
