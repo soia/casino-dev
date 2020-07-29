@@ -5,6 +5,11 @@
         "signIn": "Sign in",
         "registration": "Registration"
     },
+    "auth": {
+        "typeEmail": "Type email",
+        "typePassword": "Type password",
+        "forgotPassword": "Forgot password ?"
+    },
     "firstScreen": {
         "title": "Game token",
         "subtitle": "The best solution for casino's tokens  from CNGame Casino and the partner exchange Coinsbit, one of the world's leading cryptocurrency exchanges! The guarantee of payment of payoffs, the absence of intermediaries and banks and all the advantages of cryptocurrency are combined in the game token of the future - CNG!",

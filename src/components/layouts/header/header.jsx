@@ -8,10 +8,10 @@ import Button from '../../small-components/button';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 import SelectLanguage from '../../language';
 import logo from '../../assets/images/logo.svg';
+import rectangleGrey from '../../assets/images/rectangle-grey.svg';
 import style from './header.module.scss';
 import './header.scss';
 import 'antd/dist/antd.css';
-import rectangleGrey from '../../assets/images/rectangle-grey.svg';
 
 const Header = () => {
     const { t } = useTranslation();
@@ -59,13 +59,21 @@ const Header = () => {
     return (
         <header className={`header ${shadowStyle} ${hiddenStyle}`}>
             <div className={style.header} id="header">
-                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInDown" delay="0.01s">
+                <ReactWOW
+                    disabled={!(window.innerWidth > 767)}
+                    animation="fadeInDown"
+                    delay="0.01s"
+                >
                     <Link to="/" className={style.header__logo}>
                         <img src={logo} alt="logo" />
                     </Link>
                 </ReactWOW>
                 <div className={style.header__rightSide}>
-                    <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInDown" delay="0.01s">
+                    <ReactWOW
+                        disabled={!(window.innerWidth > 767)}
+                        animation="fadeInDown"
+                        delay="0.01s"
+                    >
                         <Button
                             className={style.header__login}
                             onClick={openLogin}
@@ -83,7 +91,11 @@ const Header = () => {
                             {t('header.registration')}
                         </Button>
                     </ReactWOW>
-                    <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInDown" delay="0.01s">
+                    <ReactWOW
+                        disabled={!(window.innerWidth > 767)}
+                        animation="fadeInDown"
+                        delay="0.01s"
+                    >
                         <div style={{ display: 'flex' }}>
                             <SelectLanguage />
                         </div>

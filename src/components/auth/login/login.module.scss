@@ -1,0 +1,64 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixin';
+
+.signIn {
+    &__title {
+        font-family: $CoreSansGRegular;
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 3vw;
+    }
+
+    &__inputWrapper {
+        margin-bottom: 1.5vw;
+    }
+
+    &__forgotPassword {
+        font-family: $CoreSansGRegular;
+        font-size: 0.8vw;
+        color: #fff;
+    }
+
+    &__registration {
+        font-family: $CoreSansGRegular;
+        font-size: 1vw;
+        color: #fff;
+        text-align: center;
+        text-align: center;
+    }
+
+    &__input {
+        width: 26vw;
+        height: 3.5vw;
+        margin-top: 0.5vw;
+        background: transparent;
+        border-radius: 0.1vw;
+        border: none;
+        padding: 0 4vw 0 2vw;
+        font-size: 1vw;
+        line-height: 1.4vw;
+        outline: none;
+
+        &::placeholder {
+            font-family: $CoreSansGRegular;
+            font-size: 1vw;
+            line-height: 3.8vw;
+            color: #fff;
+        }
+    }
+
+    &__submitBtn {
+        border: none;
+        background-color: transparent;
+        font-family: $CoreSansGRegular;
+        font-size: 1vw;
+        color: #fff;
+        display: flex;
+        width: 11vw;
+        justify-content: center;
+        align-items: center;
+        height: 3.9vw;
+        margin: 3vw auto 1.5vw;
+    }
+}

@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
+import blueChip from './images/blue-chip.svg';
+import yellowChip from './images/yellow-chip.svg';
+import redChip from './images/red-chip.svg';
+import styles from './modal-window.module.scss';
+import './modal-window.scss';
 
 const ModalWindow = props => {
     const {
-        isOpen,
-        onRequestClose,
-        children,
+        isOpen, onRequestClose, children, style,
     } = props;
 
     return (
@@ -18,7 +21,11 @@ const ModalWindow = props => {
                 className="reactModal"
                 contentLabel="Example Modal"
                 overlayClassName="modalOverlay"
+                style={style}
             >
+                <img src={blueChip} className={styles.blueChip} alt="blueChip" />
+                <img src={yellowChip} className={styles.yellowChip} alt="yellowChip" />
+                <img src={redChip} className={styles.redChip} alt="redChip" />
                 {children}
             </Modal>
         </Fragment>
@@ -28,12 +35,14 @@ const ModalWindow = props => {
 ModalWindow.defaultProps = {
     isOpen: false,
     children: '',
+    style: {},
     onRequestClose: () => {},
 };
 
 ModalWindow.propTypes = {
     isOpen: PropTypes.bool,
     onRequestClose: PropTypes.func,
+    style: PropTypes.object,
     children: PropTypes.node,
 };
 

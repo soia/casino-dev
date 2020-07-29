@@ -26,7 +26,7 @@ const FirstScreen = () => {
                     alt="firstScreenIcon"
                 />
             </ReactWOW>
-            <ReactWOW disabled={!(window.innerWidth > 767)} animation="bounceInDown" delay="1s">
+            <ReactWOW disabled={!(window.innerWidth > 767)} animation="bounceInDown" delay="0.5s">
                 <img
                     className={style.firstScreen__chip}
                     src={chip}

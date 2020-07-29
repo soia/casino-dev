@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import frame from './images/frame.svg';
 import style from './field.module.scss';
 
 const Field = props => {
@@ -25,6 +25,12 @@ const Field = props => {
         step,
     } = props;
 
+    const regtangleStyle = {
+        backgroundImage: `url(${frame})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+    };
+
     return (
         <div className={style.inputWrapper}>
             <label className={labelStyle} htmlFor={id}>
@@ -45,6 +51,7 @@ const Field = props => {
                     autoComplete="new-password"
                     disabled={disabled}
                     step={step}
+                    style={regtangleStyle}
                 />
             </label>
             {error ? <div className={style.inputWrapper__invalid}>{error}</div> : null}
