@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
+import Burger from 'react-css-burger';
 import ReactWOW from 'react-wow';
 import Button from '../../small-components/button';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
@@ -17,7 +18,7 @@ const Header = () => {
 
     const [shouldHideHeader, setShouldHideHeader] = useState(false);
     const [shouldShowShadow, setShouldShowShadow] = useState(false);
-
+    const [activeBurger, setBurgerState] = useState(false);
     const MINIMUM_SCROLL = 80;
     const TIMEOUT_DELAY = 400;
 
@@ -32,6 +33,10 @@ const Header = () => {
             setShouldHideHeader(isScrolledDown && isMinimumScrolled);
         }, TIMEOUT_DELAY);
     });
+
+    const toggleBurger = () => {
+        setBurgerState(!activeBurger);
+    };
 
     const minHeight = document.documentElement.scrollTop > 500;
     const shadowStyle = minHeight && shouldShowShadow ? 'shadow' : '';
@@ -84,6 +89,18 @@ const Header = () => {
                         </div>
                     </ReactWOW>
                 </div>
+                <ReactWOW animation="fadeInDown" delay="0.10s">
+                    <div className={style.header__burgerMenu}>
+                        <Burger
+                            onClick={() => toggleBurger()}
+                            active={activeBurger}
+                            burger="spin"
+                            color="white"
+                            marginTop="0"
+                            scale={0.65}
+                        />
+                    </div>
+                </ReactWOW>
             </div>
         </header>
     );

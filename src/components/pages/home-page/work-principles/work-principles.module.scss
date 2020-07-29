@@ -55,7 +55,12 @@
             width: 5vw;
 
             @media only screen and (max-width: 767px) {
-                width: 21.6vw;
+                img {
+                    &:first-child {
+                        display: none;
+                    }
+                }
+
             }
         }
 

@@ -42,6 +42,11 @@
             margin-bottom: 2vw;
             width: 30%;
 
+            @media only screen and (max-width: 767px) {
+                margin-bottom: 7vw;
+                width: 100%;
+            }
+
             &:hover {
                 transform: scale(1.1);
 
@@ -76,6 +81,11 @@
             left: 0;
             top: 0;
             border-radius: 1vw;
+
+            @media only screen and (max-width: 767px) {
+                bottom: 4px;
+                border-radius: 2vw;
+            }
         }
 
         &_button {
@@ -99,6 +109,14 @@
             opacity: 0;
             transition: opacity 0.25s;
             z-index: 999;
+
+            @media only screen and (max-width: 767px) {
+                right: 3.5vw;
+                bottom: 7.5vw;
+                min-width: 24vw;
+                height: 6vw;
+                font-size: 2.63vw;
+            }
         }
     }
 
@@ -113,7 +131,7 @@
         @media only screen and (max-width: 767px) {
             width: 35vw;
             height: 35vw;
-            bottom: -21vw;
+            bottom: -11vw;
             right: 3vw;
         }
     }

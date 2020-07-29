@@ -71,9 +71,21 @@
         }
     }
 
+    &__burgerMenu {
+        display: none;
+
+        @media only screen and (max-width: 767px) {
+            display: block;
+        }
+    }
+
     &__rightSide {
         display: flex;
         align-items: center;
         margin-left: 5vw;
+
+        @media only screen and (max-width: 767px) {
+            display: none;
+        }
     }
 }
