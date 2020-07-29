@@ -1,0 +1,21 @@
+@import '../.././assets/styles/variables';
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex: 1;
+    background: $blueGradient;
+
+    img {
+        margin: 0 auto;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            width: 30%;
+        }
+
+        @media only screen and (max-width: 767px) {
+            width: 50vw;
+        }
+    }
+}

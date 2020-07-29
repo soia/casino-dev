@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
 import Header from '../layouts/header';
 import Footer from '../layouts/footer';
 import {
     HomePage,
     PageNotFound,
+    LoadingPage,
 } from '../pages';
 
 import '../assets/styles/reset.scss';
 import './app.scss';
 import '../assets/styles/fonts.scss';
+
 
 const App = () => {
     const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ const App = () => {
     }, []);
 
     if (loading) {
-        return <p>Loading</p>;
+        return <LoadingPage />;
     }
 
     return (
