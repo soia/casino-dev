@@ -38,7 +38,7 @@ const AirDrop = () => {
                 className={style.airDrop}
                 style={window.innerWidth > 767 ? airDropBgStyle : null}
             >
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <h3 className={style.airDrop__title}>{t('referals.title')}</h3>
                     <img className={style.airDrop__icons} src={airDrop1} alt="airDrop1" />
                     <img className={style.airDrop__icons} src={airDrop2} alt="airDrop2" />

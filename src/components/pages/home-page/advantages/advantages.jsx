@@ -15,7 +15,7 @@ const Advantages = () => {
     return (
         <Fragment>
             <div className={style.advantages} id="advantages">
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <p className={style.advantages__title}>{t('advantages.title')}</p>
                     <div className={style.advantages__wrapper}>
                         <div className={style.advantages__wrapper_item}>
@@ -50,7 +50,7 @@ const Advantages = () => {
                         </div>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <img
                         className={style.advantages_coin}
                         src={blueCoin}

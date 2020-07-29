@@ -21,7 +21,7 @@ const WorkPrinciples = () => {
                 style={window.innerWidth > 767 ? workPrinciplesBgStyle : null}
                 id="principleOfWork"
             >
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <img
                         className={style.workPrinciples__icon}
                         src={principleWorkIcon}
@@ -29,13 +29,13 @@ const WorkPrinciples = () => {
                     />
                 </ReactWOW>
                 <div className={style.workPrinciples__wrapper}>
-                    <ReactWOW animation="fadeInUp" delay="0.05s">
+                    <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                         <h3 className={style.workPrinciples__title}>
                             {t('principleOfWork.title')}
                         </h3>
                     </ReactWOW>
                     <div className={style.workPrinciples__stepsWrapper}>
-                        <ReactWOW animation="fadeInUp" delay="0.05s">
+                        <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                             <div className={style.workPrinciples__stepsWrapper_item}>
                                 <svg
                                     width="100"
@@ -63,7 +63,7 @@ const WorkPrinciples = () => {
                                 <p>{t('principleOfWork.content1')}</p>
                             </div>
                         </ReactWOW>
-                        <ReactWOW animation="fadeInUp" delay="0.05s">
+                        <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                             <div className={style.workPrinciples__stepsWrapper_item}>
                                 <svg
                                     width="100"
@@ -91,7 +91,7 @@ const WorkPrinciples = () => {
                                 <p>{t('principleOfWork.content2')}</p>
                             </div>
                         </ReactWOW>
-                        <ReactWOW animation="fadeInUp" delay="0.05s">
+                        <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                             <div className={style.workPrinciples__stepsWrapper_item}>
                                 <svg
                                     width="100"

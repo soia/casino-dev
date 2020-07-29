@@ -79,7 +79,7 @@ const LatestNews = () => {
     return (
         <Fragment>
             <div className={style.latestNews}>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <h3 className={style.latestNews__title}>{t('latestNews.title')}</h3>
                     <Slider {...slickSettings} className="newsSlickSlider">
                         {slickImg.map(item => {

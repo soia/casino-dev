@@ -30,10 +30,10 @@ const SmartContract = () => {
     return (
         <Fragment>
             <div className={style.smartContract}>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <img className={style.smartContract__coin} src={blueCoin} alt="blueCoin" />
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <img
                         className={style.smartContract__icons}
                         src={smartContractBg}

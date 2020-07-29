@@ -10,10 +10,10 @@ const Referals = () => {
 
     return (
         <div className={style.referals} id="referralProgram">
-            <ReactWOW animation="fadeInUp" delay="0.05s">
+            <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                 <img className={style.referals__coin} src={redCoin} alt="redCoin" />
             </ReactWOW>
-            <ReactWOW animation="fadeInUp" delay="0.05s">
+            <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                 <h3 className={style.referals__title}>
                     {t('termsOfAirDrop.title')} <br /> {t('termsOfAirDrop.titleSecond')}
                 </h3>
@@ -24,7 +24,7 @@ const Referals = () => {
                 </p>
             </ReactWOW>
             <div className={style.referals__tableWrapper}>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.referals__tableWrapper_item}>
                         <svg
                             width="100"
@@ -56,7 +56,7 @@ const Referals = () => {
                         </p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.referals__tableWrapper_item}>
                         <svg
                             width="100"
@@ -88,7 +88,7 @@ const Referals = () => {
                         </p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.referals__tableWrapper_item}>
                         <svg
                             width="100"
@@ -118,7 +118,7 @@ const Referals = () => {
                         <p className={style.referals__tableWrapper_currency}>7 500 CNG</p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.referals__tableWrapper_item}>
                         <svg
                             width="100"
@@ -148,7 +148,7 @@ const Referals = () => {
                         <p className={style.referals__tableWrapper_currency}>5 000 CNG</p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.referals__tableWrapper_item}>
                         <svg
                             width="100"

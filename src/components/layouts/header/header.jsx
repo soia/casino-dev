@@ -59,13 +59,13 @@ const Header = () => {
     return (
         <header className={`header ${shadowStyle} ${hiddenStyle}`}>
             <div className={style.header} id="header">
-                <ReactWOW animation="fadeInDown" delay="0.10s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInDown" delay="0.01s">
                     <Link to="/" className={style.header__logo}>
                         <img src={logo} alt="logo" />
                     </Link>
                 </ReactWOW>
                 <div className={style.header__rightSide}>
-                    <ReactWOW animation="fadeInDown" delay="0.10s">
+                    <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInDown" delay="0.01s">
                         <Button
                             className={style.header__login}
                             onClick={openLogin}
@@ -83,13 +83,13 @@ const Header = () => {
                             {t('header.registration')}
                         </Button>
                     </ReactWOW>
-                    <ReactWOW animation="fadeInDown" delay="0.10s">
+                    <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInDown" delay="0.01s">
                         <div style={{ display: 'flex' }}>
                             <SelectLanguage />
                         </div>
                     </ReactWOW>
                 </div>
-                <ReactWOW animation="fadeInDown" delay="0.10s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInDown" delay="0.01s">
                     <div className={style.header__burgerMenu}>
                         <Burger
                             onClick={() => toggleBurger()}

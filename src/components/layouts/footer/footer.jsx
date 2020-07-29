@@ -18,7 +18,7 @@ const Footer = () => {
 
     return (
         <footer className={style.footer}>
-            <ReactWOW animation="fadeInUp" delay="0.05s">
+            <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                 <img className={style.footer_coins} src={footerCoins} alt="footerCoins" />
             </ReactWOW>
             <div className={style.footer__copyright}>

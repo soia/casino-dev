@@ -64,7 +64,7 @@ const WorkPrinciples = () => {
                 style={window.innerWidth > 767 ? workPrinciplesBgStyle : null}
                 id="principleOfWork"
             >
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <img
                         className={style.containerWrapper__icon}
                         src={principleWorkIcon}
@@ -72,7 +72,7 @@ const WorkPrinciples = () => {
                     />
                 </ReactWOW>
                 <div className={style.containerWrapper__wrapper}>
-                    <ReactWOW animation="fadeInUp" delay="0.05s">
+                    <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                         <h3 className={style.containerWrapper__title}>
                             {t('newGames.title')}
                         </h3>

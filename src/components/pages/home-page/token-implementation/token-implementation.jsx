@@ -10,20 +10,20 @@ const TokenImplementation = () => {
 
     return (
         <div className={style.tokenImplementation} id="CNG">
-            <ReactWOW animation="fadeInUp" delay="0.05s">
+            <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                 <img
                     className={style.tokenImplementation__coin}
                     src={redCoin}
                     alt="redCoin"
                 />
             </ReactWOW>
-            <ReactWOW animation="fadeInUp" delay="0.05s">
+            <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                 <h3 className={style.tokenImplementation__title}>
                     {t('tokenImplementation.title')}
                 </h3>
             </ReactWOW>
             <div className={style.tokenImplementation__contentWrapper}>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.tokenImplementation__contentWrapper_item}>
                         <svg
                             width="100"
@@ -65,7 +65,7 @@ const TokenImplementation = () => {
                         </p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.tokenImplementation__contentWrapper_item}>
                         <svg
                             width="100"
@@ -108,7 +108,7 @@ const TokenImplementation = () => {
                         </p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.tokenImplementation__contentWrapper_item}>
                         <svg
                             width="100"
@@ -150,7 +150,7 @@ const TokenImplementation = () => {
                         </p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.tokenImplementation__contentWrapper_item}>
                         <svg
                             width="100"
@@ -193,7 +193,7 @@ const TokenImplementation = () => {
                         </p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.tokenImplementation__contentWrapper_item}>
                         <svg
                             width="100"
@@ -235,7 +235,7 @@ const TokenImplementation = () => {
                         </p>
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <div className={style.tokenImplementation__contentWrapper_item}>
                         <svg
                             width="100"

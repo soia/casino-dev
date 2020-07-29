@@ -69,7 +69,7 @@ const AllGames = () => {
     return (
         <Fragment>
             <div className={style.allGames} id="advantages">
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <p className={style.allGames__title}>{t('allGames.title')}</p>
                     <div className={style.allGames__wrapper}>
                         {gamesData.map(item => {
@@ -99,7 +99,7 @@ const AllGames = () => {
                         })}
                     </div>
                 </ReactWOW>
-                <ReactWOW animation="fadeInUp" delay="0.05s">
+                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
                     <img className={style.allGames_coin} src={blueCoin} alt="blueCoin" />
                 </ReactWOW>
             </div>
