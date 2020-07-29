@@ -89,18 +89,16 @@ const Header = () => {
                         </div>
                     </ReactWOW>
                 </div>
-                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInDown" delay="0.01s">
-                    <div className={style.header__burgerMenu}>
-                        <Burger
-                            onClick={() => toggleBurger()}
-                            active={activeBurger}
-                            burger="spin"
-                            color="white"
-                            marginTop="0"
-                            scale={0.65}
-                        />
-                    </div>
-                </ReactWOW>
+                <div className={style.header__burgerMenu}>
+                    <Burger
+                        onClick={() => toggleBurger()}
+                        active={activeBurger}
+                        burger="spin"
+                        color="white"
+                        marginTop="0"
+                        scale={0.65}
+                    />
+                </div>
             </div>
         </header>
     );
