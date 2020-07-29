@@ -5,18 +5,29 @@
 .slick-slider {
     height: 30vw;
 
-    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
         height: 35vw;
+    }
+
+    @media only screen and (max-width: 767px) {
+        height: auto;
     }
 }
 
-/* the slides */
 .slick-slide {
     margin: 0 30px;
+
+    @media only screen and (max-width: 767px) {
+        margin: 0;
+    }
 }
-/* the parent */
+
 .slick-list {
     margin: 0 -30px;
+
+    @media only screen and (max-width: 767px) {
+        margin: 0;
+    }
 }
 
 .slickSlider {
@@ -26,6 +37,11 @@
         right: 52%;
         z-index: 9999;
         cursor: pointer;
+
+        @media only screen and (max-width: 767px) {
+            bottom: -25vw;
+            width: 14vw;
+        }
 
         &:hover {
             .slickRect {
@@ -45,6 +61,11 @@
         left: 52%;
         z-index: 9999;
         cursor: pointer;
+
+        @media only screen and (max-width: 767px) {
+            bottom: -25vw;
+            width: 14vw;
+        }
 
         &:hover {
             .slickRect {

@@ -3,6 +3,7 @@ import ReactWOW from 'react-wow';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import Slider from 'react-slick';
+import TextTruncate from 'react-text-truncate';
 import sliderImg from './images/newsImg.svg';
 import style from './latest-news.module.scss';
 import './latest-news.scss';
@@ -21,35 +22,35 @@ const LatestNews = () => {
         centerPadding: '80px',
         prevArrow: <ArrowPrev />,
         nextArrow: <ArrowNext />,
-        // responsive: [
-        //     {
-        //         breakpoint: 1025,
-        //         settings: {
-        //             slidesToShow: 3,
-        //             slidesToScroll: 1,
-        //             infinite: true,
-        //             variableWidth: false,
-        //         },
-        //     },
-        //     {
-        //         breakpoint: 500,
-        //         settings: {
-        //             slidesToShow: 2,
-        //             slidesToScroll: 1,
-        //             infinite: true,
-        //             variableWidth: false,
-        //         },
-        //     },
-        //     {
-        //         breakpoint: 480,
-        //         settings: {
-        //             slidesToShow: 2,
-        //             slidesToScroll: 1,
-        //             infinite: true,
-        //             variableWidth: false,
-        //         },
-        //     },
-        // ],
+        responsive: [
+            {
+                breakpoint: 1025,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    variableWidth: false,
+                },
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerPadding: '160px',
+                    variableWidth: false,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerPadding: '160px',
+                    variableWidth: false,
+                },
+            },
+        ],
     };
 
     const slickImg = [
@@ -90,7 +91,14 @@ const LatestNews = () => {
                                         src={img}
                                         alt={alt}
                                     />
-                                    <p className={style.latestNews__slickItem_content}>{content}</p>
+                                    <p className={style.latestNews__slickItem_content}>
+                                        <TextTruncate
+                                            line={2}
+                                            element="p"
+                                            truncateText="…"
+                                            text={content}
+                                        />
+                                    </p>
                                 </div>
                             );
                         })}

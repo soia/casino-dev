@@ -35,19 +35,19 @@ const Footer = () => {
                 <div className={style.footer__about}>
                     <h3 className={style.footer__title}>{t('footer.company')}</h3>
 
-                    <AnchorLink href="#CNG" className={style.footer__links}>
+                    <AnchorLink href="/" className={style.footer__links}>
                         {t('footer.aboutUs')}
                     </AnchorLink>
-                    <AnchorLink href="#advantages" className={style.footer__links}>
+                    <AnchorLink href="/" className={style.footer__links}>
                         {t('footer.benefits')}
                     </AnchorLink>
-                    <AnchorLink href="#header" className={style.footer__links}>
+                    <AnchorLink href="/" className={style.footer__links}>
                         {t('footer.gameToken')}
                     </AnchorLink>
-                    <AnchorLink href="#principleOfWork" className={style.footer__links}>
+                    <AnchorLink href="/" className={style.footer__links}>
                         {t('footer.principleOfOperation')}
                     </AnchorLink>
-                    <AnchorLink href="#referralProgram" className={style.footer__links}>
+                    <AnchorLink href="/" className={style.footer__links}>
                         {t('footer.tokenImplementation')}
                     </AnchorLink>
                 </div>
@@ -76,7 +76,7 @@ const Footer = () => {
             <p className={style.footer__copyright_contentMobile}>
                 Copyright
                 <span className={style.footer__copyright_symbol}>&#169;</span>
-                <span>2020 CNG tokens</span>
+                <span>{new Date().getFullYear()} CNG tokens</span>
             </p>
         </footer>
     );

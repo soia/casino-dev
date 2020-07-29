@@ -4,6 +4,10 @@
 .latestNews {
     background-color: #B4B1D5;
 
+    @media only screen and (max-width: 767px) {
+        padding-bottom: 35vw;
+    }
+
     &__title {
         padding: $desctop100px 0 $desctop65px 0;
         font-family: $DrukTextWide-Bold;
@@ -24,8 +28,17 @@
     &__slickItem {
         width: 20vw !important;
 
+        @media only screen and (max-width: 767px) {
+            width: auto !important;
+        }
+
         &_img {
             width: 20vw !important;
+
+            @media only screen and (max-width: 767px) {
+                width: auto !important;
+                height: 55vw;
+            }
         }
 
         &_content {
@@ -34,6 +47,12 @@
             font-size: 1.4vw;
             line-height: 2vw;
             padding-top: 1vw;
+
+            @media only screen and (max-width: 767px) {
+                font-size: 5.4vw;
+                line-height: 5.4vw;
+                padding-top: 3vw;
+            }
         }
     }
 
