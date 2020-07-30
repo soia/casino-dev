@@ -91,14 +91,14 @@ const LatestNews = () => {
                                         src={img}
                                         alt={alt}
                                     />
-                                    <p className={style.latestNews__slickItem_content}>
+                                    <div className={style.latestNews__slickItem_content}>
                                         <TextTruncate
                                             line={2}
                                             element="p"
                                             truncateText="…"
                                             text={content}
                                         />
-                                    </p>
+                                    </div>
                                 </div>
                             );
                         })}

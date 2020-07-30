@@ -31,6 +31,8 @@ const Field = props => {
         backgroundSize: 'contain',
     };
 
+    const errorValues = Object.values(error).filter(item => item.length > 0);
+
     return (
         <div className={style.inputWrapper}>
             <label className={labelStyle} htmlFor={id}>
@@ -54,7 +56,15 @@ const Field = props => {
                     style={regtangleStyle}
                 />
             </label>
-            {error ? <div className={style.inputWrapper__invalid}>{error}</div> : null}
+            {errorValues.length > 0 ? (
+                <div className={style.inputWrapper__invalid}>
+                    <ol className={style.inputWrapper__tooltip_errorList}>
+                        {errorValues.map(item => (
+                            <li key={item}>{item}</li>
+                        ))}
+                    </ol>
+                </div>
+            ) : null}
         </div>
     );
 };
@@ -68,7 +78,7 @@ Field.defaultProps = {
     min: 0,
     inputStyle: '',
     labelStyle: '',
-    error: '',
+    error: {},
     step: '',
     onChange: () => {},
     onFocus: () => {},
@@ -89,7 +99,7 @@ Field.propTypes = {
     maxLength: PropTypes.string,
     min: PropTypes.number,
     max: PropTypes.number,
-    error: PropTypes.string,
+    error: PropTypes.object,
     step: PropTypes.string,
     inputStyle: PropTypes.string,
     labelStyle: PropTypes.string,

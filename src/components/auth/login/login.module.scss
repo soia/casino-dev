@@ -39,6 +39,10 @@
         font-size: 1vw;
         line-height: 1.4vw;
         outline: none;
+        font-family: $CoreSansGRegular;
+        font-size: 1vw;
+        line-height: 3.8vw;
+        color: #fff;
 
         &::placeholder {
             font-family: $CoreSansGRegular;
@@ -60,5 +64,14 @@
         align-items: center;
         height: 3.9vw;
         margin: 3vw auto 1.5vw;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.25s;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: perspective(1000px);
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 }

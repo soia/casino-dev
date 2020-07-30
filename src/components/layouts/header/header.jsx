@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { message } from 'antd';
 import Burger from 'react-css-burger';
 import ReactWOW from 'react-wow';
+import Login from '../../auth/login/login';
+import { authModalActions } from '../../../actions/authModal.actions';
 import Button from '../../small-components/button';
+import { compose } from '../../../utils';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 import SelectLanguage from '../../language';
 import logo from '../../assets/images/logo.svg';
@@ -13,7 +18,7 @@ import style from './header.module.scss';
 import './header.scss';
 import 'antd/dist/antd.css';
 
-const Header = () => {
+const Header = ({ dispatch }) => {
     const { t } = useTranslation();
 
     const [shouldHideHeader, setShouldHideHeader] = useState(false);
@@ -49,7 +54,7 @@ const Header = () => {
     };
 
     const openLogin = () => {
-        message.success('Coming Soon!', 2);
+        dispatch(authModalActions.openLogin());
     };
 
     const openSignUp = () => {
@@ -112,8 +117,29 @@ const Header = () => {
                     />
                 </div>
             </div>
+            <Login />
         </header>
     );
 };
 
-export default Header;
+const mapStateToProps = state => {
+    const {
+        authModal: { login },
+    } = state;
+
+    return {
+        login,
+    };
+};
+
+Header.defaultProps = {
+    dispatch: () => { },
+};
+
+Header.propTypes = {
+    dispatch: PropTypes.func,
+};
+
+export default compose(
+    connect(mapStateToProps),
+)(Header);
