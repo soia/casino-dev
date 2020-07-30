@@ -12,7 +12,11 @@
         "forgotPassword": "Forgot password ?",
         "countryOfResidence": "Country of Residence",
         "alreadyHaveAccount": "Already have an account? Login here",
-        "createAccount": "Create an account"
+        "createAccount": "Create an account",
+        "iAm18years": "I certify that I am over 18 years old and fully accept",
+        "termsOfLicenseAgreement": "terms of the license agreement",
+        "iHaveReadAndFullyUnderstand": "I have read and fully understand",
+        "privacyPolicyCheckbox": "privacy policy"
     },
     "general": {
         "selectFromList": "Select from the list"

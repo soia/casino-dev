@@ -12,7 +12,11 @@
         "forgotPassword": "Забыли пароль ?",
         "countryOfResidence": "Страна проживания",
         "alreadyHaveAccount": "Уже есть аккаунт? Войдите здесь",
-        "createAccount": "Создать учетную запись"
+        "createAccount": "Создать учетную запись",
+        "iAm18years": "Я подтверждаю, что мне есть 18 лет и полностью принимаю",
+        "termsOfLicenseAgreement": "условия лицензионного соглашения",
+        "iHaveReadAndFullyUnderstand": "Я прочитал(-а) и полностью понимаю",
+        "privacyPolicyCheckbox": "политику конфиденциальности"
     },
     "general": {
         "selectFromList": "Выберите из списка"

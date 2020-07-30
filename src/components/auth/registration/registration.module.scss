@@ -10,6 +10,16 @@
         margin-bottom: 3vw;
     }
 
+    &__form {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 75vh;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
     &__select {
         margin-bottom: 1.5vw;
     }
@@ -71,6 +81,41 @@
             font-size: 1vw;
             line-height: 3.8vw;
             color: #fff;
+        }
+    }
+
+    &__checkBoxWrapper {
+        width: 26vw;
+    }
+
+    &__checkbox {
+        display: block;
+        margin-bottom: 1.5vw;
+
+        &_wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        &_title {
+            padding: 0;
+        }
+
+        &_title,
+        &_link {
+            font-family: $CoreSansGRegular;
+            font-size: 0.8vw;
+            color: #fff;
+        }
+
+        &_link {
+            border-bottom: 1px solid #fff;
+            margin-left: 0.5vw;
+
+            &:hover {
+                color: #FAD961;
+                border-bottom: 1px solid #FAD961;
+            }
         }
     }
 

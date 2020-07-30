@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Link, withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import SelectSearch from 'react-select-search';
+import { Checkbox } from 'antd';
 import frame from '../../small-components/field/images/frame.svg';
 import { countries } from '../../../helpers/countries';
 import { authModalActions } from '../../../actions/authModal.actions';
@@ -34,7 +36,8 @@ class Registration extends PureComponent {
             userName: '',
             email: '',
             userPasswordRegistration: '',
-            checkbox: false,
+            termOfService: false,
+            privacyPolicy: false,
         },
         userNameErrors: {
             userNameLengthError: '',
@@ -51,7 +54,8 @@ class Registration extends PureComponent {
             passwordUpperCaseLetter: '',
             passwordLettersError: '',
         },
-        checkBoxErrors: {},
+        termOfServiceError: '',
+        privacyPolicyError: '',
     };
 
     location = value => {
@@ -69,7 +73,7 @@ class Registration extends PureComponent {
         const { name, value } = event.target;
         const numbersLatinLettersSymbols = /[A-Za-z0-9!@#,./$%^&*/':+{}=();" `/\-/\]/\\()/[_]+$/;
         const numbersLatinLetters = /[A-Za-z0-9]+$/;
-        console.log(name, 'name');
+
         if (name === 'userName') {
             this.setState(state => ({
                 user: {
@@ -282,33 +286,16 @@ class Registration extends PureComponent {
         }
     };
 
-    termOfUse = event => {
-        const { user } = this.state;
-        this.setState({
-            user: {
-                ...user,
-                checkbox: event.target.checked,
-            },
-        });
-        if (event.target.checked) {
-            this.setState({
-                checkBoxErrors: {},
-            });
-        } else {
-            this.setState(state => ({
-                checkBoxErrors: {
-                    ...state.checkBoxErrors,
-                    isError: true,
-                },
-            }));
-        }
-    };
-
     validateFields = () => {
         const { t } = this.props;
         const {
             user: {
-                email, userPasswordRegistration, checkbox, userName, country,
+                email,
+                userPasswordRegistration,
+                userName,
+                country,
+                termOfService,
+                privacyPolicy,
             },
         } = this.state;
 
@@ -345,13 +332,16 @@ class Registration extends PureComponent {
             }));
         }
 
-        if (!checkbox) {
-            this.setState(state => ({
-                checkBoxErrors: {
-                    ...state.checkBoxErrors,
-                    isError: true,
-                },
-            }));
+        if (!termOfService) {
+            this.setState({
+                termOfServiceError: t('error.field_can_not_be_empty'),
+            });
+        }
+
+        if (!privacyPolicy) {
+            this.setState({
+                privacyPolicyError: t('error.field_can_not_be_empty'),
+            });
         }
     };
 
@@ -359,10 +349,15 @@ class Registration extends PureComponent {
         event.preventDefault();
         await this.validateFields();
         const {
-            user: { email, userPasswordRegistration, checkbox },
+            user: {
+                email,
+                userPasswordRegistration,
+                termOfService,
+                userName,
+                privacyPolicy,
+            },
             emailErrors,
             passwordErrors,
-            checkBoxErrors,
         } = this.state;
 
         const copyEmailErrors = Object.assign({}, emailErrors);
@@ -378,10 +373,15 @@ class Registration extends PureComponent {
         if (
             Object.keys(copyEmailErrors).length === 0
             && Object.keys(copyPasswordErrors).length === 0
-            && Object.keys(checkBoxErrors).length === 0
         ) {
-            if (email && userPasswordRegistration && checkbox) {
-                console.log(email, 'email');
+            if (
+                email
+                && userName
+                && userPasswordRegistration
+                && termOfService
+                && privacyPolicy
+            ) {
+                console.log(this.state.user, 'user');
             }
         }
     };
@@ -396,6 +396,30 @@ class Registration extends PureComponent {
         dispatch(authModalActions.openLogin());
     };
 
+    termOfUse = event => {
+        const { t } = this.props;
+        const { user } = this.state;
+        this.setState({
+            user: {
+                ...user,
+                termOfService: event.target.checked,
+            },
+            termOfServiceError: event.target.checked ? '' : t('error.field_can_not_be_empty'),
+        });
+    };
+
+    privacyPolicy = event => {
+        const { t } = this.props;
+        const { user } = this.state;
+        this.setState({
+            user: {
+                ...user,
+                privacyPolicy: event.target.checked,
+            },
+            privacyPolicyError: event.target.checked ? '' : t('error.field_can_not_be_empty'),
+        });
+    };
+
     render() {
         const { t, signUp, login } = this.props;
         const {
@@ -403,8 +427,15 @@ class Registration extends PureComponent {
             passwordErrors,
             userNameErrors,
             countryErrors,
+            termOfServiceError,
+            privacyPolicyError,
             user: {
-                userName, email, userPasswordRegistration, country,
+                userName,
+                email,
+                userPasswordRegistration,
+                country,
+                termOfService,
+                privacyPolicy,
             },
         } = this.state;
         const customStyles = {
@@ -495,6 +526,50 @@ class Registration extends PureComponent {
                             inputStyle={style.registration__input}
                         />
                     </div>
+                    <div className={style.registration__checkBoxWrapper}>
+                        <span className={style.registration__checkbox}>
+                            <div className={style.registration__checkbox_wrapper}>
+                                <Checkbox checked={termOfService} onChange={this.termOfUse}>
+                                    <span className={style.registration__checkbox_title}>
+                                        {t('auth.iAm18years')}
+                                        <Link
+                                            target="_blank"
+                                            to="termOfServicePath"
+                                            className={style.registration__checkbox_link}
+                                        >
+                                            {t('auth.termsOfLicenseAgreement')}
+                                        </Link>
+                                    </span>
+                                </Checkbox>
+                            </div>
+                            {termOfServiceError ? (
+                                <div className={style.registration__inputWrapper_invalid}>
+                                    {t('error.field_can_not_be_empty')}
+                                </div>
+                            ) : null}
+                        </span>
+                        <span className={style.registration__checkbox}>
+                            <div className={style.registration__checkbox_wrapper}>
+                                <Checkbox checked={privacyPolicy} onChange={this.privacyPolicy}>
+                                    <span className={style.registration__checkbox_title}>
+                                        {t('auth.iHaveReadAndFullyUnderstand')}
+                                        <Link
+                                            target="_blank"
+                                            to="privacyPolicyPath"
+                                            className={style.registration__checkbox_link}
+                                        >
+                                            {t('auth.privacyPolicyCheckbox')}
+                                        </Link>
+                                    </span>
+                                </Checkbox>
+                            </div>
+                            {privacyPolicyError ? (
+                                <div className={style.registration__inputWrapper_invalid}>
+                                    {t('error.field_can_not_be_empty')}
+                                </div>
+                            ) : null}
+                        </span>
+                    </div>
                     <Button
                         className={style.registration__submitBtn}
                         type="button"
@@ -526,4 +601,8 @@ const mapStateToProps = state => {
     };
 };
 
-export default compose(withTranslation(), connect(mapStateToProps))(Registration);
+export default compose(
+    withTranslation(),
+    connect(mapStateToProps),
+    withRouter,
+)(Registration);
