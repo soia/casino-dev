@@ -9,6 +9,7 @@ import {
 } from '../pages';
 
 import '../assets/styles/reset.scss';
+import '../assets/styles/search-select.scss';
 import './app.scss';
 import '../assets/styles/fonts.scss';
 

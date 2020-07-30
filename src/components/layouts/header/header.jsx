@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { message } from 'antd';
 import Burger from 'react-css-burger';
 import ReactWOW from 'react-wow';
-import Login from '../../auth/login/login';
+import Login from '../../auth/login';
+import Registration from '../../auth/registration';
 import { authModalActions } from '../../../actions/authModal.actions';
 import Button from '../../small-components/button';
 import { compose } from '../../../utils';
@@ -58,7 +58,7 @@ const Header = ({ dispatch }) => {
     };
 
     const openSignUp = () => {
-        message.success('Coming Soon!', 2);
+        dispatch(authModalActions.openSignUp());
     };
 
     return (
@@ -118,6 +118,7 @@ const Header = ({ dispatch }) => {
                 </div>
             </div>
             <Login />
+            <Registration />
         </header>
     );
 };

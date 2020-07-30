@@ -25,6 +25,7 @@
         "react-redux": "^7.0.2",
         "react-router-dom": "^5.0.0",
         "react-scripts": "3.0.1",
+        "react-select-search": "^2.0.4",
         "react-slick": "^0.24.0",
         "react-text-truncate": "^0.14.1",
         "react-transition-group": "^4.3.0",

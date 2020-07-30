@@ -1,7 +1,7 @@
 @import '../../assets/styles/variables';
 @import '../../assets/styles/mixin';
 
-.signIn {
+.registration {
     &__title {
         font-family: $CoreSansGRegular;
         font-size: 30px;
@@ -10,17 +10,25 @@
         margin-bottom: 3vw;
     }
 
-    &__inputWrapper {
+    &__select {
         margin-bottom: 1.5vw;
     }
 
-    &__forgotPassword {
-        font-family: $CoreSansGRegular;
-        font-size: 0.8vw;
-        color: #fff;
+    &__inputWrapper {
+        margin-bottom: 1.5vw;
+
+        &_invalid {
+            margin-top: 0.5vw;
+            color: $red;
+            font-family: $CoreSansGRegular;
+            font-weight: 400;
+            font-size: 0.8vw;
+            width: 100%;
+            white-space: nowrap;
+        }
     }
 
-    &__registration {
+    &__alreadyHaveAccount {
         font-family: $CoreSansGRegular;
         font-size: 1vw;
         color: #fff;
@@ -34,6 +42,12 @@
         &:hover {
             border-bottom: 1px solid #fff;
         }
+    }
+
+    &__label {
+        font-family: $CoreSansGRegular;
+        font-size: 0.7vw;
+        color: #fff;
     }
 
     &__input {
@@ -67,10 +81,10 @@
         font-size: 1vw;
         color: #fff;
         display: flex;
+        height: 3.5vw;
+        width: 22vw;
         justify-content: center;
         align-items: center;
-        height: 3.5vw;
-        width: 13vw;
         margin: 3vw auto 1.5vw;
         outline: none;
         cursor: pointer;

@@ -8,7 +8,14 @@
     "auth": {
         "typeEmail": "Введите адрес электронной почты",
         "typePassword": "Введите пароль",
-        "forgotPassword": "Забыли пароль ?"
+        "typeName": "Введите ваше имя",
+        "forgotPassword": "Забыли пароль ?",
+        "countryOfResidence": "Страна проживания",
+        "alreadyHaveAccount": "Уже есть аккаунт? Войдите здесь",
+        "createAccount": "Создать учетную запись"
+    },
+    "general": {
+        "selectFromList": "Выберите из списка"
     },
     "firstScreen": {
         "title": "Game token",
@@ -89,8 +96,8 @@
         "only_letters_symbols_numbers": "Разрешены только латинские буквы, специальные символы и цифры.",
         "password_at_least_6_chars": "Пароль должен быть не менее чем из 6 символов.",
         "password_at_least_1_digit": "Пароль должен содержать не менее 1 цифры.",
-        "password_at_least_1_letters": "Пароль должен содержать не менее 1 буквы.",
-        "password_at_least_1_upperCase_letter": "Пароль должен содержать не менее 1 буквы.",
+        "password_at_least_1_letters": "Пароль должен содержать не менее 1 буквы в нижнем регистре.",
+        "password_at_least_1_upperCase_letter": "Пароль должен содержать не менее 1 буквы в верхнем регистре.",
         "only_latin_letters_and_numbers_allowed": "Разрешены только латинские буквы и цифры.",
         "password_does_not_match": "Пароль не совпадает",
         "need_to_agree": "Подтвердить условия использования"

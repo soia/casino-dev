@@ -15,12 +15,14 @@ class Login extends PureComponent {
         t: () => {},
         dispatch: () => {},
         login: false,
+        signUp: false,
     };
 
     static propTypes = {
         t: PropTypes.func,
         dispatch: PropTypes.func,
         login: PropTypes.bool,
+        signUp: PropTypes.bool,
     };
 
     state = {
@@ -238,13 +240,18 @@ class Login extends PureComponent {
         }
     };
 
+    openSignUp = () => {
+        const { dispatch } = this.props;
+        dispatch(authModalActions.openSignUp());
+    };
+
     closeModal = () => {
         const { dispatch } = this.props;
         dispatch(authModalActions.closeModal());
     };
 
     render() {
-        const { t, login } = this.props;
+        const { t, login, signUp } = this.props;
         const {
             email, emailErrors, userPasswordLogin, passwordErrors,
         } = this.state;
@@ -259,7 +266,7 @@ class Login extends PureComponent {
             backgroundSize: 'cover',
         };
 
-        if (login) {
+        if (login || signUp) {
             document.documentElement.style.overflowY = 'hidden';
         } else {
             document.documentElement.style.overflowY = 'visible';
@@ -308,7 +315,10 @@ class Login extends PureComponent {
                     >
                         {t('header.signIn')}
                     </Button>
-                    <div className={style.signIn__registration}>
+                    <div
+                        onClick={this.openSignUp}
+                        className={style.signIn__registration}
+                    >
                         {t('header.registration')}
                     </div>
                 </form>
@@ -319,11 +329,12 @@ class Login extends PureComponent {
 
 const mapStateToProps = state => {
     const {
-        authModal: { login },
+        authModal: { login, signUp },
     } = state;
 
     return {
         login,
+        signUp,
     };
 };
 
