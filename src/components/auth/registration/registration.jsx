@@ -33,14 +33,13 @@ class Registration extends PureComponent {
     state = {
         user: {
             country: '',
-            userName: '',
+            username: '',
             email: '',
             userPasswordRegistration: '',
             termOfService: false,
-            privacyPolicy: false,
         },
-        userNameErrors: {
-            userNameLengthError: '',
+        usernameErrors: {
+            usernameLengthError: '',
         },
         countryErrors: '',
         emailErrors: {
@@ -55,7 +54,6 @@ class Registration extends PureComponent {
             passwordLettersError: '',
         },
         termOfServiceError: '',
-        privacyPolicyError: '',
     };
 
     location = value => {
@@ -74,15 +72,15 @@ class Registration extends PureComponent {
         const numbersLatinLettersSymbols = /[A-Za-z0-9!@#,./$%^&*/':+{}=();" `/\-/\]/\\()/[_]+$/;
         const numbersLatinLetters = /[A-Za-z0-9]+$/;
 
-        if (name === 'userName') {
+        if (name === 'username') {
             this.setState(state => ({
                 user: {
                     ...state.user,
                     [name]: value,
                 },
-                userNameErrors: {
-                    ...state.userNameErrors,
-                    userNameLengthError: value ? '' : t('error.field_can_not_be_empty'),
+                usernameErrors: {
+                    ...state.usernameErrors,
+                    usernameLengthError: value ? '' : t('error.field_can_not_be_empty'),
                 },
             }));
         }
@@ -292,10 +290,9 @@ class Registration extends PureComponent {
             user: {
                 email,
                 userPasswordRegistration,
-                userName,
+                username,
                 country,
                 termOfService,
-                privacyPolicy,
             },
         } = this.state;
 
@@ -305,11 +302,11 @@ class Registration extends PureComponent {
             });
         }
 
-        if (userName.length < 1) {
+        if (username.length < 1) {
             this.setState(state => ({
-                userNameErrors: {
-                    ...state.userNameErrors,
-                    userNameLengthError: t('error.field_can_not_be_empty'),
+                usernameErrors: {
+                    ...state.usernameErrors,
+                    usernameLengthError: t('error.field_can_not_be_empty'),
                 },
             }));
         }
@@ -337,12 +334,6 @@ class Registration extends PureComponent {
                 termOfServiceError: t('error.field_can_not_be_empty'),
             });
         }
-
-        if (!privacyPolicy) {
-            this.setState({
-                privacyPolicyError: t('error.field_can_not_be_empty'),
-            });
-        }
     };
 
     registratiOnSubmit = async event => {
@@ -353,8 +344,7 @@ class Registration extends PureComponent {
                 email,
                 userPasswordRegistration,
                 termOfService,
-                userName,
-                privacyPolicy,
+                username,
             },
             emailErrors,
             passwordErrors,
@@ -376,12 +366,11 @@ class Registration extends PureComponent {
         ) {
             if (
                 email
-                && userName
+                && username
                 && userPasswordRegistration
                 && termOfService
-                && privacyPolicy
             ) {
-                console.log(this.state.user, 'user');
+                console.log('success');
             }
         }
     };
@@ -408,34 +397,20 @@ class Registration extends PureComponent {
         });
     };
 
-    privacyPolicy = event => {
-        const { t } = this.props;
-        const { user } = this.state;
-        this.setState({
-            user: {
-                ...user,
-                privacyPolicy: event.target.checked,
-            },
-            privacyPolicyError: event.target.checked ? '' : t('error.field_can_not_be_empty'),
-        });
-    };
-
     render() {
         const { t, signUp, login } = this.props;
         const {
             emailErrors,
             passwordErrors,
-            userNameErrors,
+            usernameErrors,
             countryErrors,
             termOfServiceError,
-            privacyPolicyError,
             user: {
-                userName,
+                username,
                 email,
                 userPasswordRegistration,
                 country,
                 termOfService,
-                privacyPolicy,
             },
         } = this.state;
         const customStyles = {
@@ -469,36 +444,15 @@ class Registration extends PureComponent {
             >
                 <h3 className={style.registration__title}>{t('header.registration')}</h3>
                 <form className={style.registration__form} autoComplete="off">
-                    <div className={style.registration__select}>
-                        <p className={style.registration__label}>
-                            {t('auth.countryOfResidence')}
-                        </p>
-                        <div style={regtangleStyle}>
-                            <SelectSearch
-                                name="country"
-                                mode="input"
-                                value={country}
-                                options={countries}
-                                placeholder={t('general.selectFromList')}
-                                onChange={this.location}
-                                search
-                            />
-                        </div>
-                        {countryErrors ? (
-                            <div className={style.registration__inputWrapper_invalid}>
-                                {countryErrors}
-                            </div>
-                        ) : null}
-                    </div>
                     <div className={style.registration__inputWrapper}>
                         <Field
-                            id="userName"
-                            type="userName"
+                            id="username"
+                            type="username"
                             placeholder={t('auth.typeName')}
-                            name="userName"
-                            value={userName}
+                            name="username"
+                            value={username}
                             onChange={this.inputOnchange}
-                            error={userNameErrors}
+                            error={usernameErrors}
                             inputStyle={style.registration__input}
                         />
                     </div>
@@ -526,6 +480,27 @@ class Registration extends PureComponent {
                             inputStyle={style.registration__input}
                         />
                     </div>
+                    <div className={style.registration__select}>
+                        <p className={style.registration__label}>
+                            {t('auth.countryOfResidence')}
+                        </p>
+                        <div style={regtangleStyle}>
+                            <SelectSearch
+                                name="country"
+                                mode="input"
+                                value={country}
+                                options={countries}
+                                placeholder={t('general.selectFromList')}
+                                onChange={this.location}
+                                search
+                            />
+                        </div>
+                        {countryErrors ? (
+                            <div className={style.registration__inputWrapper_invalid}>
+                                {countryErrors}
+                            </div>
+                        ) : null}
+                    </div>
                     <div className={style.registration__checkBoxWrapper}>
                         <span className={style.registration__checkbox}>
                             <div className={style.registration__checkbox_wrapper}>
@@ -537,22 +512,9 @@ class Registration extends PureComponent {
                                             to="termOfServicePath"
                                             className={style.registration__checkbox_link}
                                         >
-                                            {t('auth.termsOfLicenseAgreement')}
+                                            {t('auth.termsOfLicenseAgreement')}.
                                         </Link>
-                                    </span>
-                                </Checkbox>
-                            </div>
-                            {termOfServiceError ? (
-                                <div className={style.registration__inputWrapper_invalid}>
-                                    {t('error.field_can_not_be_empty')}
-                                </div>
-                            ) : null}
-                        </span>
-                        <span className={style.registration__checkbox}>
-                            <div className={style.registration__checkbox_wrapper}>
-                                <Checkbox checked={privacyPolicy} onChange={this.privacyPolicy}>
-                                    <span className={style.registration__checkbox_title}>
-                                        {t('auth.iHaveReadAndFullyUnderstand')}
+                                        {' '}{t('auth.iHaveReadAndFullyUnderstand')}
                                         <Link
                                             target="_blank"
                                             to="privacyPolicyPath"
@@ -563,7 +525,7 @@ class Registration extends PureComponent {
                                     </span>
                                 </Checkbox>
                             </div>
-                            {privacyPolicyError ? (
+                            {termOfServiceError ? (
                                 <div className={style.registration__inputWrapper_invalid}>
                                     {t('error.field_can_not_be_empty')}
                                 </div>
