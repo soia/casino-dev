@@ -16,10 +16,12 @@
         "iAm18years": "Я подтверждаю, что мне есть 18 лет и полностью принимаю",
         "termsOfLicenseAgreement": "условия лицензионного соглашения",
         "iHaveReadAndFullyUnderstand": "Я прочитал(-а) и полностью понимаю",
-        "privacyPolicyCheckbox": "политику конфиденциальности"
+        "privacyPolicyCheckbox": "политику конфиденциальности",
+        "passwordRecovery": "Восстановление пароля"
     },
     "general": {
-        "selectFromList": "Выберите из списка"
+        "selectFromList": "Выберите из списка",
+        "send": "Отправить"
     },
     "firstScreen": {
         "title": "Game token",

@@ -2,19 +2,25 @@
 
 import { AUTH_MODAL } from '../constants';
 
-function openLogin() {
+const openLogin = () => {
     return {
         type: AUTH_MODAL.OPEN_LOGIN,
     };
 }
 
-function openSignUp() {
+const openSignUp = () => {
     return {
         type: AUTH_MODAL.OPEN_SIGNUP,
     };
 }
 
-function closeModal() {
+const openPasswordRecovery = () => {
+    return {
+        type: AUTH_MODAL.OPEN_PASSWORD_RECOVERY,
+    };
+}
+
+const closeModal = () => {
     return {
         type: AUTH_MODAL.CLOSE_AUTH_MODAL,
     };
@@ -23,5 +29,6 @@ function closeModal() {
 export const authModalActions = {
     openLogin,
     openSignUp,
+    openPasswordRecovery,
     closeModal,
 };

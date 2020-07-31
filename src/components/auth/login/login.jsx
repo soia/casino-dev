@@ -245,6 +245,13 @@ class Login extends PureComponent {
         dispatch(authModalActions.openSignUp());
     };
 
+
+    openPasswordRecovery = () => {
+        console.log('sdfksgnsfkgnjdfngj');
+        const { dispatch } = this.props;
+        dispatch(authModalActions.openPasswordRecovery());
+    }
+
     closeModal = () => {
         const { dispatch } = this.props;
         dispatch(authModalActions.closeModal());
@@ -304,7 +311,7 @@ class Login extends PureComponent {
                             inputStyle={style.signIn__input}
                         />
                     </div>
-                    <div className={style.signIn__forgotPassword}>
+                    <div onClick={this.openPasswordRecovery} className={style.signIn__forgotPassword}>
                         {t('auth.forgotPassword')}
                     </div>
                     <Button

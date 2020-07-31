@@ -16,10 +16,12 @@
         "iAm18years": "I certify that I am over 18 years old and fully accept",
         "termsOfLicenseAgreement": "terms of the license agreement",
         "iHaveReadAndFullyUnderstand": "I have read and fully understand",
-        "privacyPolicyCheckbox": "privacy policy"
+        "privacyPolicyCheckbox": "privacy policy",
+        "passwordRecovery": "Password recovery"
     },
     "general": {
-        "selectFromList": "Select from the list"
+        "selectFromList": "Select from the list",
+        "send": "Send"
     },
     "firstScreen": {
         "title": "Game token",

@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Burger from 'react-css-burger';
 import ReactWOW from 'react-wow';
-import Login from '../../auth/login';
-import Registration from '../../auth/registration';
 import { authModalActions } from '../../../actions/authModal.actions';
 import Button from '../../small-components/button';
 import { compose } from '../../../utils';
@@ -117,8 +115,6 @@ const Header = ({ dispatch }) => {
                     />
                 </div>
             </div>
-            <Login />
-            <Registration />
         </header>
     );
 };
