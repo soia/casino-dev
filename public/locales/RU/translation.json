@@ -21,7 +21,9 @@
     },
     "general": {
         "selectFromList": "Выберите из списка",
-        "send": "Отправить"
+        "send": "Отправить",
+        "privacyPolicy": "Политика конфиденциальности",
+        "termOfUse": "Условия обслуживания и использования"
     },
     "firstScreen": {
         "title": "Game token",

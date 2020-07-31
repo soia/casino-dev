@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import ReactWOW from 'react-wow';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { message } from 'antd';
+import { termOfServicePath, privacyPolicyPath } from '../../../constants';
 
 import logo from '../../assets/images/logo.svg';
 import style from './footer.module.scss';
@@ -53,12 +54,18 @@ const Footer = () => {
                 </div>
                 <div className={style.footer__support}>
                     <h3 className={style.footer__title}>{t('footer.support')}</h3>
-                    <span onClick={() => comingSoon()} className={style.footer__links}>
-                        {t('footer.faq')}
-                    </span>
-                    <span onClick={() => comingSoon()} className={style.footer__links}>
+                    <Link
+                        to={termOfServicePath}
+                        className={style.footer__links}
+                    >
+                        {t('general.termOfUse')}
+                    </Link>
+                    <Link
+                        to={privacyPolicyPath}
+                        className={style.footer__links}
+                    >
                         {t('footer.privacyPolice')}
-                    </span>
+                    </Link>
                 </div>
                 <div className={style.footer__services}>
                     <h3 className={style.footer__title}> {t('footer.helpCenter')}</h3>

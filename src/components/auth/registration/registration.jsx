@@ -5,13 +5,14 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import SelectSearch from 'react-select-search';
 import { Checkbox } from 'antd';
-import frame from '../../small-components/field/images/frame.svg';
+import { termOfServicePath, privacyPolicyPath } from '../../../constants';
 import { countries } from '../../../helpers/countries';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
 import Button from '../../small-components/button';
 import Field from '../../small-components/field';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
+import frame from '../../small-components/field/images/frame.svg';
 import orangeButton from './images/button.svg';
 import style from './registration.module.scss';
 
@@ -509,7 +510,7 @@ class Registration extends PureComponent {
                                         {t('auth.iAm18years')}
                                         <Link
                                             target="_blank"
-                                            to="termOfServicePath"
+                                            to={termOfServicePath}
                                             className={style.registration__checkbox_link}
                                         >
                                             {t('auth.termsOfLicenseAgreement')}.
@@ -517,7 +518,7 @@ class Registration extends PureComponent {
                                         {' '}{t('auth.iHaveReadAndFullyUnderstand')}
                                         <Link
                                             target="_blank"
-                                            to="privacyPolicyPath"
+                                            to={privacyPolicyPath}
                                             className={style.registration__checkbox_link}
                                         >
                                             {t('auth.privacyPolicyCheckbox')}

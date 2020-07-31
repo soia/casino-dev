@@ -1,0 +1,14 @@
+@import '../.././assets/styles/variables';
+
+.termOfUse {
+    display: flex;
+    flex: 1;
+    padding: 9vw 7vw 2.1vw;
+
+    &__title {
+        font-family: $DrukTextWide-Bold;
+        font-size: 1.5vw;
+        color: #2c3769;
+        margin: 0 auto;
+    }
+}

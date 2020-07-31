@@ -9,8 +9,10 @@ import {
     HomePage,
     PageNotFound,
     LoadingPage,
+    TermOfUse,
+    PrivacyPolicy,
 } from '../pages';
-
+import { termOfServicePath, privacyPolicyPath } from '../../constants';
 import '../assets/styles/reset.scss';
 import '../assets/styles/search-select.scss';
 import './app.scss';
@@ -36,6 +38,8 @@ const App = () => {
             <PasswordRecovery />
             <Switch>
                 <Route path="/" component={HomePage} exact />
+                <Route path={termOfServicePath} component={TermOfUse} exact />
+                <Route path={privacyPolicyPath} component={PrivacyPolicy} exact />
                 <Route component={PageNotFound} />
             </Switch>
             <Footer />

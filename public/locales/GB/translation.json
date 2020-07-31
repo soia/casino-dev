@@ -21,7 +21,9 @@
     },
     "general": {
         "selectFromList": "Select from the list",
-        "send": "Send"
+        "send": "Send",
+        "privacyPolicy": "Privacy policy",
+        "termOfUse": "Terms of Service and Use"
     },
     "firstScreen": {
         "title": "Game token",
