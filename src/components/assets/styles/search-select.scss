@@ -58,11 +58,31 @@
     color: #fff;
     -webkit-appearance: none;
 
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        width: 31vw;
+        height: 4vw;
+        font-size: 1.5vw;
+        line-height: 3.8vw;
+    }
+
+    @media only screen and (max-width: 499px) {
+
+    }
+
     &::placeholder {
         font-family: $CoreSansGRegular;
         font-size: 1vw;
         line-height: 3.8vw;
         color: #fff;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: 1.5vw;
+            line-height: 3.8vw;
+        }
+
+        @media only screen and (max-width: 499px) {
+
+        }
     }
 }
 

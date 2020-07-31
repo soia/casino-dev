@@ -193,7 +193,7 @@ class PasswordRecovery extends PureComponent {
                     </Button>
                     <div
                         onClick={this.openSignIn}
-                        className={style.signIn__registration}
+                        className={style.signIn__signIn}
                     >
                         {t('header.signIn')}
                     </div>

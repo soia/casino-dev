@@ -9,10 +9,26 @@
     position: absolute;
     left: -4vw;
     top: 30%;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        width: 10vw;
+    }
+
+    @media only screen and (max-width: 499px) {
+
+    }
 }
 
 .blueChip {
     position: absolute;
     right: -7vw;
     bottom: 0;
+
+    @media only screen and (min-width: 500px) and (max-width: 1024px) {
+        width: 15vw;
+    }
+
+    @media only screen and (max-width: 499px) {
+
+    }
 }

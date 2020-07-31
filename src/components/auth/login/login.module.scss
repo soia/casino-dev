@@ -4,10 +4,18 @@
 .signIn {
     &__title {
         font-family: $CoreSansGRegular;
-        font-size: 30px;
+        font-size: 2.1vw;
         color: #fff;
         text-align: center;
         margin-bottom: 3vw;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: 3vw;
+        }
+
+        @media only screen and (max-width: 499px) {
+
+        }
     }
 
     &__inputWrapper {
@@ -21,6 +29,15 @@
         cursor: pointer;
         width: fit-content;
         border-bottom: 1px solid transparent;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: 1.2vw;
+        }
+
+        @media only screen and (max-width: 499px) {
+
+        }
+
 
         &:hover {
             border-bottom: 1px solid #fff;
@@ -37,6 +54,14 @@
         width: fit-content;
         margin: 0 auto;
         border-bottom: 1px solid transparent;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: 1.2vw;
+        }
+
+        @media only screen and (max-width: 499px) {
+
+        }
 
         &:hover {
             border-bottom: 1px solid #fff;
@@ -55,15 +80,33 @@
         line-height: 1.4vw;
         outline: none;
         font-family: $CoreSansGRegular;
-        font-size: 1vw;
-        line-height: 3.8vw;
         color: #fff;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            width: 31vw;
+            height: 4vw;
+            font-size: 1.5vw;
+            line-height: 3.8vw;
+        }
+
+        @media only screen and (max-width: 499px) {
+
+        }
 
         &::placeholder {
             font-family: $CoreSansGRegular;
             font-size: 1vw;
             line-height: 3.8vw;
             color: #fff;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                font-size: 1.5vw;
+                line-height: 3.8vw;
+            }
+
+            @media only screen and (max-width: 499px) {
+
+            }
         }
     }
 
@@ -84,6 +127,17 @@
         transition: all 0.25s;
         -webkit-backface-visibility: hidden;
         -webkit-transform: perspective(1000px);
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: 1.8vw;
+            height: 4.8vw;
+            width: 18vw;
+        }
+
+        @media only screen and (max-width: 499px) {
+
+        }
+
 
         &:hover {
             transform: scale(1.05);
