@@ -15,11 +15,6 @@
         width: 75vw;
         padding: 10vw;
     }
-
-    @media only screen and (max-width: 499px) {
-        width: 100vw;
-        padding: 15vw;
-    }
 }
 
 // modal overlay
@@ -33,10 +28,10 @@
     background-color:rgba(216, 214, 237, 0.93);
     z-index: 99999999;
 
-    @media only screen and (max-width: 499px) {
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
+    // @media only screen and (max-width: 499px) {
+    //     overflow-y: scroll;
+    //     overflow-x: hidden;
+    // }
 }
 
 // modal overlay

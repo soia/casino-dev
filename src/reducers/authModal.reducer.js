@@ -5,7 +5,7 @@ export function authModal(state, action) {
     if (state === undefined) {
         return {
             login: false,
-            signUp: false,
+            signUp: true,
             passwordRecovery: false,
         };
     }
