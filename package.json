@@ -16,6 +16,7 @@
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-anchor-link-smooth-scroll": "^1.0.12",
+        "react-avatar": "^3.9.7",
         "react-copy-to-clipboard": "^5.0.1",
         "react-css-burger": "^0.2.0",
         "react-dom": "^16.8.6",
