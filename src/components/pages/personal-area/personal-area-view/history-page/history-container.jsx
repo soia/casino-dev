@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import ErrorIndicator from '../../../error-page/error-indicator';
 import Spinner from '../../../../spinner';
-import BalanceView from './balance-view';
+import HistoryCriptoView from './history-view';
 import { compose } from '../../../../../utils';
 
-export class BalanceContainer extends Component {
+export class HistoryContainer extends Component {
     state = {};
 
     componentDidMount() {
@@ -29,7 +29,7 @@ export class BalanceContainer extends Component {
         const errorMessage = error ? <ErrorIndicator /> : null;
         const spinner = loading ? <Spinner /> : null;
         const content = hasData ? (
-            <BalanceView />
+            <HistoryCriptoView />
         ) : null;
 
         return (
@@ -52,4 +52,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default compose(withTranslation(), connect(mapStateToProps))(BalanceContainer);
+export default compose(withTranslation(), connect(mapStateToProps))(HistoryContainer);
