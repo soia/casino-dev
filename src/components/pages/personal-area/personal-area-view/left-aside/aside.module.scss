@@ -1,0 +1,62 @@
+@import '../../../../assets/styles/variables';
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    width: 16vw;
+    min-width: 16vw;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0 0 0 1.5vw;
+
+    &__nav {
+        margin: auto 0 1.5vw;
+
+        li {
+            margin-bottom: 2.7vw;
+
+            &:hover {
+                svg {
+                    path {
+                        fill: #F9BD4F;
+                    }
+                }
+
+                .svgStroke {
+                    stroke: #F9BD4F;
+                }
+
+                .svgIcon {
+                    fill: #fff;
+                }
+            }
+
+            svg {
+                margin-right: 1vw;
+                width: 1.81vw;
+                height: 1.53vw;
+            }
+
+            a {
+                display: flex;
+                align-items: flex-end;
+                font-family: $CoreSansGRegular;
+                font-size: 1vw;
+                line-height: 1.4vw;
+                letter-spacing: 0.1vw;
+                color: #D3D1E4;
+
+                &:hover {
+                    color: #221876;
+                }
+            }
+        }
+    }
+
+    &__backgroundImage {
+        margin-top: auto;
+        margin-bottom: 2vw;
+        width: 14.5vw;
+        height: 22vw;
+    }
+}

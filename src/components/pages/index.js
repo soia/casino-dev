@@ -5,6 +5,7 @@ import AirDrop from './home-page/airDrop';
 import Advantages from './home-page/advantages/advantages';
 import TermOfUse from './term-of-use-page';
 import PrivacyPolicy from './privacy-policy-page';
+import PersonalArea from './personal-area';
 
 export {
     HomePage,
@@ -14,4 +15,5 @@ export {
     Advantages,
     TermOfUse,
     PrivacyPolicy,
+    PersonalArea,
 };

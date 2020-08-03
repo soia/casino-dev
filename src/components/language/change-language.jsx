@@ -5,7 +5,7 @@ import ReactFlagsSelect from 'react-flags-select';
 import './change-language.scss';
 
 import 'react-flags-select/scss/react-flags-select.scss';
-import 'antd/dist/antd.css';
+import '../../../node_modules/antd/dist/antd.css';
 
 function SelectLangeage() {
     const { i18n } = useTranslation();

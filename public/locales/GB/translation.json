@@ -23,7 +23,8 @@
         "selectFromList": "Select from the list",
         "send": "Send",
         "privacyPolicy": "Privacy policy",
-        "termOfUse": "Terms of Service and Use"
+        "termOfUse": "Terms of Service and Use",
+        "yourCurrentBalance": "Your current balance"
     },
     "firstScreen": {
         "title": "Game token",
@@ -109,6 +110,12 @@
         "only_latin_letters_and_numbers_allowed": "Only latin letters and numbers are allowed.",
         "password_does_not_match": "Password does not match",
         "need_to_agree": "Confirm terms of use"
+    },
+    "aside": {
+        "balance": "Balance",
+        "history": "History",
+        "profileData": "Profile data",
+        "documents": "Documents"
     },
     "pageNotFound": "Page not found"
 }

@@ -1,0 +1,35 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixin';
+
+.header {
+    padding: 1.5vw;
+    width: 100%;
+
+    &__logo {
+        font-family: $DrukTextWide-Super;
+        font-size: 1vw;
+        line-height: $desctop30px;
+        text-align: center;
+        letter-spacing: $desctop2px;
+        text-transform: uppercase;
+        color: $white;
+        text-decoration: none;
+        margin-right: auto;
+
+        @media only screen and (max-width: 767px) {
+            font-size: $mobile18px;
+            line-height: $mobile18px;
+            letter-spacing: 2px;
+        }
+
+        img {
+            width: 13vw;
+            height: 3.5vw;
+
+            @media only screen and (max-width: 767px) {
+                width: 45vw;
+                height: 8vw;
+            }
+        }
+    }
+}

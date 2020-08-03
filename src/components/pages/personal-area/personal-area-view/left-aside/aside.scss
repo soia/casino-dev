@@ -1,0 +1,16 @@
+@import '../../../../assets/styles/variables';
+
+#aside .active {
+    svg {
+        path {
+            fill: #f9bd4f;
+        }
+    }
+    .svgStroke {
+        stroke: #f9bd4f;
+    }
+
+    .svgIcon {
+        fill: #fff;
+    }
+}

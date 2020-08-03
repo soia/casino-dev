@@ -23,7 +23,8 @@
         "selectFromList": "Выберите из списка",
         "send": "Отправить",
         "privacyPolicy": "Политика конфиденциальности",
-        "termOfUse": "Условия обслуживания и использования"
+        "termOfUse": "Условия обслуживания и использования",
+        "yourCurrentBalance": "Ваш текущий баланс"
     },
     "firstScreen": {
         "title": "Game token",
@@ -109,6 +110,12 @@
         "only_latin_letters_and_numbers_allowed": "Разрешены только латинские буквы и цифры.",
         "password_does_not_match": "Пароль не совпадает",
         "need_to_agree": "Подтвердить условия использования"
+    },
+    "aside": {
+        "balance": "Баланс",
+        "history": "История",
+        "profileData": "Данные профиля",
+        "documents": "Документы"
     },
     "pageNotFound": "Страница не найдена"
 }

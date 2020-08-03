@@ -1,0 +1,13 @@
+@import '../../../../assets/styles/variables.scss';
+@import '../../../../assets/styles/mixin';
+
+.balance {
+    flex: 1;
+    background: linear-gradient(360deg, #FFFFFF 0%, rgba(216, 214, 237, 0.56) 81.29%);
+    border-radius: 1.5vw;
+    margin: 0 1.7vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import ReactWOW from 'react-wow';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { message } from 'antd';
-import { termOfServicePath, privacyPolicyPath } from '../../../constants';
+import { termOfServicePath, privacyPolicyPath, personalAreaPath } from '../../../constants';
 
 import logo from '../../assets/images/logo.svg';
 import style from './footer.module.scss';
@@ -16,6 +16,12 @@ const Footer = () => {
     const comingSoon = () => {
         message.success('Coming Soon!', 2);
     };
+
+    const pathName = window.location.pathname;
+    const matchPathName = pathName.split('/')[1];
+    if (`/${matchPathName}` === personalAreaPath) {
+        return null;
+    }
 
     return (
         <footer className={style.footer}>

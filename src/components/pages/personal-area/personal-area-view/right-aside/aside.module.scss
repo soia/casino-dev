@@ -1,0 +1,48 @@
+@import '../../../../assets/styles/variables';
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    width: 16vw;
+    min-width: 16vw;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0 1.5vw 0 0;
+
+    &__name {
+        font-family: $CoreSansGRegular;
+        font-weight: bold;
+        font-size: 1.25vw;
+        line-height: 1.81vw;
+        color: #272727;
+        margin-bottom: 2.1vw;
+    }
+
+    &__balanceWrapper {
+        border: 1px solid #D8D6ED;
+        border-radius: 0.6vw;
+        padding: 1.4vw;
+
+        &_title {
+            font-family: $CoreSansGRegular;
+            font-size: 0.8vw;
+            line-height: 0.9vw;
+            color: #B0AED3;
+            margin-bottom: 0.84vw;
+        }
+
+        &_amount {
+            font-family: $CoreSansGMedium;
+            font-size: 1.4vw;
+            letter-spacing: 2px;
+            color: #2A1F84;
+        }
+    }
+
+    &__backgroundImage {
+        margin-top: auto;
+        margin-bottom: 2vw;
+        width: 14.5vw;
+        height: 32.7vw;
+    }
+}

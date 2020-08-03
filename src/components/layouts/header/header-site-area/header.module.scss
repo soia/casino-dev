@@ -1,5 +1,5 @@
-@import '../../assets/styles/variables';
-@import '../../assets/styles/mixin';
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixin';
 
 .header {
     display: flex;
@@ -45,7 +45,6 @@
     &__logo {
         font-family: $DrukTextWide-Super;
         font-size: 1vw;
-        margin-right: 2vw;
         line-height: $desctop30px;
         text-align: center;
         letter-spacing: $desctop2px;
