@@ -16,7 +16,6 @@ const HeaderPersonalArea = () => (
             <Img
                 className={style.header__rightSide_logo}
                 src={avatar}
-                unstyled
                 userName="Aquaman Washington"
             />
             <svg
