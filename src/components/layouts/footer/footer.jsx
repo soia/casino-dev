@@ -1,23 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import ReactWOW from 'react-wow';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { message } from 'antd';
 import { termOfServicePath, privacyPolicyPath, personalAreaPath } from '../../../constants';
-
+import { compose } from '../../../utils';
 import logo from '../../assets/images/logo.svg';
 import style from './footer.module.scss';
 import footerCoins from '../../assets/images/footerCoins.svg';
 
-const Footer = () => {
+const Footer = ({ location: { pathname } }) => {
     const { t } = useTranslation();
 
     const comingSoon = () => {
         message.success('Coming Soon!', 2);
     };
 
-    const pathName = window.location.pathname;
+    const pathName = pathname;
     const matchPathName = pathName.split('/')[1];
     if (`/${matchPathName}` === personalAreaPath) {
         return null;
@@ -95,4 +96,14 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+Footer.defaultProps = {
+    location: {},
+};
+
+Footer.propTypes = {
+    location: PropTypes.object,
+};
+
+export default compose(
+    withRouter,
+)(Footer);
