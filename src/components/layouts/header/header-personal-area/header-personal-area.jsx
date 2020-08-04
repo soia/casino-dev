@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SelectLanguage from '../../../language';
 import { compose } from '../../../../utils';
 import Img from '../../../small-components/img/img';
 import {
@@ -37,6 +38,9 @@ const HeaderPersonalArea = () => {
                     src={avatar}
                     userName="Aquaman Washington"
                 />
+                <div className={style.header__rightSide_language}>
+                    <SelectLanguage />
+                </div>
                 <svg
                     width="19"
                     height="20"

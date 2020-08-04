@@ -44,7 +44,7 @@
         }
 
         &_settings {
-            margin-left: auto;
+            margin: 0 auto;
             cursor: pointer;
             transition: all 0.25s;
             width: 1.6vw;
@@ -62,9 +62,18 @@
             }
         }
 
+        &_language {
+            display: flex;
+            margin: 0 auto;
+
+            span {
+                color: #2A1F84 !important;
+            }
+        }
+
         &_close {
             display: flex;
-            margin-left: 1.74vw;
+            margin-left: auto;
             cursor: pointer;
             transition: all 0.25s;
             width: 1.74vw;
@@ -104,6 +113,7 @@
     color: #B0AED3;
     border: 1px solid rgba(197, 195, 223, 0.8);
     background: transparent;
+    margin-right: 1vw;
 
     &:hover {
         background: linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);

@@ -9,7 +9,7 @@
         border-radius: 0.1vw;
         border: none;
         padding: 1.6vw 2.6vw 0;
-        right: 0.3vw;
+        right: 0;
         display: flex;
         font-family: $DrukTextWide-Bold;
         top: 3.75vw;
@@ -148,6 +148,7 @@
         line-height: 1vw;
         padding-top: 1px;
         letter-spacing: 1px;
+        padding-left: 0.3vw;
 
         @media only screen and (max-width: 767px) {
             font-size: 3.2vw;
