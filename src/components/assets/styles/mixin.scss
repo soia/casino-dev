@@ -10,6 +10,20 @@
     border-radius: 0.1vw;
 }
 
+@mixin beveledButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.35vw;
+    transform: skew(-15deg);
+    cursor: pointer;
+    transition: all 0.25s;
+
+    span {
+        transform: skew(15deg);
+    }
+}
+
 @mixin roundedBtnStyle {
     box-shadow: 0px $desctop5px $desctop10px rgba(0, 0, 0, 0.1);
     border-radius: $desctop20px;

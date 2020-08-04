@@ -6,6 +6,8 @@ import {
     historyPath,
     profileDataPath,
     documentsPath,
+    depositPath,
+    withdrawalPath,
 } from '../../../../constants';
 
 import { compose } from '../../../../utils';
@@ -14,13 +16,17 @@ import RightAside from './right-aside';
 import Balance from './balance-page';
 import History from './history-page';
 import ProfileData from './profile-data-page';
+import Deposit from './deposit-page';
 import Documents from './documents-page';
 import style from './personal-area.module.scss';
+import Withdrawal from './withdrawal-page';
 
 const PersonalAreaView = () => (
     <div className={style.personalAreaWrapper}>
         <LeftAside />
         <Switch>
+            <Route path={`${personalAreaPath}${depositPath}`} component={Deposit} exact />
+            <Route path={`${personalAreaPath}${withdrawalPath}`} component={Withdrawal} exact />
             <Route path={`${personalAreaPath}${balancePath}`} component={Balance} exact />
             <Route path={`${personalAreaPath}${historyPath}`} component={History} exact />
             <Route

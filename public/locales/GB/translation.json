@@ -24,7 +24,9 @@
         "send": "Send",
         "privacyPolicy": "Privacy policy",
         "termOfUse": "Terms of Service and Use",
-        "yourCurrentBalance": "Your current balance"
+        "yourCurrentBalance": "Your current balance",
+        "deposit": "Deposit",
+        "withdrawal": "Withdrawal"
     },
     "firstScreen": {
         "title": "Game token",

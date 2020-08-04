@@ -23,6 +23,11 @@
         }
     }
 
+    &__buttonWrapper {
+        display: flex;
+        align-items: center;
+    }
+
     &__rightSide {
         display: flex;
         align-items: center;
@@ -71,7 +76,7 @@
             }
 
             &:hover {
-                svg{
+                svg {
                     fill: rgb(34, 24, 118);
 
                     rect {
@@ -84,5 +89,38 @@
                 }
             }
         }
+    }
+}
+.deposit,
+.withdrawal {
+    @include beveledButton;
+    min-width: 8vw;
+    height: 2.44vw;
+    font-family: $CoreSansGRegular;
+    font-size: 0.9vw;
+}
+
+.withdrawal {
+    color: #B0AED3;
+    border: 1px solid rgba(197, 195, 223, 0.8);
+    background: transparent;
+
+    &:hover {
+        background: linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
+        border: 1px solid transparent;
+        color: #fff;
+    }
+}
+
+.deposit {
+    color: #fff;
+    border: 1px solid transparent;
+    background: linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
+    margin-right: 1.6vw;
+
+    &:hover {
+        background: transparent;
+        border: 1px solid rgba(197, 195, 223, 0.8);
+        color: #B0AED3;
     }
 }

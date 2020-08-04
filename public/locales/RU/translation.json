@@ -24,7 +24,9 @@
         "send": "Отправить",
         "privacyPolicy": "Политика конфиденциальности",
         "termOfUse": "Условия обслуживания и использования",
-        "yourCurrentBalance": "Ваш текущий баланс"
+        "yourCurrentBalance": "Ваш текущий баланс",
+        "deposit": "Deposit",
+        "withdrawal": "Withdrawal"
     },
     "firstScreen": {
         "title": "Game token",
