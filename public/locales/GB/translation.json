@@ -26,7 +26,8 @@
         "termOfUse": "Terms of Service and Use",
         "yourCurrentBalance": "Your current balance",
         "deposit": "Deposit",
-        "withdrawal": "Withdrawal"
+        "withdrawal": "Withdrawal",
+        "datePlaceholder": "dd/mm/yyyy"
     },
     "firstScreen": {
         "title": "Game token",
@@ -118,6 +119,10 @@
         "history": "History",
         "profileData": "Profile data",
         "documents": "Documents"
+    },
+    "history": {
+        "operationsHistory": "Operations history",
+        "betHistory": "Bet history"
     },
     "pageNotFound": "Page not found"
 }

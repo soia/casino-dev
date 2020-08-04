@@ -26,7 +26,8 @@
         "termOfUse": "Условия обслуживания и использования",
         "yourCurrentBalance": "Ваш текущий баланс",
         "deposit": "Депозит",
-        "withdrawal": "Вывод"
+        "withdrawal": "Вывод",
+        "datePlaceholder": "дд/мм/гггг"
     },
     "firstScreen": {
         "title": "Game token",

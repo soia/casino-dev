@@ -5,12 +5,21 @@ import ErrorIndicator from '../../../error-page/error-indicator';
 import Spinner from '../../../../spinner';
 import HistoryCriptoView from './history-view';
 import { compose } from '../../../../../utils';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export class HistoryContainer extends Component {
-    state = {};
+    state = {
+        date: '',
+    };
 
     componentDidMount() {
     }
+
+    changeDate = date => {
+        this.setState({
+            date,
+        });
+    };
 
     onError = () => {
         this.setState({
@@ -23,13 +32,17 @@ export class HistoryContainer extends Component {
         const {
             loading,
             error,
+            date,
         } = this.state;
         const hasData = !(loading || error);
 
         const errorMessage = error ? <ErrorIndicator /> : null;
         const spinner = loading ? <Spinner /> : null;
         const content = hasData ? (
-            <HistoryCriptoView />
+            <HistoryCriptoView
+                date={date}
+                changeDate={this.changeDate}
+            />
         ) : null;
 
         return (
