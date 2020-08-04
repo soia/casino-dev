@@ -109,9 +109,9 @@
         }
 
         &_copy {
+            @include beveledButton;
             font-family: $DrukTextWide-Bold;
-            border: none;
-            background: transparent;
+            background: rgba(44, 55, 105, 0.1);
             width: 7vw;
             height: $desctop48px;
             outline: none;
@@ -122,9 +122,9 @@
             letter-spacing: $desctop1px;
             text-transform: uppercase;
             color: #2C3769;
-            background-repeat: no-repeat;
-            background-size: cover;
             margin-right: 2vw;
+            margin-left: 0.5vw;
+            border: 1px solid #2C3769;
 
             @media only screen and (max-width: 767px) {
                 font-size: 2.43vw;
@@ -133,7 +133,6 @@
                 width: 18.8vw;
                 height: 9vw;
             }
-
         }
     }
 }

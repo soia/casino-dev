@@ -4,9 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { message } from 'antd';
 
-import Button from '../../../small-components/button';
 import blueCoin from '../../../assets/images/blueCoin.svg';
-import smallTransparentButton from '../../../assets/images/smallTransparentButton.svg';
 import smartContractBg from './images/smart-contractBg.svg';
 import referalWrapper from './images/smartContractWrapper.svg';
 
@@ -14,10 +12,6 @@ import style from './smart-contract.module.scss';
 
 const SmartContract = () => {
     const { t } = useTranslation();
-
-    const transparentButtonStyle = {
-        backgroundImage: `url(${smallTransparentButton})`,
-    };
 
     const referalWrapperStyle = {
         backgroundImage: `url(${referalWrapper})`,
@@ -30,10 +24,22 @@ const SmartContract = () => {
     return (
         <Fragment>
             <div className={style.smartContract}>
-                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
-                    <img className={style.smartContract__coin} src={blueCoin} alt="blueCoin" />
+                <ReactWOW
+                    disabled={!(window.innerWidth > 767)}
+                    animation="fadeInUp"
+                    delay="0.01s"
+                >
+                    <img
+                        className={style.smartContract__coin}
+                        src={blueCoin}
+                        alt="blueCoin"
+                    />
                 </ReactWOW>
-                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
+                <ReactWOW
+                    disabled={!(window.innerWidth > 767)}
+                    animation="fadeInUp"
+                    delay="0.01s"
+                >
                     <img
                         className={style.smartContract__icons}
                         src={smartContractBg}
@@ -58,13 +64,11 @@ const SmartContract = () => {
                                     text="https://etherscan.io/token/0x883a158c9b28f8d626acfcfbe1028f49e70c9d75"
                                     onCopy={() => copied()}
                                 >
-                                    <Button
-                                        style={transparentButtonStyle}
-                                        type="button"
+                                    <div
                                         className={style.smartContract__referalField_copy}
                                     >
                                         copy
-                                    </Button>
+                                    </div>
                                 </CopyToClipboard>
                             </div>
                         </div>

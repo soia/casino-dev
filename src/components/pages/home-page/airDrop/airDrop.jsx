@@ -4,8 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { message } from 'antd';
 
-import Button from '../../../small-components/button';
-import smallTransparentButton from '../../../assets/images/smallTransparentButton.svg';
 import airDropBg from './images/airDropBg.svg';
 import airDrop1 from './images/airDrop1.svg';
 import airDrop2 from './images/airDrop2.svg';
@@ -24,10 +22,6 @@ const AirDrop = () => {
         backgroundImage: `url(${referalWrapper})`,
     };
 
-    const transparentButtonStyle = {
-        backgroundImage: `url(${smallTransparentButton})`,
-    };
-
     const copied = () => {
         message.success('Successfully copied.', 2);
     };
@@ -38,7 +32,11 @@ const AirDrop = () => {
                 className={style.airDrop}
                 style={window.innerWidth > 767 ? airDropBgStyle : null}
             >
-                <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInUp" delay="0.01s">
+                <ReactWOW
+                    disabled={!(window.innerWidth > 767)}
+                    animation="fadeInUp"
+                    delay="0.01s"
+                >
                     <h3 className={style.airDrop__title}>{t('referals.title')}</h3>
                     <img className={style.airDrop__icons} src={airDrop1} alt="airDrop1" />
                     <img className={style.airDrop__icons} src={airDrop2} alt="airDrop2" />
@@ -58,13 +56,9 @@ const AirDrop = () => {
                                 "
                                 onCopy={() => copied()}
                             >
-                                <Button
-                                    style={transparentButtonStyle}
-                                    type="button"
-                                    className={style.airDrop__referalField_copy}
-                                >
+                                <div className={style.airDrop__referalField_copy}>
                                     copy
-                                </Button>
+                                </div>
                             </CopyToClipboard>
                         </div>
                     </div>
