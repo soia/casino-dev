@@ -29,11 +29,10 @@
     &__input {
         width: 18vw;
         height: 2.5vw;
-        margin-top: 0.5vw;
         background: transparent;
         border-radius: 0.1vw;
         border: none;
-        padding: 0 2vw 0 2vw;
+        padding: 0 2vw 0 1vw;
         font-size: 1vw;
         line-height: 1.4vw;
         outline: none;
@@ -83,18 +82,16 @@
     &__changeBtn {
         @include beveledButton;
         min-width: 11vw;
-        height: 2.5vw;
+        height: 2.6vw;
         font-family: $CoreSansGRegular;
         font-size: 0.9vw;
-        color: #B0AED3;
-        border: 0.056vw solid rgba(197, 195, 223, 0.8);
-        background: transparent;
+        color: #fff;
+        background: linear-gradient(172.75deg, #FAD961 -7.82%, #F76B1C 99.05%);
         margin-left: 3vw;
+        transition: transform 0.25s;
 
         &:hover {
-            background: linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
-            border: 0.056vw solid transparent;
-            color: #fff;
+            background: linear-gradient(172.75deg, rgba(250, 217, 97, 0.8) -7.82%, rgba(247, 107, 28, 0.8) 99.05%);
         }
     }
 }

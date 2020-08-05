@@ -1,7 +1,6 @@
 /* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
-import frame from './images/frame.svg';
 import style from './field.module.scss';
 
 const Field = props => {
@@ -25,12 +24,6 @@ const Field = props => {
         step,
     } = props;
 
-    const regtangleStyle = {
-        backgroundImage: `url(${frame})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
-    };
-
     const errorValues = Object.values(error).filter(item => item.length > 0);
 
     return (
@@ -38,24 +31,25 @@ const Field = props => {
             <label className={labelStyle} htmlFor={id}>
                 {labelText}
             </label>
-            <input
-                id={id}
-                type={type}
-                className={inputStyle}
-                placeholder={placeholder}
-                value={value}
-                onChange={onChange}
-                onFocus={onFocus}
-                onKeyDown={onKeyDown}
-                name={name}
-                maxLength={maxLength}
-                min={min}
-                max={max}
-                autoComplete="new-password"
-                disabled={disabled}
-                step={step}
-                style={regtangleStyle}
-            />
+            <div className={style.frame}>
+                <input
+                    id={id}
+                    type={type}
+                    className={inputStyle}
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={onChange}
+                    onFocus={onFocus}
+                    onKeyDown={onKeyDown}
+                    name={name}
+                    maxLength={maxLength}
+                    min={min}
+                    max={max}
+                    autoComplete="new-password"
+                    disabled={disabled}
+                    step={step}
+                />
+            </div>
             {errorValues.length > 0 ? (
                 <div className={style.inputWrapper__invalid}>
                     <ol className={style.inputWrapper__tooltip_errorList}>
