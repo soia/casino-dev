@@ -7,9 +7,14 @@ import HistoryCriptoView from './history-view';
 import { compose } from '../../../../../utils';
 import 'react-datepicker/dist/react-datepicker.css';
 
+const TABS = {
+    OPERATIONS_HISTORY: 'OPERATIONS_HISTORY',
+    BET_HISTORY: 'BET_HISTORY',
+};
 export class HistoryContainer extends Component {
     state = {
         date: '',
+        activeTab: TABS.OPERATIONS_HISTORY,
     };
 
     componentDidMount() {
@@ -20,6 +25,12 @@ export class HistoryContainer extends Component {
             date,
         });
     };
+
+    setActiveTab = id => {
+        this.setState({
+            activeTab: id,
+        });
+    }
 
     onError = () => {
         this.setState({
@@ -33,6 +44,7 @@ export class HistoryContainer extends Component {
             loading,
             error,
             date,
+            activeTab,
         } = this.state;
         const hasData = !(loading || error);
 
@@ -41,7 +53,10 @@ export class HistoryContainer extends Component {
         const content = hasData ? (
             <HistoryCriptoView
                 date={date}
+                activeTab={activeTab}
+                TABS={TABS}
                 changeDate={this.changeDate}
+                setActiveTab={this.setActiveTab}
             />
         ) : null;
 
