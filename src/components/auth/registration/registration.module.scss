@@ -74,7 +74,7 @@
         cursor: pointer;
         width: fit-content;
         margin: 0 auto;
-        border-bottom: 1px solid transparent;
+        border-bottom: 0.056vw solid transparent;
 
         @media only screen and (min-width: 500px) and (max-width: 1024px) {
             font-size: 1.2vw;
@@ -85,7 +85,7 @@
         }
 
         &:hover {
-            border-bottom: 1px solid #fff;
+            border-bottom: 0.056vw solid #fff;
         }
     }
 
@@ -195,12 +195,12 @@
         }
 
         &_link {
-            border-bottom: 1px solid #fff;
+            border-bottom: 0.056vw solid #fff;
             margin-left: 0.5vw;
 
             &:hover {
                 color: #FAD961;
-                border-bottom: 1px solid #FAD961;
+                border-bottom: 0.056vw solid #FAD961;
             }
         }
     }

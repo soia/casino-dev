@@ -1,7 +1,7 @@
 @import '../../assets/styles/variables';
 
 .table {
-    border: 1px solid black;
+    border: 0.056vw solid black;
     width: 100%;
     background-color: $white;
 
@@ -23,7 +23,7 @@
         line-height: 1.6rem;
 
         /* identical to box height, or 89% */
-        border: 1px solid $white;
+        border: 0.056vw solid $white;
         color: $textDarkLight;
     }
 }

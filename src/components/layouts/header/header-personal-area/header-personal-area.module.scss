@@ -111,26 +111,26 @@
 
 .withdrawal {
     color: #B0AED3;
-    border: 1px solid rgba(197, 195, 223, 0.8);
+    border: 0.056vw solid rgba(197, 195, 223, 0.8);
     background: transparent;
     margin-right: 1vw;
 
     &:hover {
         background: linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
-        border: 1px solid transparent;
+        border: 0.056vw solid transparent;
         color: #fff;
     }
 }
 
 .deposit {
     color: #fff;
-    border: 1px solid transparent;
+    border: 0.056vw solid transparent;
     background: linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
     margin-right: 1.6vw;
 
     &:hover {
         background: transparent;
-        border: 1px solid rgba(197, 195, 223, 0.8);
+        border: 0.056vw solid rgba(197, 195, 223, 0.8);
         color: #B0AED3;
     }
 }

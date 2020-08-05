@@ -19,7 +19,7 @@
     text-transform: uppercase;
     box-sizing: border-box;
     color: $white;
-    border: 1px solid $greenLight;
+    border: 0.056vw solid $greenLight;
     bord &:active {
         outline: none;
     }
@@ -30,7 +30,7 @@
 }
 .active {
     background-color: #23c9ff;
-    border: 1px solid #5eb2f2;
+    border: 0.056vw solid #5eb2f2;
     box-shadow: 0px 0 2px 0px #c0c0c0;
 }
 .green-gradient {
