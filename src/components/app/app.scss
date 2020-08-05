@@ -129,6 +129,10 @@ input[type='number'] {
     border: none;
 }
 
+.react-datepicker__input-container {
+    display: flex;
+}
+
 .react-datepicker__header,
 .react-datepicker__day--keyboard-selected,
 .react-datepicker__month-text--keyboard-selected,

@@ -120,5 +120,9 @@
         "profileData": "Данные профиля",
         "documents": "Документы"
     },
+    "history": {
+        "operationsHistory": "История операций",
+        "betHistory": "История ставок"
+    },
     "pageNotFound": "Страница не найдена"
 }

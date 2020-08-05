@@ -64,7 +64,7 @@ HistoryView.defaultProps = {
 };
 
 HistoryView.propTypes = {
-    date: PropTypes.string,
+    date: PropTypes.any,
     activeTab: PropTypes.string,
     TABS: PropTypes.object.isRequired,
     changeDate: PropTypes.func,

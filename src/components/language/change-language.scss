@@ -23,12 +23,6 @@
         display: flex;
         flex-wrap: wrap;
 
-        @media only screen and (max-width: 767px) {
-            padding: 5.6vw;
-            width: 50vw;
-            top: 14.75vw;
-       }
-
         &::after {
             content: '';
             position: absolute;
@@ -42,10 +36,6 @@
             transform-origin: 0 0;
             transform: rotate(-225deg);
             box-shadow: -6.5px 5px 10px -3.95px rgba(0, 0, 0, 0.1);
-
-            @media only screen and (max-width: 767px) {
-                border: 2vw solid $white;
-           }
         }
     }
 
@@ -70,10 +60,6 @@
         width: fit-content !important;
         width: -moz-max-content!important;
         height: 100% !important;
-
-        @media only screen and (max-width: 767px) {
-            align-items: center;
-        }
     }
 }
 
@@ -87,13 +73,6 @@
         position: static !important;
         border: 0.1vw solid transparent;
         transition: all 0.25s;
-
-        @media only screen and (max-width: 767px) {
-            width: $mobile20px !important;
-            border-radius: inherit;
-            object-fit: initial;
-            height: $mobile20px !important;
-        }
     }
 
     .flag-option:hover {
@@ -116,23 +95,8 @@
 
         margin-bottom: 1.6vw !important;
 
-        .country-flag {
-            @media only screen and (max-width: 767px) {
-                align-items: inherit;
-           }
-        }
-
         .country-flag .country-label {
             color: #2C3769 !important;
-
-            @media only screen and (max-width: 767px) {
-                font-size: $mobile12px;
-                width: 10vw;
-                display: flex;
-                align-items: center;
-                margin-left: 2vw;
-                padding-top: 1vw !important;
-            }
         }
     }
 
@@ -149,10 +113,6 @@
         padding-top: 0.056vw;
         letter-spacing: 0.056vw;
         padding-left: 0.3vw;
-
-        @media only screen and (max-width: 767px) {
-            font-size: 3.2vw;
-        }
     }
 }
 
