@@ -37,25 +37,25 @@ const Field = props => {
         <div className={style.inputWrapper}>
             <label className={labelStyle} htmlFor={id}>
                 {labelText}
-                <input
-                    id={id}
-                    type={type}
-                    className={inputStyle}
-                    placeholder={placeholder}
-                    value={value}
-                    onChange={onChange}
-                    onFocus={onFocus}
-                    onKeyDown={onKeyDown}
-                    name={name}
-                    maxLength={maxLength}
-                    min={min}
-                    max={max}
-                    autoComplete="new-password"
-                    disabled={disabled}
-                    step={step}
-                    style={regtangleStyle}
-                />
             </label>
+            <input
+                id={id}
+                type={type}
+                className={inputStyle}
+                placeholder={placeholder}
+                value={value}
+                onChange={onChange}
+                onFocus={onFocus}
+                onKeyDown={onKeyDown}
+                name={name}
+                maxLength={maxLength}
+                min={min}
+                max={max}
+                autoComplete="new-password"
+                disabled={disabled}
+                step={step}
+                style={regtangleStyle}
+            />
             {errorValues.length > 0 ? (
                 <div className={style.inputWrapper__invalid}>
                     <ol className={style.inputWrapper__tooltip_errorList}>

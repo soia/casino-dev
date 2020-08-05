@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import DatePicker from 'react-datepicker';
 import style from './history.module.scss';
-import './history.scss';
 
 const HistoryView = ({
     date, changeDate, activeTab, TABS, setActiveTab,

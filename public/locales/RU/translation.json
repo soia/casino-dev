@@ -27,7 +27,14 @@
         "yourCurrentBalance": "Ваш текущий баланс",
         "deposit": "Депозит",
         "withdrawal": "Вывод",
-        "datePlaceholder": "дд/мм/гггг"
+        "datePlaceholder": "дд/мм/гггг",
+        "settings": "Настройки",
+        "yourEmailAddress": "Ваш E-mail адрес",
+        "сhange": "Изменить",
+        "сhangePassword": "Изменить пароль",
+        "enterPassword": "Введите пароль",
+        "confirmPassword": "Повторите пароль",
+        "save": "Сохранить"
     },
     "firstScreen": {
         "title": "Game token",

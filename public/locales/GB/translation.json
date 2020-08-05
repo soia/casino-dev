@@ -27,7 +27,14 @@
         "yourCurrentBalance": "Your current balance",
         "deposit": "Deposit",
         "withdrawal": "Withdrawal",
-        "datePlaceholder": "dd/mm/yyyy"
+        "datePlaceholder": "dd/mm/yyyy",
+        "settings": "Settings",
+        "yourEmailAddress": "Your E-mail address",
+        "сhange": "Change",
+        "сhangePassword": "Change password",
+        "enterPassword": "Enter password",
+        "confirmPassword": "Confirm password",
+        "save": "Save"
     },
     "firstScreen": {
         "title": "Game token",
