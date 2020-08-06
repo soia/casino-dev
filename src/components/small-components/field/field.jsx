@@ -128,6 +128,7 @@ const Field = props => {
                     </div>
                     <img
                         style={questionMarkStyle}
+                        className={style.questionMarkStyle}
                         src={questionMark}
                         alt="questionMark"
                     />

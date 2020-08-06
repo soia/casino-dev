@@ -27,6 +27,10 @@
             max-height: 60vh;
         }
 
+        @media only screen and (max-width: 499px) {
+            padding-top: 8vw;
+        }
+
         &::-webkit-scrollbar {
             display: none;
         }

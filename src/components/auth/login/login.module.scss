@@ -32,6 +32,15 @@
             top: 45%;
             cursor: pointer;
 
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                top: 39%;
+                right: 1.5vw;
+            }
+
+            @media only screen and (max-width: 499px) {
+                display: none;
+            }
+
             img {
                 @media only screen and (max-width: 1024px) {
                     width: 100%;
@@ -102,6 +111,7 @@
             height: 3.95vw;
             font-size: 1.5vw;
             line-height: 3.8vw;
+            padding: 0 7vw 0 2vw;
         }
 
         @media only screen and (max-width: 499px) {
