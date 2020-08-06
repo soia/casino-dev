@@ -9,11 +9,8 @@ import { termOfServicePath, privacyPolicyPath } from '../../../constants';
 import { countries } from '../../../helpers/countries';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
-import Button from '../../small-components/button';
 import Field from '../../small-components/field';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
-import frame from '../../small-components/field/images/frame.svg';
-import orangeButton from './images/button.svg';
 import style from './registration.module.scss';
 
 class Registration extends PureComponent {
@@ -420,17 +417,6 @@ class Registration extends PureComponent {
             },
         };
 
-        const orangeButtonStyle = {
-            backgroundImage: `url(${orangeButton})`,
-            backgroundSize: 'cover',
-        };
-
-        const regtangleStyle = {
-            backgroundImage: `url(${frame})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
-        };
-
         if (login || signUp) {
             document.documentElement.style.overflowY = 'hidden';
         } else {
@@ -485,7 +471,7 @@ class Registration extends PureComponent {
                         <p className={style.registration__label}>
                             {t('auth.countryOfResidence')}
                         </p>
-                        <div style={regtangleStyle}>
+                        <div className={style.frame}>
                             <SelectSearch
                                 name="country"
                                 mode="input"
@@ -533,14 +519,17 @@ class Registration extends PureComponent {
                             ) : null}
                         </span>
                     </div>
-                    <Button
-                        className={style.registration__submitBtn}
-                        type="button"
-                        style={orangeButtonStyle}
-                        onClick={this.registratiOnSubmit}
-                    >
-                        {t('auth.createAccount')}
-                    </Button>
+                    <div className={style.registration__submitBtnWrapper}>
+                        <button
+                            className={style.registration__submitBtn}
+                            type="button"
+                            onClick={this.registratiOnSubmit}
+                        >
+                            <span>
+                                {t('auth.createAccount')}
+                            </span>
+                        </button>
+                    </div>
                     <div
                         onClick={this.openLogin}
                         className={style.registration__alreadyHaveAccount}

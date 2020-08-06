@@ -4,10 +4,8 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
-import Button from '../../small-components/button';
 import Field from '../../small-components/field';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
-import orangeButton from './images/button.svg';
 import style from './password-recovery.module.scss';
 
 class PasswordRecovery extends PureComponent {
@@ -86,9 +84,7 @@ class PasswordRecovery extends PureComponent {
                 this.setState(state => ({
                     emailErrors: {
                         ...state.emailErrors,
-                        emailCharactersError: t(
-                            'error.only_letters_symbols_numbers',
-                        ),
+                        emailCharactersError: t('error.only_letters_symbols_numbers'),
                     },
                 }));
             }
@@ -112,9 +108,7 @@ class PasswordRecovery extends PureComponent {
 
     submit = async () => {
         await this.validateFields();
-        const {
-            email, emailErrors,
-        } = this.state;
+        const { email, emailErrors } = this.state;
 
         const copyEmailErrors = { ...emailErrors };
 
@@ -143,18 +137,11 @@ class PasswordRecovery extends PureComponent {
         const {
             t, login, signUp, passwordRecovery,
         } = this.props;
-        const {
-            email, emailErrors,
-        } = this.state;
+        const { email, emailErrors } = this.state;
         const customStyles = {
             content: {
                 maxWidth: '50vw',
             },
-        };
-
-        const orangeButtonStyle = {
-            backgroundImage: `url(${orangeButton})`,
-            backgroundSize: 'cover',
         };
 
         if (login || signUp || passwordRecovery) {
@@ -183,18 +170,16 @@ class PasswordRecovery extends PureComponent {
                             inputStyle={style.signIn__input}
                         />
                     </div>
-                    <Button
-                        className={style.signIn__submitBtn}
-                        type="button"
-                        style={orangeButtonStyle}
-                        onClick={this.submit}
-                    >
-                        {t('general.send')}
-                    </Button>
-                    <div
-                        onClick={this.openSignIn}
-                        className={style.signIn__signIn}
-                    >
+                    <div className={style.signIn__submitBtnWrapper}>
+                        <button
+                            className={style.signIn__submitBtn}
+                            type="button"
+                            onClick={this.submit}
+                        >
+                            <span>{t('general.send')}</span>
+                        </button>
+                    </div>
+                    <div onClick={this.openSignIn} className={style.signIn__signIn}>
                         {t('header.signIn')}
                     </div>
                 </form>

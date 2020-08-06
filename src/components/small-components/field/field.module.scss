@@ -38,6 +38,10 @@
     transform: skew(-15deg);
     border: 0.07vw solid #fff;
 
+    @media only screen and (max-width: 499px) {
+        border-radius: 1.2vw;
+    }
+
     input {
         transform: skew(15deg);
     }

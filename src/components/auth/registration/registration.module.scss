@@ -40,7 +40,7 @@
         margin: 0 0.5vw 1.5vw;
 
         @media only screen and (max-width: 499px) {
-            margin: 0 0.5vw 4.5vw;
+            margin: 0 1.5vw 4.5vw;
         }
 
         &_invalid {
@@ -108,7 +108,7 @@
 
     &__input {
         width: 26vw;
-        height: 3.5vw;
+        height: 3vw;
         margin-top: 0.5vw;
         background: transparent;
         border-radius: 0.1vw;
@@ -205,23 +205,32 @@
         }
     }
 
-    &__submitBtn {
-        border: none;
-        background-color: transparent;
-        font-family: $CoreSansGRegular;
-        font-size: 1vw;
-        color: #fff;
-        display: flex;
-        height: 3.5vw;
-        width: 22vw;
-        justify-content: center;
-        align-items: center;
-        margin: 3vw auto 1.5vw;
-        outline: none;
-        cursor: pointer;
+    &__submitBtnWrapper {
         transition: all 0.25s;
         -webkit-backface-visibility: hidden;
         -webkit-transform: perspective(1000px);
+        width: fit-content;
+        margin: 0 auto;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    &__submitBtn {
+        @include beveledButton;
+        font-family: $CoreSansGRegular;
+        font-size: 1vw;
+        color: #fff;
+        background: linear-gradient(172.75deg, #FAD961 -7.82%, #F76B1C 99.05%);
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3.5vw;
+        min-width: 22vw;
+        margin: 3vw auto 1.5vw;
+        outline: none;
 
         @media only screen and (min-width: 500px) and (max-width: 1024px) {
             font-size: 1.8vw;
@@ -231,13 +240,25 @@
 
         @media only screen and (max-width: 499px) {
             height: 8.9vw;
-            width: 55vw;
+            min-width: 55vw;
             font-size: 3vw;
             margin: 5.5vw auto 3.5vw;
         }
+    }
+}
 
-        &:hover {
-            transform: scale(1.05);
-        }
+.frame {
+    border-radius: 0.55vw;
+    transform: skew(-15deg);
+    border: 0.07vw solid #fff;
+    margin: 0.5vw 0.5vw 0;
+
+    @media only screen and (max-width: 499px) {
+        border-radius: 1.2vw;
+        margin: 0.5vw 1.5vw 4.5vw;
+    }
+
+    & > * {
+        transform: skew(15deg);
     }
 }

@@ -4,10 +4,8 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
-import Button from '../../small-components/button';
 import Field from '../../small-components/field';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
-import orangeButton from './images/button.svg';
 import style from './login.module.scss';
 
 class Login extends PureComponent {
@@ -268,11 +266,6 @@ class Login extends PureComponent {
             },
         };
 
-        const orangeButtonStyle = {
-            backgroundImage: `url(${orangeButton})`,
-            backgroundSize: 'cover',
-        };
-
         if (login || signUp) {
             document.documentElement.style.overflowY = 'hidden';
         } else {
@@ -314,14 +307,17 @@ class Login extends PureComponent {
                     <div onClick={this.openPasswordRecovery} className={style.signIn__forgotPassword}>
                         {t('auth.forgotPassword')}
                     </div>
-                    <Button
-                        className={style.signIn__submitBtn}
-                        type="button"
-                        style={orangeButtonStyle}
-                        onClick={this.loginSubmit}
-                    >
-                        {t('header.signIn')}
-                    </Button>
+                    <div className={style.signIn__submitBtnWrapper}>
+                        <button
+                            className={style.signIn__submitBtn}
+                            type="button"
+                            onClick={this.loginSubmit}
+                        >
+                            <span>
+                                {t('header.signIn')}
+                            </span>
+                        </button>
+                    </div>
                     <div
                         onClick={this.openSignUp}
                         className={style.signIn__registration}
