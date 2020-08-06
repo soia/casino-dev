@@ -7,7 +7,6 @@
         font-size: 30px;
         color: #fff;
         text-align: center;
-        margin-bottom: 3vw;
 
         @media only screen and (min-width: 500px) and (max-width: 1024px) {
             font-size: 3vw;
@@ -19,6 +18,7 @@
     }
 
     &__form {
+        padding-top: 3vw;
         overflow-y: scroll;
         overflow-x: hidden;
         max-height: 75vh;
@@ -34,6 +34,8 @@
 
     &__select {
         margin-bottom: 1.5vw;
+        position: relative;
+        z-index: 1;
     }
 
     &__inputWrapper {
@@ -106,10 +108,13 @@
         }
     }
 
+    &__labelError {
+        color: #E55541;
+    }
+
     &__input {
         width: 26vw;
-        height: 3vw;
-        margin-top: 0.5vw;
+        height: 3.5vw;
         background: transparent;
         border-radius: 0.1vw;
         border: none;
@@ -194,6 +199,15 @@
             }
         }
 
+        &_titleError {
+            color: #E55541;
+
+            a {
+                color: #E55541;
+                border-bottom: 0.056vw solid #E55541;
+            }
+        }
+
         &_link {
             border-bottom: 0.056vw solid #fff;
             margin-left: 0.5vw;
@@ -224,9 +238,6 @@
         color: #fff;
         background: linear-gradient(172.75deg, #FAD961 -7.82%, #F76B1C 99.05%);
         border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         height: 3.5vw;
         min-width: 22vw;
         margin: 3vw auto 1.5vw;
@@ -256,6 +267,18 @@
     @media only screen and (max-width: 499px) {
         border-radius: 1.2vw;
         margin: 0.5vw 1.5vw 4.5vw;
+    }
+
+    &__error {
+        border: 0.07vw solid #E55541;
+
+        input::placeholder {
+            color: #E55541;
+        }
+
+        &:first-child{
+            display: inline-flex;
+        }
     }
 
     & > * {

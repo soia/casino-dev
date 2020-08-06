@@ -20,9 +20,23 @@
 
     &__inputWrapper {
         margin-bottom: 1.5vw;
+        position: relative;
 
         @media only screen and (max-width: 499px) {
             margin-bottom: 4.5vw;
+        }
+
+        &_eye {
+            position: absolute;
+            right: 1vw;
+            top: 45%;
+            cursor: pointer;
+
+            img {
+                @media only screen and (max-width: 1024px) {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -73,8 +87,7 @@
 
     &__input {
         width: 26vw;
-        height: 3vw;
-        margin-top: 0.5vw;
+        height: 3.5vw;
         background: transparent;
         border-radius: 0.1vw;
         border: none;
@@ -83,7 +96,6 @@
         line-height: 1.4vw;
         outline: none;
         font-family: $CoreSansGRegular;
-        color: #fff;
 
         @media only screen and (min-width: 500px) and (max-width: 1024px) {
             width: 31vw;

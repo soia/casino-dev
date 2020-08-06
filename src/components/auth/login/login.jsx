@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
 import Field from '../../small-components/field';
+import eye from './images/eye.svg';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
 import style from './login.module.scss';
 
@@ -36,6 +37,7 @@ class Login extends PureComponent {
             passwordDigitError: '',
             passwordLettersError: '',
         },
+        type: 'password',
     };
 
     inputOnchange = event => {
@@ -243,7 +245,6 @@ class Login extends PureComponent {
         dispatch(authModalActions.openSignUp());
     };
 
-
     openPasswordRecovery = () => {
         console.log('sdfksgnsfkgnjdfngj');
         const { dispatch } = this.props;
@@ -255,10 +256,17 @@ class Login extends PureComponent {
         dispatch(authModalActions.closeModal());
     };
 
+    showHidePassword = () => {
+        const { type } = this.state;
+        this.setState({
+            type: type === 'password' ? 'text' : 'password',
+        });
+    };
+
     render() {
         const { t, login, signUp } = this.props;
         const {
-            email, emailErrors, userPasswordLogin, passwordErrors,
+            email, emailErrors, userPasswordLogin, passwordErrors, type,
         } = this.state;
         const customStyles = {
             content: {
@@ -290,19 +298,32 @@ class Login extends PureComponent {
                             onChange={this.inputOnchange}
                             error={emailErrors}
                             inputStyle={style.signIn__input}
+                            inputColor="#fff"
                         />
                     </div>
                     <div className={style.signIn__inputWrapper}>
                         <Field
                             id="password"
-                            type="password"
+                            type={type}
                             placeholder={t('auth.typePassword')}
                             name="userPasswordLogin"
                             value={userPasswordLogin}
                             onChange={this.inputOnchange}
                             error={passwordErrors}
                             inputStyle={style.signIn__input}
+                            inputColor="#fff"
+                            passwordType
                         />
+                        {userPasswordLogin.length >= 1 ? (
+                            <div
+                                onClick={this.showHidePassword}
+                                className={
+                                    style.signIn__inputWrapper_eye
+                                }
+                            >
+                                <img src={eye} alt="eye" />
+                            </div>
+                        ) : null}
                     </div>
                     <div onClick={this.openPasswordRecovery} className={style.signIn__forgotPassword}>
                         {t('auth.forgotPassword')}

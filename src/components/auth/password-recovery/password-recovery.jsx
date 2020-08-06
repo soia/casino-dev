@@ -168,6 +168,7 @@ class PasswordRecovery extends PureComponent {
                             onChange={this.inputOnchange}
                             error={emailErrors}
                             inputStyle={style.signIn__input}
+                            inputColor="#fff"
                         />
                     </div>
                     <div className={style.signIn__submitBtnWrapper}>

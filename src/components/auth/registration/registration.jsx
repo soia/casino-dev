@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import classNames from 'classnames';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import SelectSearch from 'react-select-search';
@@ -423,6 +424,7 @@ class Registration extends PureComponent {
             document.documentElement.style.overflowY = 'visible';
         }
 
+
         return (
             <ModalWindow
                 isOpen={signUp}
@@ -441,6 +443,7 @@ class Registration extends PureComponent {
                             onChange={this.inputOnchange}
                             error={usernameErrors}
                             inputStyle={style.registration__input}
+                            inputColor="#fff"
                         />
                     </div>
                     <div className={style.registration__inputWrapper}>
@@ -453,6 +456,7 @@ class Registration extends PureComponent {
                             onChange={this.inputOnchange}
                             error={emailErrors}
                             inputStyle={style.registration__input}
+                            inputColor="#fff"
                         />
                     </div>
                     <div className={style.registration__inputWrapper}>
@@ -465,13 +469,24 @@ class Registration extends PureComponent {
                             onChange={this.inputOnchange}
                             error={passwordErrors}
                             inputStyle={style.registration__input}
+                            inputColor="#fff"
                         />
                     </div>
                     <div className={style.registration__select}>
-                        <p className={style.registration__label}>
+                        <p
+                            className={classNames(
+                                style.registration__label,
+                                countryErrors ? style.registration__labelError : {},
+                            )}
+                        >
                             {t('auth.countryOfResidence')}
                         </p>
-                        <div className={style.frame}>
+                        <div
+                            className={classNames(
+                                style.frame,
+                                countryErrors ? style.frame__error : {},
+                            )}
+                        >
                             <SelectSearch
                                 name="country"
                                 mode="input"
@@ -482,17 +497,17 @@ class Registration extends PureComponent {
                                 search
                             />
                         </div>
-                        {countryErrors ? (
-                            <div className={style.registration__inputWrapper_invalid}>
-                                {countryErrors}
-                            </div>
-                        ) : null}
                     </div>
                     <div className={style.registration__checkBoxWrapper}>
                         <span className={style.registration__checkbox}>
                             <div className={style.registration__checkbox_wrapper}>
                                 <Checkbox checked={termOfService} onChange={this.termOfUse}>
-                                    <span className={style.registration__checkbox_title}>
+                                    <span
+                                        className={classNames(
+                                            style.registration__checkbox_title,
+                                            termOfServiceError ? style.registration__checkbox_titleError : {},
+                                        )}
+                                    >
                                         {t('auth.iAm18years')}
                                         <Link
                                             target="_blank"
@@ -512,11 +527,6 @@ class Registration extends PureComponent {
                                     </span>
                                 </Checkbox>
                             </div>
-                            {termOfServiceError ? (
-                                <div className={style.registration__inputWrapper_invalid}>
-                                    {t('error.field_can_not_be_empty')}
-                                </div>
-                            ) : null}
                         </span>
                     </div>
                     <div className={style.registration__submitBtnWrapper}>
