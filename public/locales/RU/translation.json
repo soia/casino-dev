@@ -34,7 +34,10 @@
         "сhangePassword": "Изменить пароль",
         "enterPassword": "Введите пароль",
         "confirmPassword": "Повторите пароль",
-        "save": "Сохранить"
+        "save": "Сохранить",
+        "changeAvatar": "Изменить аватар",
+        "changeNickname": "Изменить никнейм",
+        "enterYourNickname": "Введите никнейм"
     },
     "firstScreen": {
         "title": "Game token",
@@ -123,9 +126,10 @@
     },
     "aside": {
         "balance": "Баланс",
-        "history": "История",
-        "profileData": "Данные профиля",
-        "documents": "Документы"
+        "history": "История игр",
+        "profile": "Личный кабинет",
+        "documents": "Документы",
+        "logout": "Выйти"
     },
     "history": {
         "operationsHistory": "История операций",

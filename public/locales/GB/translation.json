@@ -34,7 +34,10 @@
         "сhangePassword": "Change password",
         "enterPassword": "Enter password",
         "confirmPassword": "Confirm password",
-        "save": "Save"
+        "save": "Save",
+        "changeAvatar": "Change avatar",
+        "changeNickname": "Change nickname",
+        "enterYourNickname": "Enter your nickname"
     },
     "firstScreen": {
         "title": "Game token",
@@ -123,9 +126,10 @@
     },
     "aside": {
         "balance": "Balance",
-        "history": "History",
-        "profileData": "Profile data",
-        "documents": "Documents"
+        "history": "Game history",
+        "profile": "Profile",
+        "documents": "Documents",
+        "logout": "Logout"
     },
     "history": {
         "operationsHistory": "Operations history",

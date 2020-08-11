@@ -154,6 +154,7 @@ Field.defaultProps = {
     onKeyDown: () => {},
     disabled: false,
     inputColor: '',
+    passwordType: false,
 };
 
 Field.propTypes = {
@@ -175,6 +176,7 @@ Field.propTypes = {
     labelStyle: PropTypes.string,
     disabled: PropTypes.bool,
     inputColor: PropTypes.string,
+    passwordType: PropTypes.bool,
 };
 
 export default Field;

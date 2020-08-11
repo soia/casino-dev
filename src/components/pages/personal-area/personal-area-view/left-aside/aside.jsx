@@ -36,6 +36,50 @@ class Aside extends Component {
                 <ul className={style.aside__nav} onClick={onClickAside}>
                     <li>
                         <NavLink
+                            to={`${personalAreaPath}${profileDataPath}`}
+                            activeStyle={activeStyle}
+                        >
+                            <svg
+                                width="26"
+                                height="22"
+                                viewBox="0 0 26 22"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M3.7714 4.92002C4.3997 2.6115 6.5813 1 9.07821 1H19.5139C23.1024 1 25.7237 4.23841 24.8207 7.55618L22.2286 17.08C21.6003 19.3885 19.4187 21 16.9218 21H6.48613C2.89762 21 0.276321 17.7616 1.17931 14.4438L3.7714 4.92002Z"
+                                    stroke="#D3D1E4"
+                                    className={classNames(style.svgStroke, 'svgStroke')}
+                                />
+                                <path
+                                    fillRule="evenodd"
+                                    clipRule="evenodd"
+                                    d="M15.072 10.5042C15.3553 10.1342 15.5253 9.66281 15.5253 9.15002C15.5253 7.96453 14.6168 7 13.5 7C12.3832 7 11.4747 7.96449 11.4747 9.15002C11.4747 9.66269 11.6446 10.134 11.9278 10.5039C11.3744 10.8229 11 11.4469 11 12.1524V13.5827C11 13.8131 11.176 14 11.3931 14H15.6069C15.824 14 16 13.8131 16 13.5827V12.1524C16 11.4482 15.6252 10.8237 15.072 10.5042ZM13.4997 7.83447C14.1829 7.83447 14.7387 8.42455 14.7387 9.14988C14.7387 9.87516 14.1829 10.4652 13.4997 10.4652C12.8164 10.4652 12.2606 9.87516 12.2606 9.14988C12.2606 8.42455 12.8164 7.83447 13.4997 7.83447ZM15.2137 13.1653H11.7861V12.1523C11.7861 11.614 12.1787 11.1615 12.682 11.1167C12.9322 11.2345 13.209 11.2999 13.4999 11.2999C13.7908 11.2999 14.0676 11.2345 14.3179 11.1167C14.8207 11.1614 15.2137 11.6151 15.2137 12.1523L15.2137 13.1653Z"
+                                    fill="url(#paint0_linear)"
+                                    className={classNames(style.svgIcon, 'svgIcon')}
+                                />
+                                <defs>
+                                    <linearGradient
+                                        id="paint0_linear"
+                                        x1="12.5792"
+                                        y1="16.8009"
+                                        x2="17.507"
+                                        y2="14.0225"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop stopColor="#2A1F84" />
+                                        <stop offset="1" stopColor="#221876" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+
+                            {t('aside.profile')}
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
                             to={`${personalAreaPath}${balancePath}`}
                             activeStyle={activeStyle}
                         >
@@ -113,138 +157,38 @@ class Aside extends Component {
                     </li>
                     <li>
                         <NavLink
-                            to={`${personalAreaPath}${profileDataPath}`}
-                            activeStyle={activeStyle}
-                        >
-                            <svg
-                                width="26"
-                                height="22"
-                                viewBox="0 0 26 22"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M3.7714 4.92002C4.3997 2.6115 6.5813 1 9.07821 1H19.5139C23.1024 1 25.7237 4.23841 24.8207 7.55618L22.2286 17.08C21.6003 19.3885 19.4187 21 16.9218 21H6.48613C2.89762 21 0.276321 17.7616 1.17931 14.4438L3.7714 4.92002Z"
-                                    stroke="#D3D1E4"
-                                    className={classNames(style.svgStroke, 'svgStroke')}
-                                />
-                                <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M15.072 10.5042C15.3553 10.1342 15.5253 9.66281 15.5253 9.15002C15.5253 7.96453 14.6168 7 13.5 7C12.3832 7 11.4747 7.96449 11.4747 9.15002C11.4747 9.66269 11.6446 10.134 11.9278 10.5039C11.3744 10.8229 11 11.4469 11 12.1524V13.5827C11 13.8131 11.176 14 11.3931 14H15.6069C15.824 14 16 13.8131 16 13.5827V12.1524C16 11.4482 15.6252 10.8237 15.072 10.5042ZM13.4997 7.83447C14.1829 7.83447 14.7387 8.42455 14.7387 9.14988C14.7387 9.87516 14.1829 10.4652 13.4997 10.4652C12.8164 10.4652 12.2606 9.87516 12.2606 9.14988C12.2606 8.42455 12.8164 7.83447 13.4997 7.83447ZM15.2137 13.1653H11.7861V12.1523C11.7861 11.614 12.1787 11.1615 12.682 11.1167C12.9322 11.2345 13.209 11.2999 13.4999 11.2999C13.7908 11.2999 14.0676 11.2345 14.3179 11.1167C14.8207 11.1614 15.2137 11.6151 15.2137 12.1523L15.2137 13.1653Z"
-                                    fill="url(#paint0_linear)"
-                                    className={classNames(style.svgIcon, 'svgIcon')}
-                                />
-                                <defs>
-                                    <linearGradient
-                                        id="paint0_linear"
-                                        x1="12.5792"
-                                        y1="16.8009"
-                                        x2="17.507"
-                                        y2="14.0225"
-                                        gradientUnits="userSpaceOnUse"
-                                    >
-                                        <stop stopColor="#2A1F84" />
-                                        <stop offset="1" stopColor="#221876" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-
-                            {t('aside.profileData')}
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
                             to={`${personalAreaPath}${documentsPath}`}
                             activeStyle={activeStyle}
                         >
                             <svg
-                                width="26"
-                                height="22"
-                                viewBox="0 0 26 22"
+                                width="24"
+                                height="20"
+                                viewBox="0 0 24 20"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M3.7714 4.92002C4.3997 2.6115 6.5813 1 9.07821 1H19.5139C23.1024 1 25.7237 4.23841 24.8207 7.55618L22.2286 17.08C21.6003 19.3885 19.4187 21 16.9218 21H6.48613C2.89762 21 0.276321 17.7616 1.17931 14.4438L3.7714 4.92002Z"
-                                    stroke="#D3D1E4"
+                                    d="M10.9319 14.2735H6.78624L9.37672 5.34432H13.5224C13.6984 5.34432 13.8413 5.20145 13.8413 5.02543C13.8413 4.84942 13.6984 4.70654 13.5224 4.70654H9.0578C8.88179 4.70654 8.73891 4.84939 8.73891 5.02543L6.14844 14.5924C6.14844 14.7684 6.29132 14.9113 6.46733 14.9113H10.9319C11.1079 14.9113 11.2508 14.7684 11.2508 14.5924C11.2508 14.4163 11.1079 14.2735 10.9319 14.2735Z"
+                                    fill="#221876"
+                                    stroke="#221876"
+                                    strokeWidth="0.2"
                                     className={classNames(style.svgStroke, 'svgStroke')}
                                 />
                                 <path
-                                    d="M10.4858 8.95695C10.2177 8.95695 10.0001 8.75162 10.0001 8.49862C10.0001 8.24562 10.2177 8.04028 10.4858 8.04028H12.5418C12.7949 8.04028 13.0001 8.24549 13.0001 8.49862C13.0001 8.75175 12.7949 8.95695 12.5418 8.95695H10.4858Z"
-                                    fill="url(#paint0_linear)"
-                                    className={classNames(style.svgIcon, 'svgIcon')}
+                                    d="M17.9083 9.4462L15.7079 7.21423C15.5832 7.08826 15.3814 7.08858 15.257 7.21423C15.1323 7.33988 15.1323 7.54396 15.257 7.66961L16.9153 9.3518H10.3482C10.1721 9.3518 10.0293 9.49595 10.0293 9.6739C10.0293 9.85185 10.1722 9.996 10.3482 9.996H16.9153L15.257 11.6782C15.1323 11.8042 15.1323 12.0079 15.257 12.1336C15.3817 12.2595 15.5835 12.2595 15.7079 12.1336L17.908 9.9016C18.0311 9.77754 18.0324 9.56993 17.9083 9.4462Z"
+                                    fill="#221876"
+                                    stroke="#221876"
+                                    strokeWidth="0.2"
+                                    className={classNames(style.svgStroke, 'svgStroke')}
                                 />
                                 <path
-                                    d="M10.4856 10.9569C10.2176 10.9569 10.0001 10.7516 10.0001 10.4986C10.0001 10.2456 10.2176 10.0403 10.4856 10.0403H14.5418C14.7949 10.0403 15.0001 10.2455 15.0001 10.4986C15.0001 10.7517 14.7949 10.9569 14.5418 10.9569H10.4856Z"
-                                    fill="url(#paint1_linear)"
-                                    className={classNames(style.svgIcon, 'svgIcon')}
+                                    opacity="0.2"
+                                    d="M4.13436 3.90859C4.63517 1.90534 6.4351 0.5 8.5 0.5H18.1922C21.1198 0.5 23.2679 3.25125 22.5579 6.09141L20.0579 16.0914C19.5571 18.0947 17.7571 19.5 15.6922 19.5H6C3.07243 19.5 0.924319 16.7487 1.63436 13.9086L4.13436 3.90859Z"
+                                    stroke="#221876"
+                                    className={classNames(style.svgStroke, 'svgStroke')}
                                 />
-                                <path
-                                    d="M10.0001 12.4986C10.0001 12.7516 10.2177 12.957 10.4858 12.957H12.5418C12.7949 12.957 13.0001 12.7517 13.0001 12.4986C13.0001 12.2455 12.7949 12.0403 12.5418 12.0403H10.4858C10.2177 12.0403 10.0001 12.2456 10.0001 12.4986Z"
-                                    fill="url(#paint2_linear)"
-                                    className={classNames(style.svgIcon, 'svgIcon')}
-                                />
-                                <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M8.59685 7.52936C8.81402 6.63189 9.61737 5.99976 10.5407 5.99976H16.9114C18.2063 5.99976 19.1598 7.21157 18.8552 8.47015L17.4033 14.4702C17.1862 15.3676 16.3828 15.9998 15.4594 15.9998H9.08883C7.79391 15.9998 6.84037 14.7879 7.14493 13.5294L8.59685 7.52936ZM10.5407 6.79976H16.9114C17.6883 6.79976 18.2604 7.52684 18.0777 8.28199L16.6258 14.282C16.4955 14.8205 16.0135 15.1998 15.4594 15.1998H9.08883C8.31188 15.1998 7.73975 14.4727 7.92249 13.7175L9.3744 7.71752C9.50471 7.17904 9.98672 6.79976 10.5407 6.79976Z"
-                                    fill="url(#paint3_linear)"
-                                    className={classNames(style.svgIcon, 'svgIcon')}
-                                />
-                                <defs>
-                                    <linearGradient
-                                        id="paint0_linear"
-                                        x1="8.79962"
-                                        y1="12.6827"
-                                        x2="9.11925"
-                                        y2="11.4679"
-                                        gradientUnits="userSpaceOnUse"
-                                    >
-                                        <stop stopColor="#2A1F84" />
-                                        <stop offset="1" stopColor="#221876" />
-                                    </linearGradient>
-                                    <linearGradient
-                                        id="paint1_linear"
-                                        x1="8.79962"
-                                        y1="12.6827"
-                                        x2="9.11925"
-                                        y2="11.4679"
-                                        gradientUnits="userSpaceOnUse"
-                                    >
-                                        <stop stopColor="#2A1F84" />
-                                        <stop offset="1" stopColor="#221876" />
-                                    </linearGradient>
-                                    <linearGradient
-                                        id="paint2_linear"
-                                        x1="8.79962"
-                                        y1="12.6827"
-                                        x2="9.11925"
-                                        y2="11.4679"
-                                        gradientUnits="userSpaceOnUse"
-                                    >
-                                        <stop stopColor="#2A1F84" />
-                                        <stop offset="1" stopColor="#221876" />
-                                    </linearGradient>
-                                    <linearGradient
-                                        id="paint3_linear"
-                                        x1="8.79962"
-                                        y1="12.6827"
-                                        x2="9.11925"
-                                        y2="11.4679"
-                                        gradientUnits="userSpaceOnUse"
-                                    >
-                                        <stop stopColor="#2A1F84" />
-                                        <stop offset="1" stopColor="#221876" />
-                                    </linearGradient>
-                                </defs>
                             </svg>
-
-                            {t('aside.documents')}
+                            {t('aside.logout')}
                         </NavLink>
                     </li>
                 </ul>

@@ -10,14 +10,21 @@
 
     &__title {
         color: #757575;
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 1vw;
         margin-bottom: 2vw;
     }
 
-    &__changeEmailTitle {
+    &__settingsWrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__changeUserName,
+    &__changeAvatar {
         color: #757575;
-        font-family: $DrukTextWide-Medium;
+        font-family: $Montserrat-Medium;
+        font-size: $desctop16px;
     }
 
     &__inputWrapper {
@@ -36,7 +43,7 @@
         font-size: 1vw;
         line-height: 1.4vw;
         outline: none;
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         color: #B0AED3;
 
         @media only screen and (min-width: 500px) and (max-width: 1024px) {
@@ -54,8 +61,8 @@
         }
 
         &::placeholder {
-            font-family: $CoreSansGRegular;
-            font-size: 1vw;
+            font-family: $Montserrat-Medium;
+            font-size: $desctop12px;
             line-height: 3.8vw;
             color: #B0AED3;
 
@@ -72,18 +79,19 @@
 
     &__label {
         color: #B0AED3;
-        font-size: 0.9vw;
+        font-size: $desctop10px;
+        line-height: $desctop12px;
         display: flex;
         flex-direction: column;
         padding-left: 1vw;
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
     }
 
     &__changeBtn {
         @include beveledButton;
         min-width: 11vw;
         height: 2.6vw;
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 0.9vw;
         color: #fff;
         background: linear-gradient(172.75deg, #FAD961 -7.82%, #F76B1C 99.05%);
