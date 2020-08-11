@@ -12,7 +12,7 @@
 
     &__title {
         font-family: $DrukTextWide-Medium;
-        font-size: $desctop48px;
+        font-size: $desctop36px;
         line-height: $desctop48px;
         color: #2C3769;
         text-align: center;
@@ -25,7 +25,7 @@
     }
 
     &__wrapper {
-        padding: $desctop60px $desctop245px 0;
+        padding: $desctop60px 14.42vw 0;
         display: flex;
         justify-content: space-between;
 
@@ -79,8 +79,8 @@
 
         &_content {
             font-family: $CoreSansGRegular;
-            font-size: $desctop24px;
-            line-height: $desctop40px;
+            font-size: $desctop20px;
+            line-height: $desctop30px;
             color: #2C3769;
             transition: all 0.25s;
 

@@ -12,7 +12,6 @@ import {
 
 import { compose } from '../../../../utils';
 import LeftAside from './left-aside';
-import RightAside from './right-aside';
 import Balance from './balance-page';
 import History from './history-page';
 import ProfileData from './profile-data-page';
@@ -40,7 +39,6 @@ const PersonalAreaView = () => (
                 exact
             />
         </Switch>
-        <RightAside />
     </div>
 );
 

@@ -9,7 +9,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0 $desctop245px;
+    padding: 0 14.42vw;
     margin-top: 6.4vw;
 
     @media only screen and (max-width: 767px) {
@@ -70,7 +70,7 @@
         &_title {
             font-family: $DrukTextWide-Medium;
             margin-bottom: 1.2vw;
-            font-size: $desctop40px;
+            font-size: $desctop36px;
             line-height: $desctop60px;
 
             @media only screen and (max-width: 767px) {
@@ -102,8 +102,8 @@
         &_subtitle, {
             font-family: $CoreSansGRegular;
             color: $white;
-            font-size: $desctop24px;
-            line-height: $desctop45px;
+            font-size: $desctop16px;
+            line-height: $desctop32px;
             width: 80%;
 
             @media only screen and (max-width: 767px) {

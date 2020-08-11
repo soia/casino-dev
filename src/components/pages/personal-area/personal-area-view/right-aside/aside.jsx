@@ -22,9 +22,6 @@ class Aside extends Component {
 
         return (
             <aside id="right-aside" className={style.aside}>
-                <p className={style.aside__name}>
-                    Aquaman <br /> Washington
-                </p>
                 <div className={style.aside__balanceWrapper}>
                     <p className={style.aside__balanceWrapper_title}>
                         {t('general.yourCurrentBalance')}:

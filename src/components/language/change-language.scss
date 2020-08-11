@@ -58,13 +58,12 @@
         display: flex;
         align-items: center;
         width: fit-content !important;
-        width: -moz-max-content!important;
+        width: -moz-max-content !important;
         height: 100% !important;
     }
 }
 
 #root .flag-select {
-
     img {
         width: calc(1.6vw - 0.1vw) !important;
         height: calc(1.6vw - 0.1vw) !important;
@@ -96,7 +95,7 @@
         margin-bottom: 1.6vw !important;
 
         .country-flag .country-label {
-            color: #2C3769 !important;
+            color: #2c3769 !important;
         }
     }
 
@@ -123,4 +122,49 @@
     text-transform: uppercase;
     font-family: $DrukTextWide-Bold;
     color: $white;
+}
+
+#root .changeLanguagePersonalArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s;
+
+    &__frame {
+        transition: all 0.25s;
+        position: absolute;
+        width: 3.96vw;
+        height: 2.5vw;
+    }
+
+    .arrow-down,
+    .selected--flag--option .country-flag img {
+        display: none;
+    }
+
+    .selected--flag--option .country-flag .country-label {
+        padding: 0.7vw 1vw !important;
+        font-family: $Montserrat-Medium;
+        font-size: 9.6px;
+        line-height: 12px;
+        text-align: center;
+        color: #C5C3DF !important;
+    }
+
+    &__select {
+    }
+
+    &:hover {
+        .selected--flag--option .country-flag .country-label {
+            color: #221876 !important;
+        }
+
+        .changeLanguagePersonalArea__frame path {
+            stroke: #221876;
+        }
+    }
+
+    .flag-options  {
+        right: -0.9vw;
+    }
 }

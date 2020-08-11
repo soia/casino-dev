@@ -17,8 +17,8 @@
     &__title {
         padding: $desctop100px 0 $desctop65px 0;
         font-family: $DrukTextWide-Bold;
-        font-size: $desctop48px;
-        line-height: $desctop48px;
+        font-size: $desctop36px;
+        line-height: $desctop36px;
         text-align: center;
         color: #2C3769;
 
@@ -58,12 +58,12 @@
 
         &_title {
             font-family: $CoreSansGRegular;
-            font-size: $desctop14px;
-            line-height: $desctop14px;
-            letter-spacing: $desctop2px;
             text-transform: uppercase;
             color: #2C3769;
-            margin: 0 0 $desctop10px 1.1vw;
+            margin: 0 0 $desctop5px 1.1vw;
+            font-size: $desctop12px;
+            line-height: $desctop12px;
+            letter-spacing: $desctop2px;
 
             @media only screen and (max-width: 767px) {
                 font-size: 2.97vw;
@@ -92,10 +92,10 @@
         &_link {
             margin-left: 7vw;
             font-family: $CoreSansGRegular;
-            font-size: $desctop20px;
-            line-height: $desctop20px;
+            font-size: $desctop16px;
+            line-height: $desctop17px;
             color: #2C3769;
-            max-width: 24vw;
+            max-width: 23.8vw;
             overflow: hidden;
 
             @media only screen and (max-width: 767px) {

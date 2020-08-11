@@ -24,7 +24,7 @@
 
     &__title {
         font-family: $DrukTextWide-Medium;
-        font-size: $desctop48px;
+        font-size: $desctop36px;
         color: $white;
         margin-bottom: 4.70vw;
 
@@ -152,8 +152,8 @@
 
             p {
                 font-family: $CoreSansGRegular;
-                font-size: $desctop24px;
-                line-height: $desctop40px;
+                font-size: $desctop17px;
+                line-height: $desctop30px;
                 color: $white;
 
                 @media only screen and (max-width: 767px) {

@@ -66,7 +66,7 @@
 
         &_content {
             font-family: $CoreSansGRegular;
-            font-size: $desctop20px;
+            font-size: $desctop12px;
             color: $white;
             margin: auto 0 1vw 0;
             width: max-content;
@@ -106,9 +106,9 @@
     }
 
     &__title {
-        margin-bottom: $desctop30px;
+        margin-bottom: $desctop15px;
         font-family: $DrukTextWide-Bold;
-        font-size: $desctop20px;
+        font-size: $desctop16px;
         line-height: $desctop20px;
         color: #D8D6ED;
         white-space: nowrap;
@@ -149,8 +149,8 @@
         outline: none;
         text-align: left;
         white-space: nowrap;
-        font-size: $desctop21px;
-        line-height: $desctop60px;
+        font-size: $desctop14px;
+        line-height: $desctop36px;
         color: #928DBD;
 
         @media only screen and (max-width: 767px) {

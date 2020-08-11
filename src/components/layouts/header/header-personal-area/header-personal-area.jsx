@@ -8,7 +8,6 @@ import Img from '../../../small-components/img/img';
 import {
     personalAreaPath,
     depositPath,
-    withdrawalPath,
     profileDataPath,
 } from '../../../../constants/pathLocation';
 import logo from '../../../assets/images/logoBlueText.svg';
@@ -22,27 +21,23 @@ const HeaderPersonalArea = () => {
             <Link to="/" className={style.header__logo}>
                 <img src={logo} alt="logo" />
             </Link>
+            <div className={style.header__balanceWrapper}>
+                <p className={style.header__balanceWrapper_title}>Your current balance</p>
+                <p className={style.header__balanceWrapper_amount}>20,03453335 CNG</p>
+            </div>
             <div className={style.header__buttonWrapper}>
                 <Link to={`${personalAreaPath}${depositPath}`} className={style.deposit}>
                     <span>{t('general.deposit')}</span>
                 </Link>
-                <Link
-                    to={`${personalAreaPath}${withdrawalPath}`}
-                    className={style.withdrawal}
-                >
-                    <span>{t('general.withdrawal')}</span>
-                </Link>
             </div>
             <div className={style.header__rightSide}>
-                <Img
-                    className={style.header__rightSide_logo}
-                    src={avatar}
-                    userName="Aquaman Washington"
-                />
                 <div className={style.header__rightSide_language}>
                     <SelectLanguage />
                 </div>
-                <Link to={`${personalAreaPath}${profileDataPath}`} className={style.header__rightSide_settings}>
+                <Link
+                    to={`${personalAreaPath}${profileDataPath}`}
+                    className={style.header__rightSide_settings}
+                >
                     <svg
                         width="19"
                         height="20"
@@ -58,26 +53,16 @@ const HeaderPersonalArea = () => {
                         />
                     </svg>
                 </Link>
-                <Link to="/" className={style.header__rightSide_close}>
-                    <svg
-                        width="26"
-                        height="25"
-                        viewBox="0 0 26 25"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <rect
-                            x="0.5"
-                            y="0.5"
-                            width="25"
-                            height="24"
-                            rx="8.5"
-                            stroke="#D8D6ED"
-                        />
-                        <path d="M16.3245 10.17L10.6756 15.8189" stroke="#D8D6ED" />
-                        <path d="M10.6755 10.17L16.3244 15.8189" stroke="#D8D6ED" />
-                    </svg>
-                </Link>
+                <div className={style.header__logoWrapper}>
+                    <Img
+                        className={style.header__rightSide_logo}
+                        src={avatar}
+                        userName="Aquaman Washington"
+                    />
+                    <p className={style.header__rightSide_name}>
+                        Aquaman <br /> Washington
+                    </p>
+                </div>
             </div>
         </header>
     );

@@ -67,7 +67,7 @@ const SmartContract = () => {
                                     <div
                                         className={style.smartContract__referalField_copy}
                                     >
-                                        copy
+                                        <span>copy</span>
                                     </div>
                                 </CopyToClipboard>
                             </div>
