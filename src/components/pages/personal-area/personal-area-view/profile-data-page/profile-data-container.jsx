@@ -6,11 +6,37 @@ import Spinner from '../../../../spinner';
 import ProfileDataView from './profile-data-view';
 import { compose } from '../../../../../utils';
 
+function getBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+}
 export class ProfileDataContainer extends Component {
-    state = {};
+    state = {
+        previewVisible: false,
+        previewImage: '',
+        fileList: [],
+    };
 
-    componentDidMount() {
-    }
+    componentDidMount() {}
+
+    handleCancel = () => this.setState({ previewVisible: false });
+
+    handlePreview = async file => {
+        if (!file.url && !file.preview) {
+            file.preview = await getBase64(file.originFileObj);
+        }
+
+        this.setState({
+            previewImage: file.url || file.preview,
+            previewVisible: true,
+        });
+    };
+
+    handleChange = ({ fileList }) => this.setState({ fileList });
 
     onError = () => {
         this.setState({
@@ -21,15 +47,21 @@ export class ProfileDataContainer extends Component {
 
     render() {
         const {
-            loading,
-            error,
+            loading, error, previewVisible, previewImage, fileList,
         } = this.state;
         const hasData = !(loading || error);
 
         const errorMessage = error ? <ErrorIndicator /> : null;
         const spinner = loading ? <Spinner /> : null;
         const content = hasData ? (
-            <ProfileDataView />
+            <ProfileDataView
+                previewVisible={previewVisible}
+                previewImage={previewImage}
+                fileList={fileList}
+                handlePreview={this.handlePreview}
+                handleChange={this.handleChange}
+                handleCancel={this.handleCancel}
+            />
         ) : null;
 
         return (

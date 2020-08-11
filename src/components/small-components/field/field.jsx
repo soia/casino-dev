@@ -28,6 +28,7 @@ const Field = props => {
         step,
         inputColor,
         passwordType,
+        frameStyle,
     } = props;
 
     const errorValues = Object.values(error).filter(item => item.length > 0);
@@ -61,10 +62,10 @@ const Field = props => {
 
     if (errorValues.length > 0) {
         inputInlineStyle = {
-            color: '#E55541',
+            color: inputColor,
         };
         borderInlineStyle = {
-            border: '1px solid #E55541',
+            border: `1px solid ${inputColor}`,
         };
         dynamicInputStyle = style.hasError;
     } else {
@@ -155,6 +156,7 @@ Field.defaultProps = {
     disabled: false,
     inputColor: '',
     passwordType: false,
+    frameStyle: {},
 };
 
 Field.propTypes = {
@@ -177,6 +179,7 @@ Field.propTypes = {
     disabled: PropTypes.bool,
     inputColor: PropTypes.string,
     passwordType: PropTypes.bool,
+    frameStyle: PropTypes.object,
 };
 
 export default Field;

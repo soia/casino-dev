@@ -1,1 +1,59 @@
 @import '../../../../assets/styles/variables';
+
+.uploadAvatar {
+    transition: border-color 0.3s ease;
+
+    .ant-upload {
+        background: transparent;
+        margin: 0;
+        width: $desctop120px;
+        height: $desctop120px;
+        border-width: $desctop1px;
+    }
+
+    .ant-upload-list-item {
+        width: $desctop120px;;
+        height: $desctop120px;;
+        padding: 0;
+        margin: 0;
+        border-radius: $desctop6px;
+    }
+
+    .ant-upload-list-item-uploading-text {
+        text-align: center;
+    }
+
+    .ant-upload-list-item-progress {
+        width: inherit;
+        padding: 0 $desctop18px;
+    }
+
+    .ant-upload-list-item-info {
+        border-radius: $desctop6px;
+    }
+
+    &:hover {
+        .ant-upload.ant-upload-select-picture-card {
+            border-color: #221876;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: $desctop20px;
+            height: $desctop20px;
+        }
+    }
+
+    &:hover {
+        svg {
+            path {
+               stroke: #221876;
+            }
+        }
+    }
+}
