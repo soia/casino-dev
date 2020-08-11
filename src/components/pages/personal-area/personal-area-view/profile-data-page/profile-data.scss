@@ -12,8 +12,8 @@
     }
 
     .ant-upload-list-item {
-        width: $desctop120px;;
-        height: $desctop120px;;
+        width: $desctop120px;
+        height: $desctop120px;
         padding: 0;
         margin: 0;
         border-radius: $desctop6px;
@@ -52,8 +52,15 @@
     &:hover {
         svg {
             path {
-               stroke: #221876;
+                stroke: #221876;
             }
         }
+    }
+}
+
+.qrCode {
+    canvas {
+        height: $desctop140px !important;
+        width: $desctop140px !important;
     }
 }

@@ -23,7 +23,7 @@ const AirDrop = () => {
     };
 
     const copied = () => {
-        message.success('Successfully copied.', 2);
+        message.success(t('general.сopiedToClipboard'), 2);
     };
 
     return (

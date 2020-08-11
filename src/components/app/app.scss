@@ -57,10 +57,10 @@ input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
-.ant-message {
-    font-family: $CoreSansGRegular;
+.ant-message span {
+    font-family: $Montserrat-Medium;
     color: $greyLight;
-    font-size: $desctop16px;
+    font-size: $desctop14px;
     z-index: 9999999;
 
     @media only screen and (max-width: 767px) {

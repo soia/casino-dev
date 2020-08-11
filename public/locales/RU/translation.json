@@ -37,7 +37,16 @@
         "save": "Сохранить",
         "changeAvatar": "Изменить аватар",
         "changeNickname": "Изменить никнейм",
-        "enterYourNickname": "Введите никнейм"
+        "enterYourNickname": "Введите никнейм",
+        "twoFactorAuth": "Двухфакторная аутентификация",
+        "status": "Статус",
+        "enabled": "Включено",
+        "turnedOff": "Выключено",
+        "generateCode": "Сгенерировать код",
+        "сopiedToClipboard": "Скопировано в буфер обмена.",
+        "twoFACode": "2ФА код",
+        "enable":"Enable",
+        "switchOff":"Switch off"
     },
     "firstScreen": {
         "title": "Game token",

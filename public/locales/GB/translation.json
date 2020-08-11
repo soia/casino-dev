@@ -37,7 +37,16 @@
         "save": "Save",
         "changeAvatar": "Change avatar",
         "changeNickname": "Change nickname",
-        "enterYourNickname": "Enter your nickname"
+        "enterYourNickname": "Enter your nickname",
+        "twoFactorAuth": "Two-factor autentification",
+        "status": "Status",
+        "enabled": "Enabled",
+        "turnedOff": "Turned off",
+        "generateCode": "Generate code",
+        "сopiedToClipboard.": "Copied to the clipboard.",
+        "twoFACode": "2FA code",
+        "enable":"Включить",
+        "switchOff":"Выключить"
     },
     "firstScreen": {
         "title": "Game token",
