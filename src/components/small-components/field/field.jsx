@@ -28,7 +28,6 @@ const Field = props => {
         step,
         inputColor,
         passwordType,
-        frameStyle,
     } = props;
 
     const errorValues = Object.values(error).filter(item => item.length > 0);
@@ -156,7 +155,6 @@ Field.defaultProps = {
     disabled: false,
     inputColor: '',
     passwordType: false,
-    frameStyle: {},
 };
 
 Field.propTypes = {
@@ -179,7 +177,6 @@ Field.propTypes = {
     disabled: PropTypes.bool,
     inputColor: PropTypes.string,
     passwordType: PropTypes.bool,
-    frameStyle: PropTypes.object,
 };
 
 export default Field;
