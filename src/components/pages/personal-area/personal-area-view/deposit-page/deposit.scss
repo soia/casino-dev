@@ -1,1 +1,8 @@
 @import '../../../../assets/styles/variables';
+
+.qrCode {
+    canvas {
+        height: 9.4vw !important;
+        width: 9.4vw !important;
+    }
+}

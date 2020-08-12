@@ -6,8 +6,96 @@
     background: linear-gradient(360deg, #FFFFFF 0%, rgba(216, 214, 237, 0.56) 81.29%);
     border-radius: 1.5vw;
     margin: 0 1.7vw;
-    text-align: center;
+}
+
+.depositContainer {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    border: $desctop1px solid #D8D6ED;
+    border-radius: $desctop12px;
+    margin: 5vw 2.5vw;
+    padding: $desctop21px $desctop17px;
+
+    &__rightSide {
+        margin-left: $desctop50px;
+
+        &_text {
+            font-family: $Montserrat-Medium;
+            font-size: $desctop12px;
+            color: #F5A623;
+            background: linear-gradient(90.03deg, rgba(248, 153, 57, 0.1) 22.04%, rgba(239, 238, 248, 0.1) 95.42%);
+            border-radius: $desctop5px;
+            padding: 1vw;
+            max-width: 44.5vw;
+            line-height: 1.8vw;
+        }
+
+        &_minDeposit {
+            font-family: $Montserrat-Medium;
+            font-size: $desctop13px;
+            line-height: $desctop16px;
+            color: #BA1D2B;
+            margin: $desctop30px 1vw $desctop20px 1vw;
+        }
+    }
+
+    &__qrCodeValueWrapper {
+        display: flex;
+        align-items: flex-end;
+        margin: 0 0 1.5vw;
+        position: relative;
+        width: fit-content;
+    }
+
+    &__label {
+        color: #b0aed3;
+        font-size: $desctop10px;
+        line-height: $desctop12px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 1vw;
+        font-family: $Montserrat-Medium;
+    }
+
+    &__input {
+        display: flex;
+        width: 30vw;
+        height: 2.4vw;
+        background: transparent;
+        border-radius: 0.1vw;
+        border: none;
+        padding: 0 2vw 0 1vw;
+        font-size: $desctop10px;
+        line-height: $desctop12px;
+        outline: none;
+        font-family: $Montserrat-Medium;
+        color: #b0aed3;
+    }
+
+    &__qrCodeValueBtn {
+        @include beveledButton;
+        min-width: $desctop60px;
+        height: 2.4vw;
+        font-family: $Montserrat-Medium;
+        font-size: 0.9vw;
+        color: #fff;
+        background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);
+        margin-left: 3vw;
+        transition: transform 0.25s;
+        position: absolute;
+        right: $desctop1px;
+        bottom: $desctop1px;
+
+        &:hover {
+            background: linear-gradient(
+                172.75deg,
+                rgba(250, 217, 97, 0.8) -7.82%,
+                rgba(247, 107, 28, 0.8) 99.05%
+            );
+        }
+
+        svg {
+            width: $desctop13px;
+            height: $desctop13px;
+        }
+    }
 }

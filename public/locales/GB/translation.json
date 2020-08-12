@@ -43,12 +43,14 @@
         "enabled": "Enabled",
         "turnedOff": "Turned off",
         "generateCode": "Generate code",
-        "сopiedToClipboard.": "Copied to the clipboard.",
+        "сopiedToClipboard": "Copied to the clipboard.",
         "twoFACode": "2FA code",
         "enable":"Enable",
         "switchOff":"Switch off",
         "changePassword": "Change password",
-        "socialNetwork": "Social network"
+        "socialNetwork": "Social network",
+        "minimumDepositAmount": "Minimum deposit amount",
+        "depositAddress": "Deposit address"
     },
     "firstScreen": {
         "title": "Game token",

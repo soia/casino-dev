@@ -48,7 +48,9 @@
         "enable":"Включить",
         "switchOff":"Выключить",
         "changePassword": "Сменить пароль",
-        "socialNetwork": "Соцсети"
+        "socialNetwork": "Соцсети",
+        "minimumDepositAmount": "Минимальная сумма депозита",
+        "depositAddress": "Адрес для депозита"
     },
     "firstScreen": {
         "title": "Game token",
