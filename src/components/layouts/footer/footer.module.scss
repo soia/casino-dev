@@ -3,8 +3,8 @@
 .footer {
     position: relative;
     display: flex;
-    background: #211B52;
-    padding: 3.87vw 12.18vw 3.39vw 12.70vw;
+    background: #211b52;
+    padding: 3.87vw 12.18vw 3.39vw 12.7vw;
 
     @media only screen and (max-width: 767px) {
         padding: 10.67vw 14.38vw 14.58vw 12.15vw;
@@ -110,7 +110,7 @@
         font-family: $DrukTextWide-Bold;
         font-size: $desctop16px;
         line-height: $desctop20px;
-        color: #D8D6ED;
+        color: #d8d6ed;
         white-space: nowrap;
 
         @media only screen and (max-width: 767px) {
@@ -151,7 +151,7 @@
         white-space: nowrap;
         font-size: $desctop14px;
         line-height: $desctop36px;
-        color: #928DBD;
+        color: #928dbd;
 
         @media only screen and (max-width: 767px) {
             font-size: $mobile16px;
@@ -160,69 +160,57 @@
         }
 
         &:hover {
-            color: #6EFFFF;
+            color: #6effff;
         }
     }
 }
 
 .footerPersonalArea {
-    position: relative;
-    padding: 0 7.85vw 0 0;
     display: flex;
-    justify-content: space-between;
-    background-color: $cabinerBackColor;
+    align-items: center;
+    padding: $desctop40px 1.5vw;
+    background: linear-gradient(168.3deg, #ffffff -16.89%, #d8d6ed 84.45%);
 
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 86.3vw;
-        border-bottom: 0.056vw solid $borderColor;
+    &__column {
+        margin-right: 6.75vw;
     }
 
-    &__leftSide {
-        margin-right: 8vw;
+    &__logo {
+        margin-right: 6.75vw;
+        width: 12vw;
+        height: 3.3vw;
     }
 
-    &__leftSide,
-    &__rightSide {
-        display: flex;
-        align-items: center;
+    &__title {
+        font-family: $Montserrat-Bold;
+        font-size: $desctop12px;
+        line-height: $desctop20px;
+        color: #221876;
+    }
 
-        &_links {
-            font-family: $CoreSansGRegular;
-            color: $textDarkLight;
-            font-size: 0.8vw;
-            line-height: 1.7vw;
+    &__link {
+        font-family: $Montserrat-Medium;
+        font-size: $desctop12px;
+        line-height: $desctop30px;
+        color: #928dbd;
+        margin-right: $desctop30px;
+        white-space: nowrap;
 
-            &:hover {
-                transition: 0.25s;
-                color: $greenLight;
-            }
-
-            &:not(:last-child) {
-                margin-right: 7vw;
-            }
+        &:hover {
+            color: #f76b1c;
         }
+    }
+
+    &__linksWrapper {
+        max-width: 14vw;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &__copyright {
-        padding: 1.85vw 0 1.85vw 2.9vw;
-        margin-right: 3.85vw;
-        width: 13.7vw;
-        background: #f3f7fd;
-        font-family: $CoreSansGRegular;
-        color: $textDarkLight;
-        font-size: 0.8vw;
-        line-height: 0.8vw;
-
-        &_symbol {
-            margin: 0 0.4vw;
-        }
-
-        &_p2p {
-            font-family: $DrukTextWide-Bold;
-        }
+        font-family: $Montserrat-Medium;
+        font-size: $desctop12px;
+        line-height: $desctop17px;
+        color: #928dbd;
     }
 }

@@ -47,7 +47,8 @@
         "twoFACode": "2FA code",
         "enable":"Enable",
         "switchOff":"Switch off",
-        "changePassword": "Change password"
+        "changePassword": "Change password",
+        "socialNetwork": "Social network"
     },
     "firstScreen": {
         "title": "Game token",

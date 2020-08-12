@@ -47,7 +47,8 @@
         "twoFACode": "2ФА код",
         "enable":"Включить",
         "switchOff":"Выключить",
-        "changePassword": "Сменить пароль"
+        "changePassword": "Сменить пароль",
+        "socialNetwork": "Соцсети"
     },
     "firstScreen": {
         "title": "Game token",
