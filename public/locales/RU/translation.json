@@ -52,7 +52,7 @@
         "minimumDepositAmount": "Минимальная сумма депозита",
         "depositAddress": "Адрес для депозита",
         "topUpMyBalance": "Пополнить баланс CNG",
-        "iWantToWithdraw": "Я хочу вывести"
+        "iWantToWithdraw": "Я хочу вывести средства"
     },
     "firstScreen": {
         "title": "Game token",

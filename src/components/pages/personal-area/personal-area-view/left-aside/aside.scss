@@ -18,3 +18,20 @@
 #aside .active {
     color: rgb(34, 24, 118);
 }
+
+#subMenu {
+    .active {
+        background: linear-gradient(90.03deg, rgba(248, 153, 57, 0.1) 22.04%, rgba(239, 238, 248, 0.1) 95.42%);
+        border-radius: $desctop5px;
+    }
+
+    a {
+        transition: all 0.5s;
+
+        &:hover {
+            background: linear-gradient(90.03deg, rgba(248, 153, 57, 0.1) 22.04%, rgba(239, 238, 248, 0.1) 95.42%);
+            border-radius: $desctop5px;
+            color: #C5C3DF;
+        }
+    }
+}

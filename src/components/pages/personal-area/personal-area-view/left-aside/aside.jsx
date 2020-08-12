@@ -178,7 +178,7 @@ class Aside extends Component {
                             </svg>
                             <span>{t('aside.history')}</span>
                         </div>
-                        <div className={submenuStyle}>
+                        <div id="subMenu" className={submenuStyle}>
                             <NavLink
                                 to={`${personalAreaPath}${historyPath}`}
                                 className={style.aside__subLink}
