@@ -252,3 +252,71 @@
         }
     }
 }
+
+.resetPasswordContainer {
+    margin: $desctop60px 0;
+
+    &__title {
+        font-family: $Montserrat-Medium;
+        font-size: $desctop20px;
+        line-height: $desctop24px;
+        color: #a8a6c1;
+        margin-bottom: $desctop20px;
+    }
+
+    &__inputContainer {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__inputWrapper {
+        margin-right: $desctop34px;
+        position: relative;
+
+        &_eye {
+            position: absolute;
+            right: 1vw;
+            top: 50%;
+            cursor: pointer;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                top: 50%;
+                right: $tablet10px;
+                width: $tablet30px;
+                height: $tablet20px;
+            }
+
+            @media only screen and (max-width: 499px) {
+                top: 50%;
+                right: 4vw;
+                width: $mobile30px;
+                height: $mobile20px;
+            }
+
+            img {
+                @media only screen and (max-width: 1024px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__saveBtn {
+        @include beveledButton;
+        min-width: 11vw;
+        height: 2.6vw;
+        font-family: $Montserrat-Medium;
+        font-size: 0.9vw;
+        color: #fff;
+        background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);
+        transition: transform 0.25s;
+
+        &:hover {
+            background: linear-gradient(
+                172.75deg,
+                rgba(250, 217, 97, 0.8) -7.82%,
+                rgba(247, 107, 28, 0.8) 99.05%
+            );
+        }
+    }
+}

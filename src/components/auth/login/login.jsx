@@ -114,13 +114,13 @@ class Login extends PureComponent {
                 }));
 
                 // min length 6 chars
-                if (value.length < 6) {
+                if (value.length < 8) {
                     this.setState(state => ({
                         [name]: value,
                         passwordErrors: {
                             ...state.passwordErrors,
                             passwordLengthError: t(
-                                'error.password_at_least_6_chars',
+                                'error.password_at_least_8_chars',
                             ),
                         },
                     }));

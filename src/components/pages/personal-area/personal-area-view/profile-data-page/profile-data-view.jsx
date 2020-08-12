@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Upload, Modal, message } from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import QRCode from 'qrcode.react';
+import eye from './images/eye.svg';
 import Field from '../../../../small-components/field';
 import style from './profile-data.module.scss';
 import './profile-data.scss';
@@ -22,6 +23,12 @@ const ProfileDataView = ({
     status,
     twoFACode,
     twoFACodeErrors,
+    password,
+    passwordErrors,
+    confirmPassword,
+    confirmPasswordErrors,
+    showHidePassword,
+    type,
 }) => {
     const { t } = useTranslation();
     const uploadButton = (
@@ -169,6 +176,68 @@ const ProfileDataView = ({
                     </div>
                 </div>
             </div>
+            <div className={style.resetPasswordContainer}>
+                <h3 className={style.resetPasswordContainer__title}>
+                    {t('general.changePassword')}
+                </h3>
+                <div className={style.resetPasswordContainer__inputContainer}>
+                    <div className={style.resetPasswordContainer__inputWrapper}>
+                        <Field
+                            id="password"
+                            type={type}
+                            placeholder={t('general.enterPassword')}
+                            name="password"
+                            value={password}
+                            onChange={inputOnchange}
+                            error={passwordErrors}
+                            inputStyle={style.profileData__input}
+                            labelText={t('general.enterPassword')}
+                            labelStyle={style.profileData__label}
+                            inputColor="#B0AED3"
+                            passwordType
+                        />
+                        {password.length >= 1 ? (
+                            <div
+                                onClick={showHidePassword}
+                                className={
+                                    style.resetPasswordContainer__inputWrapper_eye
+                                }
+                            >
+                                <img src={eye} alt="eye" />
+                            </div>
+                        ) : null}
+                    </div>
+                    <div className={style.resetPasswordContainer__inputWrapper}>
+                        <Field
+                            id="confirmPassword"
+                            type={type}
+                            placeholder={t('general.confirmPassword')}
+                            name="confirmPassword"
+                            value={confirmPassword}
+                            onChange={inputOnchange}
+                            error={confirmPasswordErrors}
+                            inputStyle={style.profileData__input}
+                            labelText={t('general.confirmPassword')}
+                            labelStyle={style.profileData__label}
+                            inputColor="#B0AED3"
+                            passwordType
+                        />
+                        {confirmPassword.length >= 1 ? (
+                            <div
+                                onClick={showHidePassword}
+                                className={
+                                    style.resetPasswordContainer__inputWrapper_eye
+                                }
+                            >
+                                <img src={eye} alt="eye" />
+                            </div>
+                        ) : null}
+                    </div>
+                    <div className={style.resetPasswordContainer__saveBtn}>
+                        <span>{t('general.save')}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
@@ -180,12 +249,18 @@ ProfileDataView.defaultProps = {
     previewImage: '',
     twoFACode: '',
     twoFACodeErrors: '',
+    password: '',
+    passwordErrors: '',
+    confirmPassword: '',
+    confirmPasswordErrors: '',
+    type: '',
     fileList: [],
     nicknameErrors: {},
     inputOnchange: () => {},
     handlePreview: () => {},
     handleChange: () => {},
     handleCancel: () => {},
+    showHidePassword: () => {},
 };
 
 ProfileDataView.propTypes = {
@@ -195,12 +270,18 @@ ProfileDataView.propTypes = {
     previewImage: PropTypes.string,
     twoFACode: PropTypes.string,
     twoFACodeErrors: PropTypes.string,
+    password: PropTypes.string,
+    passwordErrors: PropTypes.string,
+    confirmPassword: PropTypes.string,
+    confirmPasswordErrors: PropTypes.string,
+    type: PropTypes.string,
     fileList: PropTypes.instanceOf(Array),
     inputOnchange: PropTypes.func,
     nicknameErrors: PropTypes.object,
     handlePreview: PropTypes.func,
     handleChange: PropTypes.func,
     handleCancel: PropTypes.func,
+    showHidePassword: PropTypes.func,
 };
 
 export default ProfileDataView;

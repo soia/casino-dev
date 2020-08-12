@@ -58,13 +58,14 @@ const Field = props => {
     let inputInlineStyle = {};
     let borderInlineStyle = {};
     let dynamicInputStyle = {};
+    let questionInvalidMarkStyle = {};
 
     if (errorValues.length > 0) {
         inputInlineStyle = {
-            color: inputColor,
+            color: '#E55541',
         };
         borderInlineStyle = {
-            border: `1px solid ${inputColor}`,
+            border: '1px solid #E55541',
         };
         dynamicInputStyle = style.hasError;
     } else {
@@ -79,6 +80,12 @@ const Field = props => {
         dynamicInputStyle = {};
     }
 
+    if (labelText) {
+        questionInvalidMarkStyle = style.positionQuestion;
+    } else {
+        questionInvalidMarkStyle = {};
+    }
+
     return (
         <div className={style.inputWrapper}>
             <label className={labelStyle} htmlFor={id}>
@@ -88,10 +95,7 @@ const Field = props => {
                 <input
                     id={id}
                     type={type}
-                    className={classNames(
-                        inputStyle,
-                        dynamicInputStyle,
-                    )}
+                    className={classNames(inputStyle, dynamicInputStyle)}
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange}
@@ -108,7 +112,12 @@ const Field = props => {
                 />
             </div>
             {errorValues.length > 0 ? (
-                <div className={style.inputWrapper__invalid}>
+                <div
+                    className={classNames(
+                        style.inputWrapper__invalid,
+                        questionInvalidMarkStyle,
+                    )}
+                >
                     <div
                         className={style.inputWrapper__tooltip}
                         style={tooltipPositionStyle}

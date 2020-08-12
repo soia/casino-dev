@@ -45,8 +45,9 @@
         "generateCode": "Сгенерировать код",
         "сopiedToClipboard": "Скопировано в буфер обмена.",
         "twoFACode": "2ФА код",
-        "enable":"Enable",
-        "switchOff":"Switch off"
+        "enable":"Включить",
+        "switchOff":"Выключить",
+        "changePassword": "Сменить пароль"
     },
     "firstScreen": {
         "title": "Game token",
@@ -125,7 +126,7 @@
         "field_can_not_be_empty": "Поле не может быть пустым.",
         "wrong_email": "Неправильный адрес электронной почты.",
         "only_letters_symbols_numbers": "Разрешены только латинские буквы, специальные символы и цифры.",
-        "password_at_least_6_chars": "Пароль должен быть не менее чем из 6 символов.",
+        "password_at_least_8_chars": "Пароль должен быть не менее чем из 8 символов.",
         "password_at_least_1_digit": "Пароль должен содержать не менее 1 цифры.",
         "password_at_least_1_letters": "Пароль должен содержать не менее 1 буквы в нижнем регистре.",
         "password_at_least_1_upperCase_letter": "Пароль должен содержать не менее 1 буквы в верхнем регистре.",

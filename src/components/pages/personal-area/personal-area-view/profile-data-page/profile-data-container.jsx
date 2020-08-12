@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import ErrorIndicator from '../../../error-page/error-indicator';
 import Spinner from '../../../../spinner';
 import ProfileDataView from './profile-data-view';
@@ -15,10 +16,38 @@ function getBase64(file) {
     });
 }
 export class ProfileDataContainer extends Component {
+    static defaultProps = {
+        t: () => {},
+    };
+
+    static propTypes = {
+        t: PropTypes.func,
+    };
+
     state = {
         previewVisible: false,
         previewImage: '',
         fileList: [],
+        nickname: '',
+        twoFACode: '',
+        password: '',
+        confirmPassword: '',
+        nicknameErrors: {
+            nicknameCharactersError: '',
+        },
+        twoFACodeErrors: {
+            twoFACodeCharactersError: '',
+        },
+        passwordErrors: {
+            passwordCharactersError: '',
+            passwordLengthError: '',
+            passwordDigitError: '',
+            passwordLettersError: '',
+        },
+        confirmPasswordErrors: {
+            confirmPasswordCharactersError: '',
+        },
+        type: 'password',
     };
 
     componentDidMount() {}
@@ -38,6 +67,196 @@ export class ProfileDataContainer extends Component {
 
     handleChange = ({ fileList }) => this.setState({ fileList });
 
+    inputOnchange = event => {
+        const { name, value } = event.target;
+        const { password, confirmPassword } = this.state;
+        const { t } = this.props;
+        const numbersLatinLetters = /[A-Za-z0-9]+$/;
+
+        if (name === 'nickname') {
+            this.setState(state => ({
+                [name]: value.toLowerCase(),
+                nicknameErrors: {
+                    ...state.nicknameErrors,
+                    nicknameCharactersError: '',
+                },
+            }));
+        }
+
+        if (name === 'twoFACode') {
+            this.setState(state => ({
+                [name]: value.toLowerCase(),
+                twoFACodeErrors: {
+                    ...state.twoFACodeErrors,
+                    twoFACodeCharactersError: '',
+                },
+            }));
+        }
+
+        // PASSWORD VALIDATION
+        if (name === 'password') {
+            // only numbers and letters
+            if (value === '' || numbersLatinLetters.test(value)) {
+                this.setState(state => ({
+                    [name]: value,
+                    passwordErrors: {
+                        ...state.passwordErrors,
+                        passwordCharactersError: '',
+                    },
+                }));
+
+                // min length 8 chars
+                if (value.length < 8) {
+                    this.setState(state => ({
+                        [name]: value,
+                        passwordErrors: {
+                            ...state.passwordErrors,
+                            passwordLengthError: t(
+                                'error.password_at_least_8_chars',
+                            ),
+                        },
+                    }));
+                } else {
+                    this.setState(state => ({
+                        [name]: value,
+                        passwordErrors: {
+                            ...state.passwordErrors,
+                            passwordLengthError: '',
+                        },
+                    }));
+                }
+                // min length 8 chars
+
+                // at least one digit
+                if (!/^(?=.*[0-9])/.test(value)) {
+                    this.setState(state => ({
+                        [name]: value,
+                        passwordErrors: {
+                            ...state.passwordErrors,
+                            passwordDigitError: t('error.password_at_least_1_digit'),
+                        },
+                    }));
+                    // at least one digit
+                } else {
+                    this.setState(state => ({
+                        [name]: value,
+                        passwordErrors: {
+                            ...state.passwordErrors,
+                            passwordDigitError: '',
+                        },
+                    }));
+                }
+                // at least one digit
+
+                // at least one letters
+                if (!/^(?=.*[a-z])/.test(value.toLowerCase())) {
+                    this.setState(state => ({
+                        [name]: value,
+                        passwordErrors: {
+                            ...state.passwordErrors,
+                            passwordLettersError: t(
+                                'error.password_at_least_1_letters',
+                            ),
+                        },
+                    }));
+                } else {
+                    this.setState(state => ({
+                        [name]: value,
+                        passwordErrors: {
+                            ...state.passwordErrors,
+                            passwordLettersError: '',
+                        },
+                    }));
+                }
+                // at least one letters
+
+                // paswords doesn't match
+                if (confirmPassword.length > 0 && confirmPassword !== value) {
+                    this.setState(state => ({
+                        confirmPasswordErrors: {
+                            ...state.confirmPasswordErrors,
+                            confirmPasswordDoesntMatch: t(
+                                'error.password_does_not_match',
+                            ),
+                        },
+                    }));
+                } else {
+                    this.setState(state => ({
+                        confirmPasswordErrors: {
+                            ...state.confirmPasswordErrors,
+                            confirmPasswordDoesntMatch: '',
+                        },
+                    }));
+                }
+                // paswords doesn't match
+            } else {
+                this.setState(state => ({
+                    passwordErrors: {
+                        ...state.passwordErrors,
+                        passwordCharactersError: t(
+                            'error.only_latin_letters_and_numbers_allowed',
+                        ),
+                    },
+                }));
+            }
+            // PASSWORD VALIDATION
+        }
+        // PASSWORD VALIDATION
+
+        // CONFIRM PASSWORD VALIDATION
+        if (name === 'confirmPassword') {
+            // only numbers and letters
+            if (value === '' || numbersLatinLetters.test(value)) {
+                this.setState(state => ({
+                    [name]: value,
+
+                    confirmPasswordErrors: {
+                        ...state.confirmPasswordErrors,
+                        confirmPasswordCharactersError: '',
+                    },
+                }));
+
+                // paswords doesn't match
+                if (value.length > 0 && password !== value) {
+                    this.setState(state => ({
+                        confirmPasswordErrors: {
+                            ...state.confirmPasswordErrors,
+                            confirmPasswordDoesntMatch: t(
+                                'error.password_does_not_match',
+                            ),
+                        },
+                    }));
+                } else {
+                    this.setState(state => ({
+                        confirmPasswordErrors: {
+                            ...state.confirmPasswordErrors,
+                            confirmPasswordDoesntMatch: '',
+                        },
+                    }));
+                }
+                // paswords doesn't match
+            } else {
+                this.setState(state => ({
+                    passwordErrors: {
+                        ...state.passwordErrors,
+                        confirmPasswordCharactersError: t(
+                            'error.only_latin_letters_and_numbers_allowed',
+                        ),
+                    },
+                }));
+            }
+            // PASSWORD VALIDATION
+        }
+        // CONFIRM PASSWORD VALIDATION
+    };
+
+    showHidePassword = () => {
+        const { type } = this.state;
+        this.setState({
+            type: type === 'password' ? 'text' : 'password',
+        });
+    };
+
     onError = () => {
         this.setState({
             error: true,
@@ -48,6 +267,15 @@ export class ProfileDataContainer extends Component {
     render() {
         const {
             loading, error, previewVisible, previewImage, fileList,
+            nickname,
+            twoFACode,
+            password,
+            confirmPassword,
+            nicknameErrors,
+            twoFACodeErrors,
+            passwordErrors,
+            confirmPasswordErrors,
+            type,
         } = this.state;
         const hasData = !(loading || error);
 
@@ -58,9 +286,20 @@ export class ProfileDataContainer extends Component {
                 previewVisible={previewVisible}
                 previewImage={previewImage}
                 fileList={fileList}
+                nickname={nickname}
+                twoFACode={twoFACode}
+                password={password}
+                confirmPassword={confirmPassword}
+                nicknameErrors={nicknameErrors}
+                twoFACodeErrors={twoFACodeErrors}
+                passwordErrors={passwordErrors}
+                type={type}
+                confirmPasswordErrors={confirmPasswordErrors}
                 handlePreview={this.handlePreview}
                 handleChange={this.handleChange}
                 handleCancel={this.handleCancel}
+                inputOnchange={this.inputOnchange}
+                showHidePassword={this.showHidePassword}
             />
         ) : null;
 

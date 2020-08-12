@@ -45,8 +45,9 @@
         "generateCode": "Generate code",
         "сopiedToClipboard.": "Copied to the clipboard.",
         "twoFACode": "2FA code",
-        "enable":"Включить",
-        "switchOff":"Выключить"
+        "enable":"Enable",
+        "switchOff":"Switch off",
+        "changePassword": "Change password"
     },
     "firstScreen": {
         "title": "Game token",
@@ -125,7 +126,7 @@
         "field_can_not_be_empty": "Field cannot be empty.",
         "wrong_email": "Wrong Email.",
         "only_letters_symbols_numbers": "Only latin letters, special characters and numbers are allowed.",
-        "password_at_least_6_chars": "Password must be at least 6 chars.",
+        "password_at_least_8_chars": "Password must be at least 8 chars.",
         "password_at_least_1_digit": "Password must be at least 1 digit.",
         "password_at_least_1_letters": "The password must contain at least 1 lowercase letter.",
         "password_at_least_1_upperCase_letter": "The password must contain at least 1 uppercase letter.",
