@@ -50,7 +50,9 @@
         "changePassword": "Change password",
         "socialNetwork": "Social network",
         "minimumDepositAmount": "Minimum deposit amount",
-        "depositAddress": "Deposit address"
+        "depositAddress": "Deposit address",
+        "topUpMyBalance": "Top Up my CNG balance",
+        "iWantToWithdraw": "I want to withdraw"
     },
     "firstScreen": {
         "title": "Game token",

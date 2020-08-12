@@ -50,7 +50,9 @@
         "changePassword": "Сменить пароль",
         "socialNetwork": "Соцсети",
         "minimumDepositAmount": "Минимальная сумма депозита",
-        "depositAddress": "Адрес для депозита"
+        "depositAddress": "Адрес для депозита",
+        "topUpMyBalance": "Пополнить баланс CNG",
+        "iWantToWithdraw": "Я хочу вывести"
     },
     "firstScreen": {
         "title": "Game token",
