@@ -20,11 +20,19 @@ import './aside.scss';
 class Aside extends Component {
     mounted = true;
 
-    state = {};
+    state = {
+        isOpenHistorySubMenu: false,
+    };
 
     componentWillUnmount() {
         this.mounted = false;
     }
+
+    openHistorySubMenu = () => {
+        this.setState(state => ({
+            isOpenHistorySubMenu: !state.isOpenHistorySubMenu,
+        }));
+    };
 
     logout = () => {
         console.log('logout');
@@ -32,6 +40,15 @@ class Aside extends Component {
 
     render() {
         const { t, onClickAside } = this.props;
+        const { isOpenHistorySubMenu } = this.state;
+
+        let submenuStyle = {};
+
+        if (isOpenHistorySubMenu) {
+            submenuStyle = style.aside__openedSubmenu;
+        } else {
+            submenuStyle = style.aside__closedSubmenu;
+        }
 
         const activeStyle = { color: '#221876' };
         return (
@@ -40,6 +57,7 @@ class Aside extends Component {
                     <li>
                         <NavLink
                             to={`${personalAreaPath}${profileDataPath}`}
+                            className={style.asideLink}
                             activeStyle={activeStyle}
                         >
                             <svg
@@ -84,6 +102,7 @@ class Aside extends Component {
                     <li>
                         <NavLink
                             to={`${personalAreaPath}${balancePath}`}
+                            className={style.asideLink}
                             activeStyle={activeStyle}
                         >
                             <svg
@@ -115,9 +134,12 @@ class Aside extends Component {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink
-                            to={`${personalAreaPath}${historyPath}`}
-                            activeStyle={activeStyle}
+                        <div
+                            className={classNames(
+                                style.asideLink,
+                                isOpenHistorySubMenu ? 'active' : '',
+                            )}
+                            onClick={this.openHistorySubMenu}
                         >
                             <svg
                                 width="26"
@@ -154,12 +176,31 @@ class Aside extends Component {
                                     </linearGradient>
                                 </defs>
                             </svg>
-
                             <span>{t('aside.history')}</span>
-                        </NavLink>
+                        </div>
+                        <div className={submenuStyle}>
+                            <NavLink
+                                to={`${personalAreaPath}${historyPath}`}
+                                className={style.aside__subLink}
+                            >
+                                Casino 1
+                            </NavLink>
+                            <NavLink
+                                to={`${personalAreaPath}${historyPath}`}
+                                className={style.aside__subLink}
+                            >
+                                Casino 1
+                            </NavLink>
+                            <NavLink
+                                to={`${personalAreaPath}${historyPath}`}
+                                className={style.aside__subLink}
+                            >
+                                Casino 1
+                            </NavLink>
+                        </div>
                     </li>
                     <li>
-                        <div onClick={this.logout}>
+                        <div className={style.asideLink} onClick={this.logout}>
                             <svg
                                 width="24"
                                 height="20"
@@ -170,21 +211,21 @@ class Aside extends Component {
                                 <path
                                     d="M4.13436 3.90859C4.63517 1.90534 6.4351 0.5 8.5 0.5H18.1922C21.1198 0.5 23.2679 3.25125 22.5579 6.09141L20.0579 16.0914C19.5571 18.0947 17.7571 19.5 15.6922 19.5H6C3.07243 19.5 0.924319 16.7487 1.63436 13.9086L4.13436 3.90859Z"
                                     stroke="rgba(34, 24, 118, 0.2)"
-                                    className={style.adfwdf}
+                                    className={style.logoutIcon}
                                 />
                                 <path
                                     d="M10.7835 14.5669H6.63781L9.22828 5.63778H13.374C13.55 5.63778 13.6929 5.4949 13.6929 5.31889C13.6929 5.14288 13.55 5 13.374 5H8.90937C8.73335 5 8.59048 5.14285 8.59048 5.31889L6 14.8858C6 15.0619 6.14288 15.2047 6.31889 15.2047H10.7835C10.9595 15.2047 11.1024 15.0619 11.1024 14.8858C11.1024 14.7098 10.9595 14.5669 10.7835 14.5669Z"
                                     fill="rgba(34, 24, 118, 0.2)"
                                     stroke="rgba(34, 24, 118, 0.2)"
                                     strokeWidth="0.2"
-                                    className={style.qqqqqq}
+                                    className={style.logoutFill}
                                 />
                                 <path
                                     d="M17.7599 9.73965L15.5595 7.50769C15.4348 7.38172 15.2329 7.38204 15.1085 7.50769C14.9838 7.63333 14.9838 7.83742 15.1085 7.96306L16.7668 9.64526H10.1997C10.0237 9.64526 9.88086 9.78941 9.88086 9.96736C9.88086 10.1453 10.0237 10.2895 10.1997 10.2895H16.7668L15.1085 11.9716C14.9838 12.0976 14.9838 12.3014 15.1085 12.427C15.2332 12.553 15.4351 12.553 15.5595 12.427L17.7595 10.1951C17.8826 10.071 17.8839 9.86339 17.7599 9.73965Z"
                                     fill="rgba(34, 24, 118, 0.2)"
                                     stroke="rgba(34, 24, 118, 0.2)"
                                     strokeWidth="0.2"
-                                    className={style.qqqqqq}
+                                    className={style.logoutFill}
                                 />
                             </svg>
 
