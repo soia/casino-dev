@@ -16,14 +16,24 @@
             margin-bottom: 2.7vw;
 
             &:hover {
+                .adfwdf {
+                    fill: #f9bd4f;
+                    stroke: #f9bd4f;
+                }
+
+                .qqqqqq {
+                    fill: #fff;
+                    stroke: #fff;
+                }
+
                 svg {
                     path {
-                        fill: #F9BD4F;
+                        fill: #f9bd4f;
                     }
                 }
 
                 .svgStroke {
-                    stroke: #F9BD4F;
+                    stroke: #f9bd4f;
                 }
 
                 .svgIcon {
@@ -37,14 +47,16 @@
                 height: 1.53vw;
             }
 
-            a {
+            a,
+            div {
                 display: flex;
                 align-items: flex-end;
                 font-family: $Montserrat-Medium;
                 font-size: 1vw;
                 line-height: 1.4vw;
                 letter-spacing: 0.1vw;
-                color: #D3D1E4;
+                color: #d3d1e4;
+                cursor: pointer;
 
                 &:hover {
                     color: #221876;
