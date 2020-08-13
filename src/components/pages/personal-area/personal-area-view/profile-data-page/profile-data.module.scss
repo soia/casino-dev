@@ -208,7 +208,7 @@
 
     &__switchQrCodeBtn {
         @include beveledButton;
-        min-width: $desctop110px;
+        min-width: 8.3vw;
         height: 2.4vw;
         font-family: $Montserrat-Medium;
         font-size: 0.9vw;
@@ -219,6 +219,8 @@
         position: absolute;
         right: $desctop1px;
         bottom: $desctop1px;
+        border: none;
+        outline: none;
 
         &:hover {
             background: linear-gradient(
@@ -244,7 +246,7 @@
         background: transparent;
         border-radius: 0.1vw;
         border: none;
-        padding: 0 2vw 0 1vw;
+        padding: 0 9.1vw 0 1vw;
         font-size: 1vw;
         line-height: 1.4vw;
         outline: none;

@@ -31,6 +31,7 @@ const ProfileDataView = ({
     type,
     submitChangeName,
     submitNewPassword,
+    submitTwoFACode,
 }) => {
     const { t } = useTranslation();
     const uploadButton = (
@@ -159,7 +160,10 @@ const ProfileDataView = ({
                                 </p>
                             </CopyToClipboard>
                         </div>
-                        <div className={style.twoFactorAuth__twoFAInputWrapper}>
+                        <form
+                            className={style.twoFactorAuth__twoFAInputWrapper}
+                            onSubmit={submitTwoFACode}
+                        >
                             <Field
                                 id="twoFACode"
                                 type="text"
@@ -171,10 +175,13 @@ const ProfileDataView = ({
                                 inputStyle={style.twoFactorAuth__input}
                                 inputColor="#B0AED3"
                             />
-                            <div className={style.twoFactorAuth__switchQrCodeBtn}>
+                            <button
+                                type="submit"
+                                className={style.twoFactorAuth__switchQrCodeBtn}
+                            >
                                 <span>{t('general.enable')}</span>
-                            </div>
-                        </div>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -268,6 +275,7 @@ ProfileDataView.defaultProps = {
     showHidePassword: () => {},
     submitChangeName: () => {},
     submitNewPassword: () => {},
+    submitTwoFACode: () => {},
 };
 
 ProfileDataView.propTypes = {
@@ -291,6 +299,7 @@ ProfileDataView.propTypes = {
     showHidePassword: PropTypes.func,
     submitChangeName: PropTypes.func,
     submitNewPassword: PropTypes.func,
+    submitTwoFACode: PropTypes.func,
 };
 
 export default ProfileDataView;

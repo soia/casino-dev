@@ -294,6 +294,21 @@ export class ProfileDataContainer extends Component {
         }
     };
 
+    submitTwoFACode = event => {
+        event.preventDefault();
+        const { twoFACode } = this.state;
+        const { t } = this.props;
+        if (!twoFACode.length) {
+            this.setState({
+                twoFACodeErrors: {
+                    twoFACodeCharactersError: t('error.field_can_not_be_empty'),
+                },
+            });
+        } else {
+            console.log(twoFACode, 'twoFACode');
+        }
+    };
+
     submitNewPassword = event => {
         event.preventDefault();
         const {
@@ -387,6 +402,7 @@ export class ProfileDataContainer extends Component {
                 beforeUpload={this.beforeUpload}
                 submitChangeName={this.submitChangeName}
                 submitNewPassword={this.submitNewPassword}
+                submitTwoFACode={this.submitTwoFACode}
             />
         ) : null;
 
