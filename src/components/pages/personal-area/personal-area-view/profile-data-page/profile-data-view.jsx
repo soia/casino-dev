@@ -57,10 +57,10 @@ const ProfileDataView = ({
                     </p>
                     <div className="uploadAvatar">
                         <Upload
-                            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                             listType="picture-card"
                             fileList={fileList}
                             onPreview={handlePreview}
+                            beforeUpload={() => false}
                             onChange={handleChange}
                         >
                             {fileList.length >= 1 ? null : uploadButton}

@@ -52,7 +52,9 @@
         "minimumDepositAmount": "Minimum deposit amount",
         "depositAddress": "Deposit address",
         "topUpMyBalance": "Top Up my CNG balance",
-        "iWantToWithdraw": "I want to withdraw"
+        "iWantToWithdraw": "I want to withdraw",
+        "youCanUploadPNGFile": "You can upload only png or jpeg file.",
+        "imageMustSmallerThan5MB": "Image size must be 5 MB or less."
     },
     "firstScreen": {
         "title": "Game token",

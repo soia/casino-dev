@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import { message } from 'antd';
 import ErrorIndicator from '../../../error-page/error-indicator';
 import Spinner from '../../../../spinner';
 import ProfileDataView from './profile-data-view';
@@ -50,8 +51,6 @@ export class ProfileDataContainer extends Component {
         type: 'password',
     };
 
-    componentDidMount() {}
-
     handleCancel = () => this.setState({ previewVisible: false });
 
     handlePreview = async file => {
@@ -65,7 +64,34 @@ export class ProfileDataContainer extends Component {
         });
     };
 
-    handleChange = ({ fileList }) => this.setState({ fileList });
+    beforeUpload = file => {
+        const { t } = this.props;
+        const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+        const isLt5M = file.size / 1024 / 1024 < 5;
+        if (!isJpgOrPng) {
+            message.error(t('general.youCanUploadPNGFile'), 5);
+        } else if (!isLt5M) {
+            message.error(t('general.imageMustSmallerThan5MB'), 5);
+        } else {
+            this.uploadAvatar(file);
+        }
+    };
+
+    handleChange = ({ fileList }) => {
+        if (fileList.length) {
+            this.beforeUpload(fileList[0]);
+        } else {
+            this.setState({
+                fileList: [],
+            });
+        }
+    }
+
+    uploadAvatar = file => {
+        this.setState({
+            fileList: [file],
+        });
+    }
 
     inputOnchange = event => {
         const { name, value } = event.target;
@@ -300,6 +326,7 @@ export class ProfileDataContainer extends Component {
                 handleCancel={this.handleCancel}
                 inputOnchange={this.inputOnchange}
                 showHidePassword={this.showHidePassword}
+                beforeUpload={this.beforeUpload}
             />
         ) : null;
 
