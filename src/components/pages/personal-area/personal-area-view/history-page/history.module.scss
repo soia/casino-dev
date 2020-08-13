@@ -8,41 +8,21 @@
     margin: 0 1.7vw;
     padding: 2.3vw 2.64vw;
 
-    &__tabsWrapper {
+    &__headerContainer {
         display: flex;
-        justify-content: flex-end;
+        align-items: center;
 
-        &_item {
-            border: 0.056vw solid #D8D6ED;
-            font-family: $CoreSansGRegular;
-            color: #757575;
-            cursor: pointer;
-            transition: all 0.25s;
-            font-size: 0.89vw;
-            padding: 0.7vw 1.25vw;
-            width: fit-content;
-            border-radius: 0.5vw;
-            text-align: center;
-            margin-left: 1.4vw;
-            line-height: initial;
-            transition: all 0.25s;
-
-            &:hover {
-                background: linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
-                color: #fff;
-                border: 0.056vw solid linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
-            }
-        }
-
-        &_itemActive {
-            background: linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
-            color: #fff;
-            border: 0.056vw solid linear-gradient(20.27deg, #2A1F84 0.74%, #221876 72.26%);
+        &__id {
+            font-family: $Montserrat-Medium;
+            font-size: $desctop13px;
+            line-height: $desctop16px;
+            color: #A8A6C1;
+            margin-right: auto;
         }
 
         &_datePicker {
             border: 0.056vw solid #D8D6ED;
-            font-family: $CoreSansGRegular;
+            font-family: $Montserrat-Medium;
             color: #757575;
             cursor: pointer;
             transition: all 0.25s;
