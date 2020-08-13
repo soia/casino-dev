@@ -32,6 +32,7 @@ const ProfileDataView = ({
     submitChangeName,
     submitNewPassword,
     submitTwoFACode,
+    submitGenerateCode,
 }) => {
     const { t } = useTranslation();
     const uploadButton = (
@@ -148,6 +149,7 @@ const ProfileDataView = ({
                                 className={
                                     style.twoFactorAuth__qrCodeWrapper_generateCode
                                 }
+                                onClick={submitGenerateCode}
                             >
                                 <span>{t('general.generateCode')}</span>
                             </div>
@@ -276,6 +278,7 @@ ProfileDataView.defaultProps = {
     submitChangeName: () => {},
     submitNewPassword: () => {},
     submitTwoFACode: () => {},
+    submitGenerateCode: () => {},
 };
 
 ProfileDataView.propTypes = {
@@ -300,6 +303,7 @@ ProfileDataView.propTypes = {
     submitChangeName: PropTypes.func,
     submitNewPassword: PropTypes.func,
     submitTwoFACode: PropTypes.func,
+    submitGenerateCode: PropTypes.func,
 };
 
 export default ProfileDataView;

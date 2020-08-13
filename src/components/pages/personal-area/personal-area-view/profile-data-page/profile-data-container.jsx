@@ -352,6 +352,10 @@ export class ProfileDataContainer extends Component {
         }
     };
 
+    submitGenerateCode = () => {
+        message.success('Coming soon', 2);
+    }
+
     onError = () => {
         this.setState({
             error: true,
@@ -403,6 +407,7 @@ export class ProfileDataContainer extends Component {
                 submitChangeName={this.submitChangeName}
                 submitNewPassword={this.submitNewPassword}
                 submitTwoFACode={this.submitTwoFACode}
+                submitGenerateCode={this.submitGenerateCode}
             />
         ) : null;
 
