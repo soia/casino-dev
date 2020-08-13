@@ -53,7 +53,7 @@ const HeaderPersonalArea = () => {
                         />
                     </svg>
                 </Link>
-                <div className={style.header__logoWrapper}>
+                <Link to={`${personalAreaPath}${profileDataPath}`} className={style.header__logoWrapper}>
                     <Img
                         className={style.header__rightSide_logo}
                         src={avatar}
@@ -62,7 +62,7 @@ const HeaderPersonalArea = () => {
                     <p className={style.header__rightSide_name}>
                         Aquaman <br /> Washington
                     </p>
-                </div>
+                </Link>
             </div>
         </header>
     );
