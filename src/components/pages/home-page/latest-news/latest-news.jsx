@@ -94,7 +94,7 @@ const LatestNews = () => {
                                     <p className={style.latestNews__slickItem_content}>
                                         <TextTruncate
                                             line={2}
-                                            element="p"
+                                            element="span"
                                             truncateText="…"
                                             text={content}
                                         />
