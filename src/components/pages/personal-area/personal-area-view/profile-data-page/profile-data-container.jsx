@@ -85,13 +85,13 @@ export class ProfileDataContainer extends Component {
                 fileList: [],
             });
         }
-    }
+    };
 
     uploadAvatar = file => {
         this.setState({
             fileList: [file],
         });
-    }
+    };
 
     inputOnchange = event => {
         const { name, value } = event.target;
@@ -137,9 +137,7 @@ export class ProfileDataContainer extends Component {
                         [name]: value,
                         passwordErrors: {
                             ...state.passwordErrors,
-                            passwordLengthError: t(
-                                'error.password_at_least_8_chars',
-                            ),
+                            passwordLengthError: t('error.password_at_least_8_chars'),
                         },
                     }));
                 } else {
@@ -180,9 +178,7 @@ export class ProfileDataContainer extends Component {
                         [name]: value,
                         passwordErrors: {
                             ...state.passwordErrors,
-                            passwordLettersError: t(
-                                'error.password_at_least_1_letters',
-                            ),
+                            passwordLettersError: t('error.password_at_least_1_letters'),
                         },
                     }));
                 } else {
@@ -283,6 +279,64 @@ export class ProfileDataContainer extends Component {
         });
     };
 
+    submitChangeName = event => {
+        event.preventDefault();
+        const { nickname } = this.state;
+        const { t } = this.props;
+        if (!nickname.length) {
+            this.setState({
+                nicknameErrors: {
+                    nicknameCharactersError: t('error.field_can_not_be_empty'),
+                },
+            });
+        } else {
+            console.log(nickname, 'nickname');
+        }
+    };
+
+    submitNewPassword = event => {
+        event.preventDefault();
+        const {
+            password,
+            passwordErrors,
+            confirmPassword,
+            confirmPasswordErrors,
+        } = this.state;
+        const { t } = this.props;
+        const copyPasswordErrors = Object.assign({}, passwordErrors);
+        const copyConfirmPasswordErrors = Object.assign({}, confirmPasswordErrors);
+
+        Object.keys(copyPasswordErrors).forEach(key => {
+            if (!copyPasswordErrors[key]) delete copyPasswordErrors[key];
+        });
+        Object.keys(copyConfirmPasswordErrors).forEach(key => {
+            if (!copyConfirmPasswordErrors[key]) delete copyConfirmPasswordErrors[key];
+        });
+
+        if (!password.length) {
+            this.setState(state => ({
+                passwordErrors: {
+                    ...state.passwordErrors,
+                    passwordLengthError: t('error.field_can_not_be_empty'),
+                },
+            }));
+        } else if (!confirmPassword.length) {
+            this.setState(state => ({
+                confirmPasswordErrors: {
+                    ...state.confirmPasswordErrors,
+                    confirmPasswordCharactersError: t('error.field_can_not_be_empty'),
+                },
+            }));
+        } else if (
+            Object.keys(copyPasswordErrors).length === 0
+            && Object.keys(copyConfirmPasswordErrors).length === 0
+        ) {
+            if (password && confirmPassword) {
+                console.log(password, 'password');
+            }
+        }
+    };
+
     onError = () => {
         this.setState({
             error: true,
@@ -292,7 +346,11 @@ export class ProfileDataContainer extends Component {
 
     render() {
         const {
-            loading, error, previewVisible, previewImage, fileList,
+            loading,
+            error,
+            previewVisible,
+            previewImage,
+            fileList,
             nickname,
             twoFACode,
             password,
@@ -327,6 +385,8 @@ export class ProfileDataContainer extends Component {
                 inputOnchange={this.inputOnchange}
                 showHidePassword={this.showHidePassword}
                 beforeUpload={this.beforeUpload}
+                submitChangeName={this.submitChangeName}
+                submitNewPassword={this.submitNewPassword}
             />
         ) : null;
 

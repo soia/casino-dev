@@ -29,6 +29,8 @@ const ProfileDataView = ({
     confirmPasswordErrors,
     showHidePassword,
     type,
+    submitChangeName,
+    submitNewPassword,
 }) => {
     const { t } = useTranslation();
     const uploadButton = (
@@ -78,7 +80,7 @@ const ProfileDataView = ({
                         </Modal>
                     </div>
                 </div>
-                <div>
+                <form onSubmit={submitChangeName}>
                     <p className={style.profileData__changeUserName}>
                         {t('general.changeNickname')}
                     </p>
@@ -91,16 +93,16 @@ const ProfileDataView = ({
                             value={nickname}
                             onChange={inputOnchange}
                             error={nicknameErrors}
-                            inputStyle={style.profileData__input}
+                            inputStyle={style.profileData__inputNickname}
                             labelText={t('general.enterYourNickname')}
                             labelStyle={style.profileData__label}
                             inputColor="#B0AED3"
                         />
-                        <div className={style.profileData__changeBtn}>
+                        <button type="submit" className={style.profileData__changeBtn}>
                             <span>{t('general.сhange')}</span>
-                        </div>
+                        </button>
                     </div>
-                </div>
+                </form>
             </div>
             <div className={style.twoFactorAuth}>
                 <div className={style.twoFactorAuth__header}>
@@ -233,7 +235,10 @@ const ProfileDataView = ({
                             </div>
                         ) : null}
                     </div>
-                    <div className={style.resetPasswordContainer__saveBtn}>
+                    <div
+                        className={style.resetPasswordContainer__saveBtn}
+                        onClick={submitNewPassword}
+                    >
                         <span>{t('general.save')}</span>
                     </div>
                 </div>
@@ -261,6 +266,8 @@ ProfileDataView.defaultProps = {
     handleChange: () => {},
     handleCancel: () => {},
     showHidePassword: () => {},
+    submitChangeName: () => {},
+    submitNewPassword: () => {},
 };
 
 ProfileDataView.propTypes = {
@@ -282,6 +289,8 @@ ProfileDataView.propTypes = {
     handleChange: PropTypes.func,
     handleCancel: PropTypes.func,
     showHidePassword: PropTypes.func,
+    submitChangeName: PropTypes.func,
+    submitNewPassword: PropTypes.func,
 };
 
 export default ProfileDataView;
