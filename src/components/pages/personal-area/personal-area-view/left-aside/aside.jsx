@@ -180,22 +180,22 @@ class Aside extends Component {
                         </div>
                         <div id="subMenu" className={submenuStyle}>
                             <NavLink
-                                to={`${personalAreaPath}${historyPath}`}
+                                to={`${personalAreaPath}${historyPath}/Casino1`}
                                 className={style.aside__subLink}
                             >
                                 Casino 1
                             </NavLink>
                             <NavLink
-                                to={`${personalAreaPath}${historyPath}`}
+                                to={`${personalAreaPath}${historyPath}/Casino2`}
                                 className={style.aside__subLink}
                             >
-                                Casino 1
+                                Casino 2
                             </NavLink>
                             <NavLink
-                                to={`${personalAreaPath}${historyPath}`}
+                                to={`${personalAreaPath}${historyPath}/Casino3`}
                                 className={style.aside__subLink}
                             >
-                                Casino 1
+                                Casino 3
                             </NavLink>
                         </div>
                     </li>

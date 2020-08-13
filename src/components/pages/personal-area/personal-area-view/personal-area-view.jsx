@@ -27,7 +27,7 @@ const PersonalAreaView = () => (
             <Route path={`${personalAreaPath}${depositPath}`} component={Deposit} exact />
             <Route path={`${personalAreaPath}${withdrawalPath}`} component={Withdrawal} exact />
             <Route path={`${personalAreaPath}${balancePath}`} component={Balance} exact />
-            <Route path={`${personalAreaPath}${historyPath}`} component={History} exact />
+            <Route path={`${personalAreaPath}${historyPath}/:id?`} component={History} exact />
             <Route
                 path={`${personalAreaPath}${profileDataPath}`}
                 component={ProfileData}

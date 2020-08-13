@@ -70,6 +70,8 @@
         font-size: $desctop10px;
         line-height: $desctop24px;
         color: #8e8e8e;
+        padding-left: 0.6vw;
+        max-width: 8vw;
     }
 
     &__backgroundImage {
@@ -79,24 +81,24 @@
         height: 22vw;
     }
 
+    &__openedSubmenu,
+    &__closedSubmenu {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5vw 0 0 2.8vw;
+        transition: max-height 0.25s, opacity 0.25s, visibility 0.25s, padding 0.25s ease;
+    }
+
     &__openedSubmenu {
-        transition: max-height 0.4s, opacity 0.1s, visibility 0s, padding 0.2s ease;
         max-height: $desctop120px;
         opacity: 1;
         visibility: visible;
-        display: flex;
-        flex-direction: column;
-        margin-left: 3.2vw;
     }
 
     &__closedSubmenu {
         max-height: 0;
-        display: flex;
-        flex-direction: column;
-        margin-left: 3.2vw;
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
-        transition: max-height 0.25s, opacity 0.25s, visibility 0.25s, padding 0.25s ease;
     }
 }
