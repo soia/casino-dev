@@ -88,7 +88,11 @@ const Field = props => {
 
     return (
         <div className={style.inputWrapper}>
-            <label className={labelStyle} htmlFor={id}>
+            <label
+                style={errorValues.length ? { color: '#E55541' } : {}}
+                className={labelStyle}
+                htmlFor={id}
+            >
                 {labelText}
             </label>
             <div className={style.frame} style={borderInlineStyle}>
