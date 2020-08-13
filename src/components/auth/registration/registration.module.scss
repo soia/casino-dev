@@ -44,6 +44,7 @@
 
     &__inputWrapper {
         margin: 0 0.5vw 1.5vw;
+        position: relative;
 
         @media only screen and (max-width: 499px) {
             margin: 0 1.5vw 4.5vw;
@@ -67,6 +68,33 @@
                 margin-top: 1.5vw;
                 margin-bottom: 1vw;
                 font-size: 2vw;
+            }
+        }
+
+        &_eye {
+            position: absolute;
+            right: 1vw;
+            top: 43%;
+            cursor: pointer;
+            z-index: 10;
+
+            @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                top: 41%;
+                right: 1vw;
+            }
+
+            img {
+                width: $desctop16px;
+                height: $desctop16px;
+
+                @media only screen and (min-width: 500px) and (max-width: 1024px) {
+                    width: $tablet12px;
+                    height: $tablet12px;
+                }
+            }
+
+            @media only screen and (max-width: 499px) {
+               display: none;
             }
         }
     }
@@ -113,7 +141,7 @@
     }
 
     &__labelError {
-        color: #E55541;
+        color: #e55541;
     }
 
     &__input {
@@ -204,11 +232,11 @@
         }
 
         &_titleError {
-            color: #E55541;
+            color: #e55541;
 
             a {
-                color: #E55541;
-                border-bottom: 0.056vw solid #E55541;
+                color: #e55541;
+                border-bottom: 0.056vw solid #e55541;
             }
         }
 
@@ -217,8 +245,8 @@
             margin-left: 0.5vw;
 
             &:hover {
-                color: #FAD961;
-                border-bottom: 0.056vw solid #FAD961;
+                color: #fad961;
+                border-bottom: 0.056vw solid #fad961;
             }
         }
     }
@@ -240,7 +268,7 @@
         font-family: $CoreSansGRegular;
         font-size: 1vw;
         color: #fff;
-        background: linear-gradient(172.75deg, #FAD961 -7.82%, #F76B1C 99.05%);
+        background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);
         border: none;
         height: 3.5vw;
         min-width: 22vw;
@@ -274,13 +302,13 @@
     }
 
     &__error {
-        border: 0.07vw solid #E55541;
+        border: 0.07vw solid #e55541;
 
         input::placeholder {
-            color: #E55541;
+            color: #e55541;
         }
 
-        &:first-child{
+        &:first-child {
             display: inline-flex;
         }
     }

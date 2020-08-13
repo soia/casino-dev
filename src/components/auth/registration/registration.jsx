@@ -11,6 +11,7 @@ import { countries } from '../../../helpers/countries';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
 import Field from '../../small-components/field';
+import eye from '../../assets/images/white-eye.svg';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
 import style from './registration.module.scss';
 
@@ -53,6 +54,7 @@ class Registration extends PureComponent {
             passwordLettersError: '',
         },
         termOfServiceError: '',
+        type: 'password',
     };
 
     location = value => {
@@ -464,6 +466,14 @@ class Registration extends PureComponent {
         });
     };
 
+    showHidePassword = () => {
+        const { type } = this.state;
+        this.setState({
+            type: type === 'password' ? 'text' : 'password',
+        });
+    };
+
+
     render() {
         const { t, signUp, login } = this.props;
         const {
@@ -479,6 +489,7 @@ class Registration extends PureComponent {
                 country,
                 termOfService,
             },
+            type,
         } = this.state;
         const customStyles = {
             content: {
@@ -516,7 +527,7 @@ class Registration extends PureComponent {
                     <div className={style.registration__inputWrapper}>
                         <Field
                             id="userPasswordRegistration"
-                            type="password"
+                            type={type}
                             placeholder={t('auth.typePassword')}
                             name="userPasswordRegistration"
                             value={userPasswordRegistration}
@@ -524,12 +535,23 @@ class Registration extends PureComponent {
                             error={passwordErrors}
                             inputStyle={style.registration__input}
                             inputColor="#fff"
+                            passwordType
                         />
+                        {userPasswordRegistration.length >= 1 ? (
+                            <div
+                                onClick={this.showHidePassword}
+                                className={
+                                    style.registration__inputWrapper_eye
+                                }
+                            >
+                                <img src={eye} alt="eye" />
+                            </div>
+                        ) : null}
                     </div>
                     <div className={style.registration__inputWrapper}>
                         <Field
                             id="confirmPassword"
-                            type="password"
+                            type={type}
                             placeholder={t('general.confirmPassword')}
                             name="confirmPassword"
                             value={confirmPassword}
@@ -537,7 +559,18 @@ class Registration extends PureComponent {
                             error={confirmPasswordErrors}
                             inputStyle={style.registration__input}
                             inputColor="#fff"
+                            passwordType
                         />
+                        {confirmPassword.length >= 1 ? (
+                            <div
+                                onClick={this.showHidePassword}
+                                className={
+                                    style.registration__inputWrapper_eye
+                                }
+                            >
+                                <img src={eye} alt="eye" />
+                            </div>
+                        ) : null}
                     </div>
                     <div className={style.registration__select}>
                         <p
