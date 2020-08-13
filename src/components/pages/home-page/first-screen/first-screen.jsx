@@ -19,14 +19,17 @@ const FirstScreen = () => {
             className={style.firstScreen}
             style={window.innerWidth > 767 ? bgImage : null}
         >
-            <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInRight" delay="0.01s">
-                <img
-                    className={style.firstScreen__icon}
-                    src={firstScreenIcon}
-                    alt="firstScreenIcon"
-                />
-            </ReactWOW>
-            <ReactWOW disabled={!(window.innerWidth > 767)} animation="bounceInDown" delay="0.5s">
+            <img
+                className={style.firstScreen__icon}
+                src={firstScreenIcon}
+                alt="firstScreenIcon"
+            />
+
+            <ReactWOW
+                disabled={!(window.innerWidth > 767)}
+                animation="bounceInDown"
+                delay="0.5s"
+            >
                 <img
                     className={style.firstScreen__chip}
                     src={chip}
@@ -35,7 +38,11 @@ const FirstScreen = () => {
             </ReactWOW>
             <div className={style.firstScreen__leftSide}>
                 <div>
-                    <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInLeft" delay="0.01s">
+                    <ReactWOW
+                        disabled={!(window.innerWidth > 767)}
+                        animation="fadeInLeft"
+                        delay="0.01s"
+                    >
                         <div className={style.firstScreen__leftSide_titleWrapper}>
                             <div className={style.firstScreen__leftSide_title}>
                                 <TextTruncate
@@ -55,7 +62,11 @@ const FirstScreen = () => {
                             </div>
                         </div>
                     </ReactWOW>
-                    <ReactWOW disabled={!(window.innerWidth > 767)} animation="fadeInLeft" delay="0.01s">
+                    <ReactWOW
+                        disabled={!(window.innerWidth > 767)}
+                        animation="fadeInLeft"
+                        delay="0.01s"
+                    >
                         <div>
                             <div className={style.firstScreen__leftSide_subtitle}>
                                 <TextTruncate
