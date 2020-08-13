@@ -32,13 +32,13 @@ class Registration extends PureComponent {
     state = {
         user: {
             country: '',
-            username: '',
+            confirmPassword: '',
             email: '',
             userPasswordRegistration: '',
             termOfService: false,
         },
-        usernameErrors: {
-            usernameLengthError: '',
+        confirmPasswordErrors: {
+            confirmPasswordCharactersError: '',
         },
         countryErrors: '',
         emailErrors: {
@@ -68,21 +68,11 @@ class Registration extends PureComponent {
     inputOnchange = event => {
         const { t } = this.props;
         const { name, value } = event.target;
+        const {
+            user: { userPasswordRegistration, confirmPassword },
+        } = this.state;
         const numbersLatinLettersSymbols = /[A-Za-z0-9!@#,./$%^&*/':+{}=();" `/\-/\]/\\()/[_]+$/;
         const numbersLatinLetters = /[A-Za-z0-9]+$/;
-
-        if (name === 'username') {
-            this.setState(state => ({
-                user: {
-                    ...state.user,
-                    [name]: value,
-                },
-                usernameErrors: {
-                    ...state.usernameErrors,
-                    usernameLengthError: value ? '' : t('error.field_can_not_be_empty'),
-                },
-            }));
-        }
 
         // EMAIL VALIDATION
         if (name === 'email') {
@@ -269,6 +259,26 @@ class Registration extends PureComponent {
                     }));
                 }
                 // at least one letters
+
+                // paswords doesn't match
+                if (confirmPassword.length > 0 && confirmPassword !== value) {
+                    this.setState(state => ({
+                        confirmPasswordErrors: {
+                            ...state.confirmPasswordErrors,
+                            confirmPasswordDoesntMatch: t(
+                                'error.password_does_not_match',
+                            ),
+                        },
+                    }));
+                } else {
+                    this.setState(state => ({
+                        confirmPasswordErrors: {
+                            ...state.confirmPasswordErrors,
+                            confirmPasswordDoesntMatch: '',
+                        },
+                    }));
+                }
+                // paswords doesn't match
             } else {
                 this.setState(state => ({
                     passwordErrors: {
@@ -279,8 +289,57 @@ class Registration extends PureComponent {
                     },
                 }));
             }
+        }
+        // PASSWORD VALIDATION
+
+        // CONFIRM PASSWORD VALIDATION
+        if (name === 'confirmPassword') {
+            // only numbers and letters
+            if (value === '' || numbersLatinLetters.test(value)) {
+                this.setState(state => ({
+                    user: {
+                        ...state.user,
+                        [name]: value,
+                    },
+
+                    confirmPasswordErrors: {
+                        ...state.confirmPasswordErrors,
+                        confirmPasswordCharactersError: '',
+                    },
+                }));
+
+                // paswords doesn't match
+                if (value.length > 0 && userPasswordRegistration !== value) {
+                    this.setState(state => ({
+                        confirmPasswordErrors: {
+                            ...state.confirmPasswordErrors,
+                            confirmPasswordDoesntMatch: t(
+                                'error.password_does_not_match',
+                            ),
+                        },
+                    }));
+                } else {
+                    this.setState(state => ({
+                        confirmPasswordErrors: {
+                            ...state.confirmPasswordErrors,
+                            confirmPasswordDoesntMatch: '',
+                        },
+                    }));
+                }
+                // paswords doesn't match
+            } else {
+                this.setState(state => ({
+                    passwordErrors: {
+                        ...state.passwordErrors,
+                        confirmPasswordCharactersError: t(
+                            'error.only_latin_letters_and_numbers_allowed',
+                        ),
+                    },
+                }));
+            }
             // PASSWORD VALIDATION
         }
+        // CONFIRM PASSWORD VALIDATION
     };
 
     validateFields = () => {
@@ -289,7 +348,7 @@ class Registration extends PureComponent {
             user: {
                 email,
                 userPasswordRegistration,
-                username,
+                confirmPassword,
                 country,
                 termOfService,
             },
@@ -301,11 +360,11 @@ class Registration extends PureComponent {
             });
         }
 
-        if (username.length < 1) {
+        if (confirmPassword.length < 1) {
             this.setState(state => ({
-                usernameErrors: {
-                    ...state.usernameErrors,
-                    usernameLengthError: t('error.field_can_not_be_empty'),
+                confirmPasswordErrors: {
+                    ...state.confirmPasswordErrors,
+                    confirmPasswordCharactersError: t('error.field_can_not_be_empty'),
                 },
             }));
         }
@@ -343,34 +402,41 @@ class Registration extends PureComponent {
                 email,
                 userPasswordRegistration,
                 termOfService,
-                username,
+                confirmPassword,
+                country,
             },
             emailErrors,
             passwordErrors,
+            confirmPasswordErrors,
         } = this.state;
 
         const copyEmailErrors = Object.assign({}, emailErrors);
         const copyPasswordErrors = Object.assign({}, passwordErrors);
+        const copyConfirmPassword = Object.assign({}, confirmPasswordErrors);
 
         Object.keys(copyEmailErrors).forEach(key => {
             if (!copyEmailErrors[key]) delete copyEmailErrors[key];
         });
+
         Object.keys(copyPasswordErrors).forEach(key => {
             if (!copyPasswordErrors[key]) delete copyPasswordErrors[key];
+        });
+
+        Object.keys(copyConfirmPassword).forEach(key => {
+            if (!copyConfirmPassword[key]) delete copyConfirmPassword[key];
         });
 
         if (
             Object.keys(copyEmailErrors).length === 0
             && Object.keys(copyPasswordErrors).length === 0
+            && Object.keys(copyConfirmPassword).length === 0
+            && termOfService
+            && country
+            && email
+            && confirmPassword
+            && userPasswordRegistration
         ) {
-            if (
-                email
-                && username
-                && userPasswordRegistration
-                && termOfService
-            ) {
-                console.log('success');
-            }
+            console.log('success');
         }
     };
 
@@ -392,7 +458,9 @@ class Registration extends PureComponent {
                 ...user,
                 termOfService: event.target.checked,
             },
-            termOfServiceError: event.target.checked ? '' : t('error.field_can_not_be_empty'),
+            termOfServiceError: event.target.checked
+                ? ''
+                : t('error.field_can_not_be_empty'),
         });
     };
 
@@ -401,11 +469,11 @@ class Registration extends PureComponent {
         const {
             emailErrors,
             passwordErrors,
-            usernameErrors,
+            confirmPasswordErrors,
             countryErrors,
             termOfServiceError,
             user: {
-                username,
+                confirmPassword,
                 email,
                 userPasswordRegistration,
                 country,
@@ -424,7 +492,6 @@ class Registration extends PureComponent {
             document.documentElement.style.overflowY = 'visible';
         }
 
-
         return (
             <ModalWindow
                 isOpen={signUp}
@@ -433,19 +500,6 @@ class Registration extends PureComponent {
             >
                 <h3 className={style.registration__title}>{t('header.registration')}</h3>
                 <form className={style.registration__form} autoComplete="off">
-                    <div className={style.registration__inputWrapper}>
-                        <Field
-                            id="username"
-                            type="username"
-                            placeholder={t('auth.typeName')}
-                            name="username"
-                            value={username}
-                            onChange={this.inputOnchange}
-                            error={usernameErrors}
-                            inputStyle={style.registration__input}
-                            inputColor="#fff"
-                        />
-                    </div>
                     <div className={style.registration__inputWrapper}>
                         <Field
                             id="email"
@@ -468,6 +522,19 @@ class Registration extends PureComponent {
                             value={userPasswordRegistration}
                             onChange={this.inputOnchange}
                             error={passwordErrors}
+                            inputStyle={style.registration__input}
+                            inputColor="#fff"
+                        />
+                    </div>
+                    <div className={style.registration__inputWrapper}>
+                        <Field
+                            id="confirmPassword"
+                            type="password"
+                            placeholder={t('general.confirmPassword')}
+                            name="confirmPassword"
+                            value={confirmPassword}
+                            onChange={this.inputOnchange}
+                            error={confirmPasswordErrors}
                             inputStyle={style.registration__input}
                             inputColor="#fff"
                         />
@@ -501,11 +568,16 @@ class Registration extends PureComponent {
                     <div className={style.registration__checkBoxWrapper}>
                         <span className={style.registration__checkbox}>
                             <div className={style.registration__checkbox_wrapper}>
-                                <Checkbox checked={termOfService} onChange={this.termOfUse}>
+                                <Checkbox
+                                    checked={termOfService}
+                                    onChange={this.termOfUse}
+                                >
                                     <span
                                         className={classNames(
                                             style.registration__checkbox_title,
-                                            termOfServiceError ? style.registration__checkbox_titleError : {},
+                                            termOfServiceError
+                                                ? style.registration__checkbox_titleError
+                                                : {},
                                         )}
                                     >
                                         {t('auth.iAm18years')}
@@ -515,8 +587,8 @@ class Registration extends PureComponent {
                                             className={style.registration__checkbox_link}
                                         >
                                             {t('auth.termsOfLicenseAgreement')}.
-                                        </Link>
-                                        {' '}{t('auth.iHaveReadAndFullyUnderstand')}
+                                        </Link>{' '}
+                                        {t('auth.iHaveReadAndFullyUnderstand')}
                                         <Link
                                             target="_blank"
                                             to={privacyPolicyPath}
@@ -535,9 +607,7 @@ class Registration extends PureComponent {
                             type="button"
                             onClick={this.registratiOnSubmit}
                         >
-                            <span>
-                                {t('auth.createAccount')}
-                            </span>
+                            <span>{t('auth.createAccount')}</span>
                         </button>
                     </div>
                     <div
