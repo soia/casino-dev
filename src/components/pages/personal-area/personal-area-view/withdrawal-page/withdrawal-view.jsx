@@ -1,9 +1,12 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import leftArrow from '../../../../assets/images/left-arrow.svg';
 import toFixedBigValue from '../../../../../helpers/big-number';
 import Field from '../../../../small-components/field';
+import { personalAreaPath, balancePath } from '../../../../../constants';
 import style from './withdrawal.module.scss';
 import './withdrawal.scss';
 
@@ -23,6 +26,24 @@ const WithdrawalView = ({
 
     return (
         <div className={style.withdrawal}>
+            <div className={style.withdrawal__header}>
+                <Link
+                    to={`${personalAreaPath}${balancePath}`}
+                    className={style.withdrawal__arrowBackWrapper}
+                >
+                    <img
+                        className={style.withdrawal__leftArrow}
+                        src={leftArrow}
+                        alt="leftArrow"
+                    />
+                    <p className={style.withdrawal__arrowBackWrapper_title}>
+                        {t('general.back')}
+                    </p>
+                </Link>
+                <p className={style.withdrawal__header_title}>
+                    {t('general.withdrawal')}
+                </p>
+            </div>
             <div className={style.withdrawal__container}>
                 <div className={style.withdrawal__wrapper}>
                     <div className={style.withdrawal__inputWrapper}>

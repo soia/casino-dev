@@ -61,7 +61,8 @@
         "total": "Total",
         "fee": "Fee",
         "withdrawalRequest": "Withdrawal request",
-        "max": "Max"
+        "max": "Max",
+        "back": "Back"
     },
     "firstScreen": {
         "title": "Game token",

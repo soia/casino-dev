@@ -61,7 +61,8 @@
         "total": "Всего",
         "fee": "Комиссия",
         "withdrawalRequest": "Запрос на вывод",
-        "max": "Maкс"
+        "max": "Maкс",
+        "back": "Назад"
     },
     "firstScreen": {
         "title": "Game token",
