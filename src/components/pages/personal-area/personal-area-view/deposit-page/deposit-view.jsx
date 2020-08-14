@@ -30,9 +30,9 @@ const DepositView = () => {
                     </p>
                     <div className={style.depositContainer__qrCodeValueWrapper}>
                         <Field
-                            id="twoFACode"
+                            id="qrCodeValue"
                             type="text"
-                            name="twoFACode"
+                            name="qrCodeValue"
                             value={qrCodeValue}
                             inputStyle={style.depositContainer__input}
                             inputColor="#B0AED3"

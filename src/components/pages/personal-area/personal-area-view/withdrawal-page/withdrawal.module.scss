@@ -3,11 +3,104 @@
 
 .withdrawal {
     flex: 1;
-    background: linear-gradient(360deg, #FFFFFF 0%, rgba(216, 214, 237, 0.56) 81.29%);
+    background: linear-gradient(360deg, #ffffff 0%, rgba(216, 214, 237, 0.56) 81.29%);
     border-radius: 1.5vw;
     margin: 0 1.7vw;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    &__container {
+        background: rgba(216, 214, 237, 0.3);
+        border: $desctop1px solid #d8d6ed;
+        border-radius: $desctop12px;
+        padding: $desctop110px $desctop80px $desctop45px $desctop60px;
+        margin: 5vw 2.5vw;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__inputWrapper {
+        position: relative;
+    }
+
+    &__input,
+    &__amountInput {
+        display: flex;
+        width: 18vw;
+        height: 2.5vw;
+        background: transparent;
+        border-radius: 0.1vw;
+        border: none;
+        padding: 0 2vw 0 1vw;
+        font-size: 1vw;
+        line-height: 1.4vw;
+        outline: none;
+        font-family: $Montserrat-Medium;
+        color: #b0aed3;
+
+        &::placeholder {
+            font-family: $Montserrat-Medium;
+            font-size: $desctop12px;
+            line-height: 3.8vw;
+            color: #b0aed3;
+        }
+    }
+
+    &__amountInput {
+        padding-right: 7.2vw;
+    }
+
+    &__label {
+        color: #b0aed3;
+        font-size: $desctop10px;
+        line-height: $desctop12px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 1vw;
+        font-family: $Montserrat-Medium;
+    }
+
+    &__fee {
+        font-family: $Montserrat-Medium;
+        font-size: $desctop12px;
+        line-height: $desctop17px;
+        margin-top: $desctop6px;
+        color: #686868;
+        opacity: 0.9;
+    }
+
+    &__maxBtn,
+    &__submitBtn {
+        @include beveledButton;
+        height: 2.47vw;
+        font-family: $Montserrat-Medium;
+        font-size: 0.9vw;
+        color: #fff;
+        background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);
+        transition: transform 0.25s;
+        border: none;
+        outline: none;
+
+        &:hover {
+            background: linear-gradient(
+                172.75deg,
+                rgba(250, 217, 97, 0.8) -7.82%,
+                rgba(247, 107, 28, 0.8) 99.05%
+            );
+        }
+    }
+
+    &__maxBtn {
+        min-width: 6.33vw;
+        margin-left: 3vw;
+        position: absolute;
+        right: 0.1vw;
+        top: 1.4vw;
+    }
+
+    &__submitBtn {
+        min-width: $desctop259px;
+        margin: $desctop75px auto 0;
+    }
 }

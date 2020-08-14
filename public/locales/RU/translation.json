@@ -54,7 +54,14 @@
         "topUpMyBalance": "Пополнить баланс CNG",
         "iWantToWithdraw": "Я хочу вывести средства",
         "youCanUploadPNGFile": "You can upload only png or jpeg file.",
-        "imageMustSmallerThan5MB": "Размер изображение должен быть 5 мб или меньше."
+        "imageMustSmallerThan5MB": "Размер изображение должен быть 5 мб или меньше.",
+        "withdrawalAddress": "Адрес для вывода",
+        "typeHere": "Введите здесь ...",
+        "amount": "Количество",
+        "total": "Всего",
+        "fee": "Комиссия",
+        "withdrawalRequest": "Запрос на вывод",
+        "max": "Maкс"
     },
     "firstScreen": {
         "title": "Game token",
@@ -139,7 +146,8 @@
         "password_at_least_1_upperCase_letter": "Пароль должен содержать не менее 1 буквы в верхнем регистре.",
         "only_latin_letters_and_numbers_allowed": "Разрешены только латинские буквы и цифры.",
         "password_does_not_match": "Пароль не совпадает",
-        "need_to_agree": "Подтвердить условия использования"
+        "need_to_agree": "Подтвердить условия использования",
+        "minimumWithdrawalAmount": "Минимальная сумма вывод"
     },
     "aside": {
         "balance": "Баланс",
