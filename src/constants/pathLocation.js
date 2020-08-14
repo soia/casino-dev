@@ -7,8 +7,8 @@ const balancePath = '/balance';
 const historyPath = '/history';
 const profileDataPath = '/profile';
 const documentsPath = '/documents';
-const depositPath = '/deposit';
-const withdrawalPath = '/withdrawal';
+const depositPath = '/balance/deposit';
+const withdrawalPath = '/balance/withdrawal';
 
 export {
     loginPath,
