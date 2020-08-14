@@ -25,7 +25,7 @@
     }
 
     &__wrapper {
-        padding: $desctop60px 14.42vw 0;
+        padding: $desctop60px 12.78vw 0;
         display: flex;
         justify-content: space-between;
 
@@ -35,7 +35,7 @@
         }
 
         &_item {
-            padding: $desctop40px $desctop55px;
+            padding: 2.09vw 2.87vw;
             width: 22.17vw;
             background-color: rgba(184, 182, 207, 0.1);
             border-radius: $desctop8px;
@@ -79,8 +79,8 @@
 
         &_content {
             font-family: $CoreSansGRegular;
-            font-size: $desctop20px;
-            line-height: $desctop30px;
+            font-size: 1.25vw;
+            line-height: 2.09vw;
             color: #2C3769;
             transition: all 0.25s;
 
