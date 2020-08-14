@@ -21,50 +21,12 @@ export class WithdrawalContainer extends Component {
 
     inputOnchange = event => {
         const { name, value } = event.target;
-        const { t } = this.props;
-        const onlyNumbers = /^[0-9.]+$/;
-
-        if (name === 'address') {
-            this.setState(state => ({
-                [name]: value,
-                addressErrors: {
-                    ...state.addressErrors,
-                    addressCharactersError: '',
-                },
-            }));
-        }
-
-        if (name === 'amount') {
-            if (event.target.value === '' || onlyNumbers.test(event.target.value)) {
-                this.setState(state => ({
-                    [name]: value,
-                    amountErrors: {
-                        ...state.amountErrors,
-                        amountCharactersError: '',
-                    },
-                }));
-            }
-
-            if (+value > this.fee) {
-                this.setState(state => ({
-                    amountErrors: {
-                        ...state.amountErrors,
-                        amountFeeError: '',
-                    },
-                }));
-            } else {
-                this.setState(state => ({
-                    amountErrors: {
-                        ...state.amountErrors,
-                        amountFeeError: `${t('error.minimumWithdrawalAmount')} ${this.fee}`,
-                    },
-                }));
-            }
-        }
+        this.validateFields(name, value);
     };
 
-    validateFields = () => {
+    validateFields = (name, value) => {
         const { t } = this.props;
+        const onlyNumbers = /^[0-9.]+$/;
         const { address, amount } = this.state;
 
         if (address.length < 1) {
@@ -93,6 +55,44 @@ export class WithdrawalContainer extends Component {
                 },
             }));
         }
+
+        if (name === 'address') {
+            this.setState(state => ({
+                [name]: value,
+                addressErrors: {
+                    ...state.addressErrors,
+                    addressCharactersError: '',
+                },
+            }));
+        }
+
+        if (name === 'amount') {
+            if (value === '' || onlyNumbers.test(value)) {
+                this.setState(state => ({
+                    [name]: value,
+                    amountErrors: {
+                        ...state.amountErrors,
+                        amountCharactersError: '',
+                    },
+                }));
+            }
+
+            if (+value > this.fee) {
+                this.setState(state => ({
+                    amountErrors: {
+                        ...state.amountErrors,
+                        amountFeeError: '',
+                    },
+                }));
+            } else {
+                this.setState(state => ({
+                    amountErrors: {
+                        ...state.amountErrors,
+                        amountFeeError: `${t('error.minimumWithdrawalAmount')} ${this.fee}`,
+                    },
+                }));
+            }
+        }
     };
 
     setMaxAmount = () => {
@@ -104,7 +104,10 @@ export class WithdrawalContainer extends Component {
                 ...state.amountErrors,
                 amountCharactersError: '',
             },
-        }));
+        }), () => {
+            const { amount } = this.state;
+            this.validateFields('amount', amount);
+        });
     };
 
     submit = async () => {
