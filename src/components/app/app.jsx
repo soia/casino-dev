@@ -18,6 +18,7 @@ import '../assets/styles/reset.scss';
 import '../assets/styles/search-select.scss';
 import './app.scss';
 import '../assets/styles/fonts.scss';
+import 'react-notifications-component/dist/theme.css';
 
 const App = () => {
     const [loading, setLoading] = useState(true);

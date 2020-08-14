@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import ReactNotification, { store } from 'react-notifications-component';
 import { message } from 'antd';
 import ErrorIndicator from '../../../error-page/error-indicator';
 import Spinner from '../../../../spinner';
@@ -353,7 +354,19 @@ export class ProfileDataContainer extends Component {
     };
 
     submitGenerateCode = () => {
-        message.success('Coming soon', 2);
+        store.addNotification({
+            title: 'Success!',
+            message: 'Coming soon!',
+            type: 'success',
+            insert: 'top',
+            container: 'top-right',
+            animationIn: ['animated', 'zoomIn'],
+            animationOut: ['animated', 'zoomOut'],
+            dismiss: {
+                duration: 3000,
+                pauseOnHover: true,
+            },
+        });
     }
 
     onError = () => {
@@ -416,6 +429,7 @@ export class ProfileDataContainer extends Component {
                 {errorMessage}
                 {spinner}
                 {content}
+                <ReactNotification />
             </Fragment>
         );
     }
