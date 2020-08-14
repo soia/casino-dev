@@ -6,13 +6,45 @@
     background: linear-gradient(360deg, #FFFFFF 0%, rgba(216, 214, 237, 0.56) 81.29%);
     border-radius: 1.5vw;
     margin: 0 1.7vw;
+    position: relative;
+
+    &__header {
+        display: flex;
+        margin: 2vw 2.5vw;
+
+        &_title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: $Montserrat-Medium;
+            font-size: $desctop20px;
+            line-height: $desctop24px;
+            color: #a8a6c1;
+        }
+    }
+
+    &__arrowBackWrapper {
+        display: flex;
+        align-items: center;
+
+        &_title {
+            margin-left: 0.5vw;
+            font-family: $Montserrat-Medium;
+            font-size: $desctop14px;
+            color: #a8a6c1;
+        }
+    }
+
+    &__leftArrow {
+        width: 1.5vw;
+    }
 }
 
 .depositContainer {
     display: flex;
     border: $desctop1px solid #D8D6ED;
     border-radius: $desctop12px;
-    margin: 5vw 2.5vw;
+    margin: 1vw 2.5vw;
     padding: $desctop21px $desctop17px;
 
     &__rightSide {

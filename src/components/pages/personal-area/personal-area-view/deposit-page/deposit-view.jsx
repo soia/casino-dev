@@ -2,8 +2,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import QRCode from 'qrcode.react';
+import { Link } from 'react-router-dom';
 import { message } from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { personalAreaPath, balancePath } from '../../../../../constants';
+import leftArrow from '../../../../assets/images/left-arrow.svg';
 import Field from '../../../../small-components/field';
 import style from './deposit.module.scss';
 import './deposit.scss';
@@ -14,6 +17,24 @@ const DepositView = () => {
 
     return (
         <div className={style.deposit}>
+            <div className={style.deposit__header}>
+                <Link
+                    to={`${personalAreaPath}${balancePath}`}
+                    className={style.deposit__arrowBackWrapper}
+                >
+                    <img
+                        className={style.deposit__leftArrow}
+                        src={leftArrow}
+                        alt="leftArrow"
+                    />
+                    <p className={style.deposit__arrowBackWrapper_title}>
+                        {t('general.back')}
+                    </p>
+                </Link>
+                <p className={style.deposit__header_title}>
+                    {t('general.deposit')}
+                </p>
+            </div>
             <div className={style.depositContainer}>
                 <div className="qrCode">
                     <QRCode value={qrCodeValue} />
