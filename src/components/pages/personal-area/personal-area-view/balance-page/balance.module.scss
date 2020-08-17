@@ -7,12 +7,22 @@
     border-radius: 1.5vw;
     margin: 0 1.7vw;
 
+    @media only screen and (max-width: 499px) {
+        margin: 0 3.47vw 0 0;
+        padding: $mobile17px $mobile13px;
+    }
+
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: fit-content;
         margin: 13vw 0 0 4vw;
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            margin: 0;
+        }
     }
 
     &__wrapper {
@@ -22,12 +32,25 @@
         width: fit-content;
         margin-bottom: $desctop55px;
 
+        @media only screen and (max-width: 499px) {
+            border: none;
+            border-bottom: $mobile1px solid #D8D6ED;
+            width: 100%;
+            margin-bottom: $mobile22px;
+        }
+
         &_title {
             font-family: $Montserrat-Medium;
             font-size: $desctop12px;
             line-height: $desctop14px;
             color: #B0AED3;
             margin-bottom: $desctop10px;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile12px;
+                line-height: $mobile15px;
+                margin-bottom: $mobile10px;
+            }
         }
 
         &_amount {
@@ -37,22 +60,27 @@
             letter-spacing: $desctop2px;
             text-transform: uppercase;
             color: #221876;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile22px;
+                line-height: $mobile27px;
+                letter-spacing: 1.5px;
+            }
         }
     }
 
     &__buttonWrapper {
         display: flex;
 
+        @media only screen and (max-width: 499px) {
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
         &_deposit {
-            @include beveledButton;
-            min-width: $desctop200px;
-            height: $desctop36px;
-            font-family: $Montserrat-Medium;
             color: #fff;
             background: linear-gradient(52.45deg, #2A1F84 0.74%, #221876 72.26%);
             margin-right: $desctop90px;
-            font-size: $desctop10px;
-            line-height: $desctop12px;
             border: $desctop1px solid transparent;
 
             &:hover {
@@ -63,12 +91,6 @@
         }
 
         &_withdrawal {
-            @include beveledButton;
-            min-width: $desctop200px;
-            height: $desctop36px;
-            font-family: $Montserrat-Medium;
-            font-size: $desctop10px;
-            line-height: $desctop12px;
             color: #B0AED3;
             background: transparent;
             border: $desctop1px solid #B0AED3;
@@ -76,6 +98,26 @@
             &:hover {
                 background: #B0AED3;
                 color: #fff;
+            }
+        }
+
+        &_deposit,
+        &_withdrawal {
+            @include beveledButton;
+            min-width: $desctop200px;
+            height: $desctop36px;
+            font-family: $Montserrat-Medium;
+            font-size: $desctop10px;
+            line-height: $desctop12px;
+
+            @media only screen and (max-width: 499px) {
+                width: 100%;
+                height: $mobile36px;
+                margin: 0;
+                font-size: $mobile10px;
+                line-height: $mobile12px;
+                margin-bottom: $mobile22px;
+                margin-right: 0;
             }
         }
     }
@@ -87,5 +129,14 @@
         transform: translateY(-50%);
         width: 19.52vw;
         height: 24.87vw;
+
+        @media only screen and (max-width: 499px) {
+            margin: 0 auto;
+            display: flex;
+            position: static;
+            width: 90%;
+            height: fit-content;
+            transform: initial;
+        }
     }
 }
