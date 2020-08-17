@@ -8,15 +8,36 @@
     margin: 0 1.7vw;
     padding: 2.3vw 2.64vw;
 
+    @media only screen and (max-width: 499px) {
+        margin: 0 3.47vw 0 0;
+        padding: $mobile17px $mobile13px;
+    }
+
     &__title {
         color: #a8a6c1;
         font-family: $Montserrat-Medium;
         font-size: 1vw;
         margin-bottom: 2vw;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile11px;
+            line-height: $mobile13px;
+            margin-bottom: $mobile14px;
+        }
     }
 
     &__settingsWrapper {
         display: flex;
+
+        @media only screen and (max-width: 499px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__formChangeUserName {
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+        }
     }
 
     &__changeUserName,
@@ -25,16 +46,33 @@
         font-family: $Montserrat-Medium;
         font-size: $desctop16px;
         margin-bottom: 2.5vw;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile14px;
+            line-height: $mobile17px;
+            margin-bottom: $mobile16px;
+        }
     }
 
     &__changeAvatarWrapper {
         margin-right: 15vw;
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: $mobile34px;
+        }
     }
 
     &__inputWrapper {
         display: flex;
         align-items: flex-end;
         margin: 0 0 1.5vw;
+
+        @media only screen and (max-width: 499px) {
+            flex-wrap: wrap;
+            margin: 0 $mobile10px;
+        }
     }
 
     &__input,
@@ -52,16 +90,29 @@
         font-family: $Montserrat-Medium;
         color: #b0aed3;
 
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            line-height: $mobile15px;
+            height: $mobile35px;
+            width: 100%;
+            padding: 0 14vw 0 $mobile20px;
+        }
+
         &::placeholder {
             font-family: $Montserrat-Medium;
             font-size: $desctop12px;
             line-height: 3.8vw;
             color: #b0aed3;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile12px;
+                line-height: $mobile15px;
+            }
         }
     }
 
     &__inputNickname {
-        padding: 0 2vw 0 1vw;
+        padding: 0 2vw 0 $mobile20px;
     }
 
     &__label {
@@ -72,6 +123,12 @@
         flex-direction: column;
         padding-left: 1vw;
         font-family: $Montserrat-Medium;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            padding-left: $mobile20px;
+        }
     }
 
     &__changeBtn {
@@ -87,6 +144,16 @@
         border: none;
         outline: none;
 
+        @media only screen and (max-width: 499px) {
+            width: 50.3vw;
+            height: $mobile35px;
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            margin: $mobile27px auto $mobile55px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         &:hover {
             background: linear-gradient(
                 172.75deg,
@@ -100,11 +167,20 @@
 .twoFactorAuth {
     margin-top: $desctop60px;
 
+    @media only screen and (max-width: 499px) {
+        margin-bottom: $mobile30px;
+    }
+
     &__title {
         font-family: $Montserrat-Medium;
         font-size: $desctop20px;
         line-height: $desctop24px;
         color: #a8a6c1;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile14px;
+            line-height: $mobile17px;
+        }
     }
 
     &__header {
@@ -112,6 +188,10 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: $desctop15px;
+
+        @media only screen and (max-width: 499px) {
+            margin-bottom: $mobile16px;
+        }
     }
 
     &__statusWrapper {
@@ -124,31 +204,43 @@
             line-height: $desctop15px;
             color: #a8a6c1;
             margin-right: $desctop18px;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile10px;
+                line-height: $mobile12px;
+                margin-right: $mobile16px;
+            }
         }
 
-        &_statusTurnedOff {
-            @include beveledButton;
-            min-width: 8vw;
-            height: 2.44vw;
-            font-family: $Montserrat-Medium;
-            font-size: $desctop12px;
-            color: #a8a6c1;
-            background: transparent;
-            margin-right: 1.6vw;
-            border: $desctop1px solid #d8d6ed;
-            cursor: default;
-        }
-
+        &_statusTurnedOff,
         &_statusEnabled {
             @include beveledButton;
             min-width: 8vw;
             height: 2.44vw;
             font-family: $Montserrat-Medium;
             font-size: $desctop12px;
-            color: #fff;
-            background: #96df6a;
             margin-right: 1.6vw;
             cursor: default;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile8px;
+                line-height: $mobile10px;
+                padding: $mobile5px $mobile15px;
+                margin: 0;
+                height: $mobile20px;
+                min-width: 22.57vw;
+            }
+        }
+
+        &_statusTurnedOff {
+            color: #a8a6c1;
+            background: transparent;
+            border: $desctop1px solid #d8d6ed;
+        }
+
+        &_statusEnabled {
+            color: #fff;
+            background: #96df6a;
         }
     }
 
@@ -158,8 +250,17 @@
         border-radius: $desctop12px;
         padding: $desctop17px $desctop40px $desctop17px $desctop17px;
 
+        @media only screen and (max-width: 499px) {
+            padding: $mobile16px $mobile11px;
+            border-radius: $mobile12px;
+        }
+
         &_rightSide {
             margin-left: $desctop40px;
+
+            @media only screen and (max-width: 499px) {
+                margin-left: 0;
+            }
         }
 
         &_title {
@@ -168,6 +269,12 @@
             line-height: $desctop16px;
             color: #4a4a4a;
             margin-bottom: $desctop20px;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile10px;
+                line-height: $mobile13px;
+                margin-left: 20vw;
+            }
         }
 
         &_generateCode {
@@ -180,6 +287,15 @@
             color: #fff;
             background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);
             margin-right: 1.6vw;
+
+            @media only screen and (max-width: 499px) {
+                width: 33.4vw;
+                height: $mobile24px;
+                font-size: $mobile7px;
+                line-height: $mobile10px;
+                margin-right: $mobile10px;
+                text-transform: uppercase;
+            }
 
             &:hover {
                 background: linear-gradient(
@@ -197,6 +313,15 @@
             line-height: $desctop12px;
             color: #f77723;
             cursor: pointer;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile10px;
+                line-height: $mobile12px;
+                max-width: 33vw;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
         }
     }
 
@@ -204,6 +329,10 @@
         display: flex;
         align-items: center;
         margin-bottom: $desctop20px;
+
+        @media only screen and (max-width: 499px) {
+            margin: 6vw 0 2vw 0;
+        }
     }
 
     &__switchQrCodeBtn {
@@ -222,6 +351,17 @@
         border: none;
         outline: none;
 
+        @media only screen and (max-width: 499px) {
+            width: 27vw;
+            height: $mobile35px;
+            font-size: $mobile8px;
+            line-height: $mobile11px;
+            border-radius: 1.15vw;
+            right: 0.13vw;
+            bottom: 0.09vw;
+            text-transform: uppercase;
+        }
+
         &:hover {
             background: linear-gradient(
                 172.75deg,
@@ -237,6 +377,11 @@
         margin: 0 0 1.5vw;
         position: relative;
         width: fit-content;
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            margin: 0;
+        }
     }
 
     &__input {
@@ -253,11 +398,24 @@
         font-family: $Montserrat-Medium;
         color: #b0aed3;
 
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            height: $mobile35px;
+            padding: 0 29.8vw 0 5.34vw;
+            font-size: $mobile12px;
+            line-height: $mobile15px;
+        }
+
         &::placeholder {
             font-family: $Montserrat-Medium;
             font-size: $desctop12px;
             line-height: 3.8vw;
             color: #b0aed3;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile12px;
+                line-height: $mobile15px;
+            }
         }
     }
 }
@@ -271,16 +429,31 @@
         line-height: $desctop24px;
         color: #a8a6c1;
         margin-bottom: $desctop20px;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile14px;
+            line-height: $mobile17px;
+            margin-bottom: $mobile16px;
+        }
     }
 
     &__inputContainer {
         display: flex;
         align-items: flex-end;
+
+        @media only screen and (max-width: 499px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__inputWrapper {
         margin-right: $desctop34px;
         position: relative;
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            margin: 0 $mobile10px $mobile13px $mobile10px;
+        }
 
         &_eye {
             position: absolute;
@@ -297,15 +470,18 @@
             }
 
             @media only screen and (max-width: 499px) {
-                top: 50%;
-                right: 4vw;
-                width: $mobile30px;
-                height: $mobile20px;
+                top: 55%;
+                right: 8vw;
             }
 
             img {
                 width: $desctop16px;
                 height: $desctop16px;
+
+                @media only screen and (max-width: 499px) {
+                    width: $mobile13px;
+                    height: $mobile13px;
+                }
             }
         }
     }
@@ -319,6 +495,16 @@
         color: #fff;
         background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);
         transition: transform 0.25s;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        @media only screen and (max-width: 499px) {
+            width: 50.3vw;
+            height: $mobile35px;
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            margin: $mobile15px auto 0;
+        }
 
         &:hover {
             background: linear-gradient(

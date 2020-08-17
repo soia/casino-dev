@@ -5,12 +5,24 @@
     width: 8.34vw;
     height: 8.34vw;
 
+    @media only screen and (max-width: 499px) {
+        width: 28vw;
+        height: 28vw;
+    }
+
     .ant-upload {
         background: transparent;
         margin: 0;
         width: $desctop120px;
         height: $desctop120px;
         border-width: $desctop1px;
+
+        @media only screen and (max-width: 499px) {
+            width: 28vw;
+            height: 28vw;
+            border-color: #221876;
+            border-width: $mobile1px;
+        }
     }
 
     .ant-upload-list-item {
@@ -19,6 +31,11 @@
         padding: 0;
         margin: 0;
         border-radius: $desctop6px;
+
+        @media only screen and (max-width: 499px) {
+            width: 28vw;
+            height: 28vw;
+        }
     }
 
     .ant-upload-list-item-uploading-text {
@@ -48,6 +65,17 @@
         svg {
             width: $desctop20px;
             height: $desctop20px;
+
+            @media only screen and (max-width: 499px) {
+                width: 5.2vw;
+                height: 5.2vw;
+            }
+
+            path {
+                @media only screen and (max-width: 499px) {
+                    stroke: #221876;
+                }
+            }
         }
     }
 
@@ -60,9 +88,19 @@
     }
 }
 
-.qrCode {
+.qrCode.twoFAQrCode {
+
+    @media only screen and (max-width: 499px) {
+        position: absolute;
+    }
+
     canvas {
         height: $desctop140px !important;
         width: $desctop140px !important;
+
+        @media only screen and (max-width: 499px) {
+            height: 16.8vw !important;
+            width: 16.8vw !important;
+        }
     }
 }

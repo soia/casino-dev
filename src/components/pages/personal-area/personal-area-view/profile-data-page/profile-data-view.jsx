@@ -82,7 +82,10 @@ const ProfileDataView = ({
                         </Modal>
                     </div>
                 </div>
-                <form onSubmit={submitChangeName}>
+                <form
+                    className={style.profileData__formChangeUserName}
+                    onSubmit={submitChangeName}
+                >
                     <p className={style.profileData__changeUserName}>
                         {t('general.changeNickname')}
                     </p>
@@ -101,7 +104,7 @@ const ProfileDataView = ({
                             inputColor="#B0AED3"
                         />
                         <button type="submit" className={style.profileData__changeBtn}>
-                            <span>{t('general.сhange')}</span>
+                            <span>{t('general.apply')}</span>
                         </button>
                     </div>
                 </form>
@@ -135,7 +138,7 @@ const ProfileDataView = ({
                     </div>
                 </div>
                 <div className={style.twoFactorAuth__qrCodeWrapper}>
-                    <div className="qrCode">
+                    <div className="qrCode twoFAQrCode">
                         <QRCode value={qrCodeValue} />
                     </div>
                     <div className={style.twoFactorAuth__qrCodeWrapper_rightSide}>
@@ -248,7 +251,7 @@ const ProfileDataView = ({
                         className={style.resetPasswordContainer__saveBtn}
                         onClick={submitNewPassword}
                     >
-                        <span>{t('general.save')}</span>
+                        <span>{t('general.apply')}</span>
                     </div>
                 </div>
             </div>

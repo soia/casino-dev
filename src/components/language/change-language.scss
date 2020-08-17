@@ -229,5 +229,9 @@
 }
 
 .flag-select.change-language-flags .flag-options::after {
-    border: 2em solid #ffffff;
+    border: 1em solid #ffffff;
+
+    @media only screen and (max-width: 499px) {
+        border: 2em solid #ffffff;
+    }
 }

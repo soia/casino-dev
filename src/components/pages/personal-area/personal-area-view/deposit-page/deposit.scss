@@ -4,5 +4,10 @@
     canvas {
         height: 9.4vw !important;
         width: 9.4vw !important;
+
+        @media only screen and (max-width: 499px) {
+            height: 16.8vw !important;
+            width: 16.8vw !important;
+        }
     }
 }
