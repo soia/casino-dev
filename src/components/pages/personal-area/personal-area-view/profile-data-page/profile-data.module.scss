@@ -112,7 +112,11 @@
     }
 
     &__inputNickname {
-        padding: 0 2vw 0 $mobile20px;
+        padding: 0 2vw 0 1vw;
+
+        @media only screen and (max-width: 499px) {
+            padding: 0 2vw 0 $mobile20px;
+        }
     }
 
     &__label {
@@ -346,7 +350,7 @@
         margin-left: 3vw;
         transition: transform 0.25s;
         position: absolute;
-        right: $desctop1px;
+        right: 0.144vw;
         bottom: $desctop1px;
         border: none;
         outline: none;
@@ -356,9 +360,9 @@
             height: $mobile35px;
             font-size: $mobile8px;
             line-height: $mobile11px;
-            border-radius: 1.15vw;
-            right: 0.13vw;
-            bottom: 0.09vw;
+            border-radius: 0.9vw;
+            right: 0.24vw;
+            bottom: 0.3vw;
             text-transform: uppercase;
         }
 
@@ -496,7 +500,6 @@
         background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);
         transition: transform 0.25s;
         letter-spacing: 1px;
-        text-transform: uppercase;
 
         @media only screen and (max-width: 499px) {
             width: 50.3vw;
@@ -504,6 +507,7 @@
             font-size: $mobile10px;
             line-height: $mobile12px;
             margin: $mobile15px auto 0;
+            text-transform: uppercase;
         }
 
         &:hover {
