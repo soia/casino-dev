@@ -11,6 +11,7 @@ import {
     profileDataPath,
 } from '../../../../constants/pathLocation';
 import logo from '../../../assets/images/logoBlueText.svg';
+import mobileLogo from '../../../assets/images/mobile-logo.svg';
 import avatar from './avatar.png';
 import style from './header-personal-area.module.scss';
 
@@ -19,10 +20,11 @@ const HeaderPersonalArea = () => {
     return (
         <header className={style.header}>
             <Link to="/" className={style.header__logo}>
-                <img src={logo} alt="logo" />
+                <img className={style.header__logo_img} src={logo} alt="logo" />
+                <img className={style.header__logo_imgMobile} src={mobileLogo} alt="logo" />
             </Link>
             <div className={style.header__balanceWrapper}>
-                <p className={style.header__balanceWrapper_title}>Your current balance</p>
+                <p className={style.header__balanceWrapper_title}>{t('general.yourCurrentBalance')}</p>
                 <p className={style.header__balanceWrapper_amount}>20,03453335 CNG</p>
             </div>
             <div className={style.header__buttonWrapper}>

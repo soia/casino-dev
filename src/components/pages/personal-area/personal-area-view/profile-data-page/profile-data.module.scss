@@ -287,6 +287,7 @@
             right: 1vw;
             top: 52%;
             cursor: pointer;
+            z-index: 1;
 
             @media only screen and (min-width: 500px) and (max-width: 1024px) {
                 top: 50%;

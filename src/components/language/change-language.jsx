@@ -38,7 +38,7 @@ function SelectLangeage() {
                             customLabels={{
                                 GB: 'EN', RU: 'RU',
                             }}
-                            className="change-language-flags"
+                            className="change-language-flags personal-area-flags"
                             onSelect={onSelectFlag}
                         />
                     </div>

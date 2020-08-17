@@ -19,6 +19,10 @@
     cursor: pointer;
     transition: all 0.25s;
 
+    @media only screen and (max-width: 499px) {
+        border-radius: 1.07vw;
+    }
+
     span {
         transform: skew(15deg);
     }

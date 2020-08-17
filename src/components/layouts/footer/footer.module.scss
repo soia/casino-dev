@@ -171,14 +171,46 @@
     padding: $desctop40px 1.5vw;
     background: linear-gradient(168.3deg, #ffffff -16.89%, #d8d6ed 84.45%);
 
+    @media only screen and (max-width: 499px) {
+        flex-wrap: wrap;
+        padding: $mobile16px $mobile10px;
+    }
+
     &__column {
         margin-right: 6.75vw;
+
+        @media only screen and (max-width: 499px) {
+            margin-right: 5%;
+            width: 45%;
+            margin-bottom: $mobile16px;
+        }
     }
 
     &__logo {
-        margin-right: 6.75vw;
-        width: 12vw;
-        height: 3.3vw;
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            margin-bottom: $mobile30px;
+        }
+
+        &_img {
+            margin-right: 6.75vw;
+            width: 12vw;
+            height: 3.3vw;
+
+            @media only screen and (max-width: 499px) {
+                display: none;
+            }
+        }
+
+        &_mobileImg {
+            display: none;
+
+            @media only screen and (max-width: 499px) {
+                display: block;
+                width: 40vw;
+                height: 7.5vw;
+            }
+        }
     }
 
     &__title {
@@ -186,6 +218,11 @@
         font-size: $desctop12px;
         line-height: $desctop20px;
         color: #221876;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            line-height: $mobile20px;
+        }
     }
 
     &__link {
@@ -195,6 +232,11 @@
         color: #928dbd;
         margin-right: $desctop30px;
         white-space: nowrap;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile10px;
+            line-height: $mobile30px;
+        }
 
         &:hover {
             color: #f76b1c;
@@ -212,5 +254,10 @@
         font-size: $desctop12px;
         line-height: $desctop17px;
         color: #928dbd;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile10px;
+            line-height: $mobile30px;
+        }
     }
 }

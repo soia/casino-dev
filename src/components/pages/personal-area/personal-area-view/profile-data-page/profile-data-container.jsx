@@ -360,7 +360,7 @@ export class ProfileDataContainer extends Component {
             type: 'success',
             insert: 'top',
             container: 'top-right',
-            animationIn: ['animated', 'zoomIn'],
+            animationIn: ['animated', 'slideInRight'],
             animationOut: ['animated', 'zoomOut'],
             dismiss: {
                 duration: 3000,

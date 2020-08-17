@@ -90,6 +90,10 @@
 
         &:not(:nth-child(2)) {
             margin: 0px 1.6vw 1.6vw 0px !important;
+
+            @media only screen and (max-width: 499px) {
+                margin: 0 0 1.6vw 0 !important;
+            }
         }
 
         margin-bottom: 1.6vw !important;
@@ -102,6 +106,10 @@
     .flag-option .country-label {
         padding: 0 0 0 0.5vw !important;
         width: 2vw;
+
+        @media only screen and (max-width: 499px) {
+            width: auto;
+        }
     }
 
     .country-flag .country-label {
@@ -130,11 +138,25 @@
     justify-content: center;
     transition: all 0.25s;
 
+    @media only screen and (max-width: 499px) {
+        width: 12.08vw;
+        height: 7.5vw;
+    }
+
     &__frame {
         transition: all 0.25s;
         position: absolute;
         width: 3.96vw;
         height: 2.5vw;
+
+        @media only screen and (max-width: 499px) {
+            width: auto;
+            height: 7.5vw;
+
+            path:first-child {
+                stroke-width: 0.4vw;
+            }
+        }
     }
 
     .arrow-down,
@@ -149,10 +171,14 @@
         line-height: $desctop12px;
         text-align: center;
         color: #C5C3DF !important;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile10px;
+            padding: 3.7vw 4vw !important;
+        }
     }
 
-    &__select {
-    }
+    &__select {}
 
     &:hover {
         .selected--flag--option .country-flag .country-label {
@@ -164,7 +190,44 @@
         }
     }
 
-    .flag-options  {
+    .flag-options {
         right: -0.9vw;
+
+        @media only screen and (max-width: 499px) {
+            right: -0.6vw;
+            top: 10.75vw;
+        }
     }
+}
+
+#root .changeLanguagePersonalArea .personal-area-flags .flag-options {
+
+    @media only screen and (max-width: 499px) {
+        width: 20vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .country-flag {
+        img {
+            @media only screen and (max-width: 499px) {
+                width: $mobile18px !important;
+                height: $mobile18px !important;
+                border-radius: inherit;
+                object-fit: initial;
+            }
+        }
+    }
+
+    .country-label {
+        @media only screen and (max-width: 499px) {
+            font-size: 3vw;
+            line-height: 3vw;
+            padding: 1vw 0 0 1vw !important;
+        }
+    }
+}
+
+.flag-select.change-language-flags .flag-options::after {
+    border: 2em solid #ffffff;
 }

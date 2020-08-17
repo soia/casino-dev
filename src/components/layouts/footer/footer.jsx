@@ -15,6 +15,7 @@ import logo from '../../assets/images/logo.svg';
 import logoBlueText from '../../assets/images/logoBlueText.svg';
 import style from './footer.module.scss';
 import footerCoins from '../../assets/images/footerCoins.svg';
+import mobileLogo from '../../assets/images/mobile-logo-with-blue-text.svg';
 
 const Footer = ({ location: { pathname } }) => {
     const { t } = useTranslation();
@@ -28,11 +29,16 @@ const Footer = ({ location: { pathname } }) => {
     if (`/${matchPathName}` === personalAreaPath) {
         return (
             <footer className={style.footerPersonalArea}>
-                <Link to="/">
+                <Link to="/" className={style.footerPersonalArea__logo}>
                     <img
                         src={logoBlueText}
-                        alt="logoBlueText"
-                        className={style.footerPersonalArea__logo}
+                        alt="logo"
+                        className={style.footerPersonalArea__logo_img}
+                    />
+                    <img
+                        src={mobileLogo}
+                        alt="logo"
+                        className={style.footerPersonalArea__logo_mobileImg}
                     />
                 </Link>
                 <div className={style.footerPersonalArea__column}>

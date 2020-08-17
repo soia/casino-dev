@@ -95,8 +95,9 @@ class Aside extends Component {
                                     </linearGradient>
                                 </defs>
                             </svg>
-
-                            {t('aside.profile')}
+                            <span className={style.asideLink__text}>
+                                {t('aside.profile')}
+                            </span>
                         </NavLink>
                     </li>
                     <li>
@@ -129,8 +130,9 @@ class Aside extends Component {
                                     className={classNames(style.svgIcon, 'svgIcon')}
                                 />
                             </svg>
-
-                            {t('aside.balance')}
+                            <span className={style.asideLink__text}>
+                                {t('aside.balance')}
+                            </span>
                         </NavLink>
                     </li>
                     <li>
@@ -176,7 +178,7 @@ class Aside extends Component {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <span>{t('aside.history')}</span>
+                            <span className={style.asideLink__text}>{t('aside.history')}</span>
                         </div>
                         <div id="subMenu" className={submenuStyle}>
                             <NavLink
@@ -228,8 +230,9 @@ class Aside extends Component {
                                     className={style.logoutFill}
                                 />
                             </svg>
-
-                            {t('aside.logout')}
+                            <span className={style.asideLink__text}>
+                                {t('aside.logout')}
+                            </span>
                         </div>
                     </li>
                 </ul>
