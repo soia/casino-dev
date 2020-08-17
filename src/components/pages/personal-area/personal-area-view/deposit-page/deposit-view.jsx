@@ -31,20 +31,16 @@ const DepositView = () => {
                         {t('general.back')}
                     </p>
                 </Link>
-                <p className={style.deposit__header_title}>
-                    {t('general.deposit')}
-                </p>
+                <p className={style.deposit__header_title}>{t('general.deposit')}</p>
             </div>
             <div className={style.depositContainer}>
-                <div className="qrCode">
+                <div className="qrCode depositQrCode">
                     <QRCode value={qrCodeValue} />
                 </div>
                 <div className={style.depositContainer__rightSide}>
                     <p className={style.depositContainer__rightSide_text}>
-                        Lorem ipsum is placeholder text commonly used in the graphic,
-                        print, and publishing industries for previewing layouts and visual
-                        mockups:Lorem ipsum is placeholder text commonly used in the
-                        graphic, print, and publishing industries for
+                        Send only USDT to this deposit address. Sending other any coin or
+                        token to this address may result in the loss of your deposit.
                     </p>
                     <p className={style.depositContainer__rightSide_minDeposit}>
                         {t('general.minimumDepositAmount')}: 0 CNG
@@ -62,7 +58,8 @@ const DepositView = () => {
                         />
                         <CopyToClipboard
                             text={qrCodeValue}
-                            onCopy={() => message.success(t('general.сopiedToClipboard'), 2)}
+                            onCopy={() => message.success(t('general.сopiedToClipboard'), 2)
+                            }
                         >
                             <div className={style.depositContainer__qrCodeValueBtn}>
                                 <span>

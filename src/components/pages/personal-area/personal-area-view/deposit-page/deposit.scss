@@ -1,13 +1,19 @@
 @import '../../../../assets/styles/variables';
 
-.qrCode {
+.depositQrCode.qrCode {
+
+    @media only screen and (max-width: 499px) {
+        position: absolute;
+    }
+
     canvas {
         height: 9.4vw !important;
         width: 9.4vw !important;
 
         @media only screen and (max-width: 499px) {
-            height: 16.8vw !important;
-            width: 16.8vw !important;
+            height: 19vw !important;
+            width: 19vw !important;
+            border-radius: $mobile5px;
         }
     }
 }

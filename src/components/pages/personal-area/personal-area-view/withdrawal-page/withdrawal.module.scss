@@ -8,9 +8,19 @@
     margin: 0 1.7vw;
     position: relative;
 
+
+    @media only screen and (max-width: 499px) {
+        margin: 0 3.47vw 0 0;
+        border-radius: $mobile14px;
+    }
+
     &__header {
         display: flex;
         margin: 2vw 2.5vw;
+
+        @media only screen and (max-width: 499px) {
+            margin: 3vw 4vw 0vw;
+        }
 
         &_title {
             position: absolute;
@@ -20,6 +30,11 @@
             font-size: $desctop20px;
             line-height: $desctop24px;
             color: #a8a6c1;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile14px;
+                line-height: $mobile14px;
+            }
         }
     }
 
@@ -32,11 +47,20 @@
             font-family: $Montserrat-Medium;
             font-size: $desctop14px;
             color: #a8a6c1;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile10px;
+                margin-left: $mobile5px;
+            }
         }
     }
 
     &__leftArrow {
         width: 1.5vw;
+
+        @media only screen and (max-width: 499px) {
+            width: 3.5vw;
+        }
     }
 
     &__container {
@@ -45,11 +69,21 @@
         border-radius: $desctop12px;
         padding: $desctop110px $desctop80px $desctop45px $desctop60px;
         margin: 1vw 2.5vw;
+
+        @media only screen and (max-width: 499px) {
+            padding: $mobile16px $mobile11px;
+            margin: $mobile16px $mobile15px;
+            border-radius: $mobile12px;
+        }
     }
 
     &__wrapper {
         display: flex;
         justify-content: space-between;
+
+        @media only screen and (max-width: 499px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__inputWrapper {
@@ -71,11 +105,24 @@
         font-family: $Montserrat-Medium;
         color: #b0aed3;
 
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            line-height: $mobile15px;
+            height: $mobile35px;
+            width: 100%;
+            padding: 0 14vw 0 $mobile20px;
+        }
+
         &::placeholder {
             font-family: $Montserrat-Medium;
             font-size: $desctop12px;
             line-height: 3.8vw;
             color: #b0aed3;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile12px;
+                line-height: $mobile15px;
+            }
         }
     }
 
@@ -91,6 +138,12 @@
         flex-direction: column;
         padding-left: 1vw;
         font-family: $Montserrat-Medium;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            padding-left: $mobile20px;
+        }
     }
 
     &__fee {

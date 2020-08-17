@@ -8,9 +8,19 @@
     margin: 0 1.7vw;
     position: relative;
 
+    @media only screen and (max-width: 499px) {
+        margin: 0 3.47vw 0 0;
+        border-radius: $mobile14px;
+    }
+
     &__header {
         display: flex;
+        align-items: center;
         margin: 2vw 2.5vw;
+
+        @media only screen and (max-width: 499px) {
+            margin: 3vw 4vw 0vw;
+        }
 
         &_title {
             position: absolute;
@@ -20,6 +30,11 @@
             font-size: $desctop20px;
             line-height: $desctop24px;
             color: #a8a6c1;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile14px;
+                line-height: $mobile14px;
+            }
         }
     }
 
@@ -32,11 +47,20 @@
             font-family: $Montserrat-Medium;
             font-size: $desctop14px;
             color: #a8a6c1;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile10px;
+                margin-left: $mobile5px;
+            }
         }
     }
 
     &__leftArrow {
         width: 1.5vw;
+
+        @media only screen and (max-width: 499px) {
+            width: 3.5vw;
+        }
     }
 }
 
@@ -47,8 +71,18 @@
     margin: 1vw 2.5vw;
     padding: $desctop21px $desctop17px;
 
+    @media only screen and (max-width: 499px) {
+        padding: $mobile16px $mobile11px;
+        margin: $mobile16px $mobile15px;
+        border-radius: $mobile12px;
+    }
+
     &__rightSide {
         margin-left: $desctop50px;
+
+        @media only screen and (max-width: 499px) {
+           margin: 0;
+        }
 
         &_text {
             font-family: $Montserrat-Medium;
@@ -59,6 +93,17 @@
             padding: 1vw;
             max-width: 44.5vw;
             line-height: 1.8vw;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile10px;
+                line-height: $mobile12px;
+                max-width: 48.5vw;
+                margin-left: 21vw;
+                min-height: 19vw;
+                color: #4A4A4A;
+                padding: $mobile5px $mobile8px;
+                border-radius: $mobile5px;
+            }
         }
 
         &_minDeposit {
@@ -67,6 +112,12 @@
             line-height: $desctop16px;
             color: #BA1D2B;
             margin: $desctop30px 1vw $desctop20px 1vw;
+
+            @media only screen and (max-width: 499px) {
+                font-size: $mobile10px;
+                line-height: $mobile12px;
+                margin: $mobile14px 0 $mobile32px 0;
+            }
         }
     }
 
@@ -76,6 +127,10 @@
         margin: 0 0 1.5vw;
         position: relative;
         width: fit-content;
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+        }
     }
 
     &__label {
@@ -86,6 +141,12 @@
         flex-direction: column;
         padding-left: 1vw;
         font-family: $Montserrat-Medium;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            padding-left: $mobile20px;
+        }
     }
 
     &__input {
@@ -101,6 +162,15 @@
         outline: none;
         font-family: $Montserrat-Medium;
         color: #b0aed3;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            line-height: $mobile15px;
+            height: $mobile35px;
+            width: 100%;
+            padding: 0 14vw 0 $mobile20px;
+            max-width: 67vw;
+        }
     }
 
     &__qrCodeValueBtn {
@@ -117,6 +187,18 @@
         right: $desctop1px;
         bottom: $desctop1px;
 
+        @media only screen and (max-width: 499px) {
+            width: 27vw;
+            height: $mobile35px;
+            font-size: $mobile8px;
+            line-height: $mobile11px;
+            border-radius: 0.9vw;
+            right: 0.24vw;
+            bottom: 0.1vw;
+            text-transform: uppercase;
+            width: 11vw;
+        }
+
         &:hover {
             background: linear-gradient(
                 172.75deg,
@@ -128,6 +210,11 @@
         svg {
             width: $desctop13px;
             height: $desctop13px;
+
+            @media only screen and (max-width: 499px) {
+                width: $mobile12px;
+                height: $mobile13px;
+            }
         }
     }
 }
