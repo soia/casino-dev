@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import ReactWOW from 'react-wow';
 import { useTranslation } from 'react-i18next';
 import Button from '../../../small-components/button';
-import orangeButton from './images/button.svg';
 import blueCoin from '../../../assets/images/blueCoin.svg';
 import games1 from './images/games1.svg';
 import games2 from './images/games2.svg';
@@ -17,11 +16,6 @@ import style from './all-games.module.scss';
 
 const AllGames = () => {
     const { t } = useTranslation();
-
-    const orangeButtonStyle = {
-        backgroundImage: `url(${orangeButton})`,
-        backgroundSize: 'cover',
-    };
 
     const gamesData = [
         {
@@ -90,9 +84,8 @@ const AllGames = () => {
                                     <Button
                                         className={style.allGames__wrapper_button}
                                         type="button"
-                                        style={orangeButtonStyle}
                                     >
-                                        {t('allGames.play')}
+                                        <span>{t('allGames.play')}</span>
                                     </Button>
                                 </div>
                             );

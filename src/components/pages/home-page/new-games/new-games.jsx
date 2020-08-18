@@ -3,7 +3,6 @@ import ReactWOW from 'react-wow';
 import { useTranslation } from 'react-i18next';
 
 import Button from '../../../small-components/button';
-import orangeButton from './images/button.svg';
 import workPrinciplesBg from './images/workPrinciplesBg.svg';
 import principleWorkIcon from './images/principleWorkIcon.svg';
 import games1 from './images/games1.svg';
@@ -19,11 +18,6 @@ const WorkPrinciples = () => {
 
     const workPrinciplesBgStyle = {
         backgroundImage: `url(${workPrinciplesBg})`,
-    };
-
-    const orangeButtonStyle = {
-        backgroundImage: `url(${orangeButton})`,
-        backgroundSize: 'cover',
     };
 
     const gamesData = [
@@ -95,9 +89,8 @@ const WorkPrinciples = () => {
                                         <Button
                                             className={style.allGames__wrapper_button}
                                             type="button"
-                                            style={orangeButtonStyle}
                                         >
-                                            {t('allGames.play')}
+                                            <span>{t('allGames.play')}</span>
                                         </Button>
                                     </div>
                                 );
