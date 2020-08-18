@@ -6,7 +6,7 @@ import { compose } from '../../../utils';
 import PersonalAreaContainer from './personal-area-container';
 
 const PersonalArea = ({ loggedIn }) => {
-    if (!loggedIn) {
+    if (loggedIn) {
         return <PersonalAreaContainer />;
     }
 

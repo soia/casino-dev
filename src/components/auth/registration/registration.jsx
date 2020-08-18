@@ -6,6 +6,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import SelectSearch from 'react-select-search';
 import { Checkbox } from 'antd';
+import registrationAction from '../../../actions/registration.actions';
 import { termOfServicePath, privacyPolicyPath } from '../../../constants';
 import { countries } from '../../../helpers/countries';
 import { authModalActions } from '../../../actions/authModal.actions';
@@ -412,6 +413,7 @@ class Registration extends PureComponent {
             passwordErrors,
             confirmPasswordErrors,
         } = this.state;
+        const { dispatch } = this.props;
 
         const copyEmailErrors = Object.assign({}, emailErrors);
         const copyPasswordErrors = Object.assign({}, passwordErrors);
@@ -430,16 +432,21 @@ class Registration extends PureComponent {
         });
 
         if (
-            Object.keys(copyEmailErrors).length === 0
-            && Object.keys(copyPasswordErrors).length === 0
-            && Object.keys(copyConfirmPassword).length === 0
+            !Object.keys(copyEmailErrors).length
+            && !Object.keys(copyPasswordErrors).length
+            && !Object.keys(copyConfirmPassword).length
             && termOfService
             && country
             && email
             && confirmPassword
             && userPasswordRegistration
         ) {
-            console.log('success');
+            const user = {
+                country,
+                email,
+                password: userPasswordRegistration,
+            };
+            dispatch(registrationAction(user, dispatch));
         }
     };
 

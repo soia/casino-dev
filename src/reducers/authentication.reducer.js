@@ -1,25 +1,25 @@
 /* eslint-disable */
 
-import { userConstants } from '../constants';
+import { USER_CONSTANTS } from '../constants';
 
 let user = JSON.parse(localStorage.getItem('user'));
 const initialState = user ? { loggedIn: true, user } : {};
 
 export function authentication(state = initialState, action) {
     switch (action.type) {
-        case userConstants.LOGIN_REQUEST:
+        case USER_CONSTANTS.LOGIN_REQUEST:
             return {
                 loggingIn: true,
                 user: action.user,
             };
-        case userConstants.LOGIN_SUCCESS:
+        case USER_CONSTANTS.LOGIN_SUCCESS:
             return {
                 loggedIn: true,
                 user: action.user,
             };
-        case userConstants.LOGIN_FAILURE:
+        case USER_CONSTANTS.LOGIN_FAILURE:
             return {};
-        case userConstants.LOGOUT:
+        case USER_CONSTANTS.LOGOUT:
             return {};
         default:
             return state;

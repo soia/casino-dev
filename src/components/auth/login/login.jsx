@@ -1,19 +1,23 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
 import Field from '../../small-components/field';
+import loginAction from '../../../actions/login.actions';
 import eye from './images/eye.svg';
 import closeIcon from '../../assets/images/close-white.svg';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
 import style from './login.module.scss';
 
+
 class Login extends PureComponent {
     static defaultProps = {
         t: () => {},
         dispatch: () => {},
+        history: {},
         login: false,
         signUp: false,
     };
@@ -21,6 +25,7 @@ class Login extends PureComponent {
     static propTypes = {
         t: PropTypes.func,
         dispatch: PropTypes.func,
+        history: PropTypes.object,
         login: PropTypes.bool,
         signUp: PropTypes.bool,
     };
@@ -219,6 +224,7 @@ class Login extends PureComponent {
         const {
             email, userPasswordLogin, passwordErrors, emailErrors,
         } = this.state;
+        const { history, dispatch } = this.props;
 
         const copyEmailErrors = { ...emailErrors };
         const copyPasswordErrors = { ...passwordErrors };
@@ -231,12 +237,11 @@ class Login extends PureComponent {
         });
 
         if (
-            Object.keys(copyEmailErrors).length === 0
-            && Object.keys(copyPasswordErrors).length === 0
+            !Object.keys(copyEmailErrors).length
+            && !Object.keys(copyPasswordErrors).length
         ) {
             if (email && userPasswordLogin) {
-                console.log(email, 'email');
-                console.log(userPasswordLogin, 'userPasswordLogin');
+                dispatch(loginAction(email, userPasswordLogin, history));
             }
         }
     };
@@ -373,4 +378,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default compose(withTranslation(), connect(mapStateToProps))(Login);
+export default compose(withTranslation(), connect(mapStateToProps), withRouter)(Login);

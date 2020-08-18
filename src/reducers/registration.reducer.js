@@ -1,16 +1,16 @@
 /* eslint-disable */
 
-import { userConstants } from '../constants';
+import { USER_CONSTANTS } from '../constants';
 
 export function registration(state = {}, action) {
     switch (action.type) {
-        case userConstants.REGISTER_REQUEST:
+        case USER_CONSTANTS.REGISTER_REQUEST:
             return {
                 registering: true,
             };
-        case userConstants.REGISTER_SUCCESS:
+        case USER_CONSTANTS.REGISTER_SUCCESS:
             return {};
-        case userConstants.REGISTER_FAILURE:
+        case USER_CONSTANTS.REGISTER_FAILURE:
             return {};
         default:
             return state;
