@@ -1,5 +1,6 @@
 const loginPath = '/login';
 const registartionPath = '/registration';
+const passwordRecoveryPath = '/password-recovery';
 const termOfServicePath = '/term-of-service';
 const privacyPolicyPath = '/privacy-policy';
 const personalAreaPath = '/personal-area';
@@ -22,4 +23,5 @@ export {
     documentsPath,
     depositPath,
     withdrawalPath,
+    passwordRecoveryPath,
 };

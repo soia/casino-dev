@@ -12,8 +12,11 @@ import {
     TermOfUse,
     PrivacyPolicy,
     PersonalArea,
+    PasswordRecoveryPage,
 } from '../pages';
-import { termOfServicePath, privacyPolicyPath, personalAreaPath } from '../../constants';
+import {
+    termOfServicePath, privacyPolicyPath, personalAreaPath, passwordRecoveryPath,
+} from '../../constants';
 import '../assets/styles/reset.scss';
 import '../assets/styles/search-select.scss';
 import './app.scss';
@@ -42,6 +45,7 @@ const App = () => {
                 <Route path="/" component={HomePage} exact />
                 <Route path={termOfServicePath} component={TermOfUse} exact />
                 <Route path={privacyPolicyPath} component={PrivacyPolicy} exact />
+                <Route path={passwordRecoveryPath} component={PasswordRecoveryPage} exact />
                 <Route path={personalAreaPath} component={PersonalArea} />
                 <Route component={PageNotFound} />
             </Switch>

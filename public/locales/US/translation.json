@@ -63,7 +63,10 @@
         "withdrawalRequest": "Withdrawal request",
         "max": "Max",
         "back": "Back",
-        "apply": "Apply"
+        "apply": "Apply",
+        "newPassword": "New password",
+        "enterNewPassword": "Enter new password",
+        "confirmNewPassword": "Confirm new password"
     },
     "firstScreen": {
         "title": "Game token",
