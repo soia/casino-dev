@@ -10,14 +10,14 @@ function SelectLangeage() {
     const { i18n } = useTranslation();
 
     const onSelectFlag = countryCode => {
-        i18n.changeLanguage(countryCode);
-        localStorage.setItem('i18nextLngCngCasion', countryCode);
-    };
-
-    const changeLangOnMobile = event => {
-        const { value } = event.target;
-        i18n.changeLanguage(value);
-        localStorage.setItem('i18nextLngCngCasion', value);
+        if (countryCode.target) {
+            const { value } = countryCode.target;
+            i18n.changeLanguage(value);
+            localStorage.setItem('i18nextLngCngCasion', value);
+        } else {
+            i18n.changeLanguage(countryCode);
+            localStorage.setItem('i18nextLngCngCasion', countryCode);
+        }
     };
 
     const currentLang = localStorage.getItem('i18nextLngCngCasion');
@@ -49,10 +49,11 @@ function SelectLangeage() {
                         <p className="currentLangTicker">{currentLang === 'US' ? 'EN' : currentLang}</p>
                         <select
                             className="personalAreaMobileSelect"
-                            onChange={changeLangOnMobile}
+                            onChange={onSelectFlag}
+                            value={currentLang}
                         >
-                            <option selected={currentLang === 'US'} value="US">English</option>
-                            <option selected={currentLang === 'RU'} value="RU">Русский</option>
+                            <option value="US">English</option>
+                            <option value="RU">Русский</option>
                         </select>
                     </div>
                 )
