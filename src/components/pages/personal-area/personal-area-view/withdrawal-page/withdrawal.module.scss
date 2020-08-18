@@ -71,9 +71,11 @@
         margin: 1vw 2.5vw;
 
         @media only screen and (max-width: 499px) {
-            padding: $mobile16px $mobile11px;
-            margin: $mobile16px $mobile15px;
+            padding: $mobile16px 0 10vw 0;
+            margin: $mobile16px $mobile15px 0 $mobile15px;
             border-radius: $mobile12px;
+            border: none;
+            background: transparent;
         }
     }
 
@@ -88,6 +90,8 @@
 
     &__inputWrapper {
         position: relative;
+        width: 100%;
+        margin-bottom: $mobile25px;
     }
 
     &__input,
@@ -153,6 +157,12 @@
         margin-top: $desctop6px;
         color: #686868;
         opacity: 0.9;
+
+        @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            line-height: $mobile15px;
+            margin-top: $mobile10px;
+        }
     }
 
     &__maxBtn,
@@ -182,10 +192,30 @@
         position: absolute;
         right: 0.1vw;
         top: 1.4vw;
+
+        @media only screen and (max-width: 499px) {
+            bottom: $mobile1px;
+            right: $mobile1px;
+            top: auto;
+            height: $mobile35px;
+            width: $mobile70px;
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            text-transform: uppercase;
+        }
     }
 
     &__submitBtn {
         min-width: $desctop259px;
         margin: $desctop75px auto 0;
+
+        @media only screen and (max-width: 499px) {
+            width: 90%;
+            height: $mobile34px;
+            font-size: $mobile12px;
+            line-height: $mobile12px;
+            letter-spacing: $mobile1px;
+            text-transform: uppercase;
+        }
     }
 }
