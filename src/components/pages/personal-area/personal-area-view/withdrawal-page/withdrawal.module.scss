@@ -90,8 +90,11 @@
 
     &__inputWrapper {
         position: relative;
-        width: 100%;
-        margin-bottom: $mobile25px;
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+            margin-bottom: $mobile25px;
+        }
     }
 
     &__input,
