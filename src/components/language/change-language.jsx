@@ -46,14 +46,13 @@ function SelectLangeage() {
                             className="change-language-flags personal-area-flags"
                             onSelect={onSelectFlag}
                         />
-                        <p className="currentLangTicker">{currentLang}</p>
+                        <p className="currentLangTicker">{currentLang === 'US' ? 'EN' : currentLang}</p>
                         <select
                             className="personalAreaMobileSelect"
                             onChange={changeLangOnMobile}
-                            selected={currentLang}
                         >
-                            <option value="EN">English</option>
-                            <option value="RU">Русский</option>
+                            <option selected={currentLang === 'US'} value="US">English</option>
+                            <option selected={currentLang === 'RU'} value="RU">Русский</option>
                         </select>
                     </div>
                 )
@@ -62,7 +61,7 @@ function SelectLangeage() {
                         defaultCountry={currentLang}
                         countries={['US', 'RU']}
                         customLabels={{
-                            US: 'US', RU: 'RU',
+                            US: 'EN', RU: 'RU',
                         }}
                         className="change-language-flags"
                         onSelect={onSelectFlag}
