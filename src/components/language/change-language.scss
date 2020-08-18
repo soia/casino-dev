@@ -228,10 +228,49 @@
     }
 }
 
+.changeLanguagePersonalArea {
+    .flag-select {
+        @media only screen and (max-width: 499px) {
+           display: none;
+        }
+    }
+}
+
 .flag-select.change-language-flags .flag-options::after {
     border: 1em solid #ffffff;
 
     @media only screen and (max-width: 499px) {
         border: 2em solid #ffffff;
+    }
+}
+
+.personalAreaMobileSelect {
+    display: none;
+
+    @media only screen and (max-width: 499px) {
+        display: block;
+        position: relative;
+        opacity: 0;
+        width: 12vw;
+        height: 7.5vw;
+    }
+}
+
+.currentLangTicker {
+    display: none;
+
+    @media only screen and (max-width: 499px) {
+        display: block;
+        position: absolute;
+        font-family: $Montserrat-Medium;
+        font-size: $mobile10px;
+        line-height: $mobile12px;
+        color: #D8D6ED;
+    }
+}
+
+#root .changeLanguagePersonalArea:hover {
+    .currentLangTicker {
+        color: #221876;
     }
 }

@@ -38,7 +38,7 @@ class Aside extends Component {
         console.log('logout');
     };
 
-    onChange = event => {
+    mobileHistoryTab = event => {
         const { value } = event.target;
         const { history } = this.props;
         history.push(`${personalAreaPath}${historyPath}/${value}`);
@@ -143,7 +143,7 @@ class Aside extends Component {
                     </li>
                     <li className={style.aside__mobileSelect}>
                         <select
-                            onChange={this.onChange}
+                            onChange={this.mobileHistoryTab}
                         >
                             <option>Casino 1</option>
                             <option>Casino 2</option>

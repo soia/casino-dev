@@ -5,7 +5,7 @@ import { initReactI18next } from 'react-i18next';
 const currentLang = localStorage.getItem('i18nextLngCngCasion');
 
 if (localStorage.getItem('i18nextLngCngCasion') === null) {
-    localStorage.setItem('i18nextLngCngCasion', 'GB');
+    localStorage.setItem('i18nextLngCngCasion', 'US');
 }
 
 i18n.use(Backend)
@@ -13,8 +13,8 @@ i18n.use(Backend)
     .use(initReactI18next)
 
     .init({
-        fallbackLng: currentLang || 'GB',
-        lng: currentLang || 'GB',
+        fallbackLng: currentLang || 'US',
+        lng: currentLang || 'US',
         debug: true,
 
         interpolation: {

@@ -14,6 +14,12 @@ function SelectLangeage() {
         localStorage.setItem('i18nextLngCngCasion', countryCode);
     };
 
+    const changeLangOnMobile = event => {
+        const { value } = event.target;
+        i18n.changeLanguage(value);
+        localStorage.setItem('i18nextLngCngCasion', value);
+    };
+
     const currentLang = localStorage.getItem('i18nextLngCngCasion');
 
     const pathName = window.location.pathname;
@@ -31,24 +37,32 @@ function SelectLangeage() {
                             <path d="M42.1718 17.0001L45.0002 19.8285L47.8287 17.0001" stroke="#D8D6ED" strokeWidth="0.845" />
                             <path d="M14.334 0.4H50.3411C53.61 0.4 56.2774 3.01668 56.34 6.28495L56.7696 28.6849C56.8341 32.0431 54.1295 34.8 50.7708 34.8H8.39994C4.46182 34.8 1.59154 31.0703 2.6 27.2635L8.53402 4.86353C9.23106 2.23233 11.612 0.4 14.334 0.4Z" stroke="#C5C3DF" strokeWidth="0.8" />
                         </svg>
-
                         <ReactFlagsSelect
                             defaultCountry={currentLang}
-                            countries={['GB', 'RU']}
+                            countries={['US', 'RU']}
                             customLabels={{
-                                GB: 'EN', RU: 'RU',
+                                US: 'EN', RU: 'RU',
                             }}
                             className="change-language-flags personal-area-flags"
                             onSelect={onSelectFlag}
                         />
+                        <p className="currentLangTicker">{currentLang}</p>
+                        <select
+                            className="personalAreaMobileSelect"
+                            onChange={changeLangOnMobile}
+                            selected={currentLang}
+                        >
+                            <option value="EN">English</option>
+                            <option value="RU">Русский</option>
+                        </select>
                     </div>
                 )
                 : (
                     <ReactFlagsSelect
                         defaultCountry={currentLang}
-                        countries={['GB', 'RU']}
+                        countries={['US', 'RU']}
                         customLabels={{
-                            GB: 'EN', RU: 'RU',
+                            US: 'US', RU: 'RU',
                         }}
                         className="change-language-flags"
                         onSelect={onSelectFlag}
