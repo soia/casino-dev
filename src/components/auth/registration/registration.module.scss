@@ -13,7 +13,8 @@
         }
 
         @media only screen and (max-width: 499px) {
-            font-size: 6vw;
+            font-size: 7vw;
+            margin-bottom: 4vw;
         }
     }
 
@@ -28,7 +29,7 @@
         }
 
         @media only screen and (max-width: 499px) {
-            padding-top: 8vw;
+            padding-top: 0;
         }
 
         &::-webkit-scrollbar {
@@ -115,7 +116,7 @@
         }
 
         @media only screen and (max-width: 499px) {
-            font-size: 2.5vw;
+            font-size: 3vw;
         }
 
         &:hover {
@@ -134,9 +135,11 @@
         }
 
         @media only screen and (max-width: 499px) {
-            font-size: 2.5vw;
-            margin-left: 6vw;
             margin-bottom: 1.5vw;
+
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            padding-left: $mobile20px;
         }
     }
 
@@ -167,10 +170,11 @@
         }
 
         @media only screen and (max-width: 499px) {
+            font-size: $mobile12px;
+            line-height: $mobile15px;
+            height: $mobile35px;
             width: 100%;
-            height: 9.4vw;
-            padding: 0 7vw 0 6vw;
-            font-size: 2.5vw;
+            padding: 0 14vw 0 $mobile20px;
         }
 
         &::placeholder {
@@ -185,7 +189,8 @@
             }
 
             @media only screen and (max-width: 499px) {
-                font-size: 2.5vw;
+                font-size: $mobile12px;
+                line-height: $mobile15px;
             }
         }
     }
@@ -227,7 +232,8 @@
             }
 
             @media only screen and (max-width: 499px) {
-                font-size: 2.5vw;
+                font-size: 3vw;
+                line-height: 3.5vw;
             }
         }
 
@@ -282,10 +288,13 @@
         }
 
         @media only screen and (max-width: 499px) {
-            height: 8.9vw;
             min-width: 55vw;
-            font-size: 3vw;
             margin: 5.5vw auto 3.5vw;
+            height: $mobile35px;
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
     }
 }
