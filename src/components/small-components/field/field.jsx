@@ -74,7 +74,7 @@ const Field = props => {
         };
 
         borderInlineStyle = {
-            border: `0.07vw solid ${inputColor}`,
+            border: `1px solid ${inputColor}`,
         };
 
         dynamicInputStyle = {};

@@ -194,8 +194,8 @@
         top: 1.4vw;
 
         @media only screen and (max-width: 499px) {
-            bottom: $mobile1px;
-            right: $mobile1px;
+            bottom: 1px;
+            right: 1px;
             top: auto;
             height: $mobile35px;
             width: $mobile70px;

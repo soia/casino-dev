@@ -38,6 +38,12 @@ class Aside extends Component {
         console.log('logout');
     };
 
+    onChange = event => {
+        const { value } = event.target;
+        const { history } = this.props;
+        history.push(`${personalAreaPath}${historyPath}/${value}`);
+    };
+
     render() {
         const { t, onClickAside } = this.props;
         const { isOpenHistorySubMenu } = this.state;
@@ -135,7 +141,51 @@ class Aside extends Component {
                             </span>
                         </NavLink>
                     </li>
-                    <li>
+                    <li className={style.aside__mobileSelect}>
+                        <select
+                            onChange={this.onChange}
+                        >
+                            <option>Casino 1</option>
+                            <option>Casino 2</option>
+                            <option>Casino 3</option>
+                        </select>
+                        <svg
+                            width="26"
+                            height="22"
+                            viewBox="0 0 26 22"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d="M3.7714 4.92002C4.3997 2.6115 6.5813 1 9.07821 1H19.5139C23.1024 1 25.7237 4.23841 24.8207 7.55618L22.2286 17.08C21.6003 19.3885 19.4187 21 16.9218 21H6.48613C2.89762 21 0.276321 17.7616 1.17931 14.4438L3.7714 4.92002Z"
+                                stroke="#D3D1E4"
+                                className={classNames(style.svgStroke, 'svgStroke')}
+                            />
+                            <path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d="M15.4737 12.0252C15.2207 12.0252 15.0155 11.7993 15.0155 11.521V10.9748H14.4737C14.1978 10.9748 13.9738 10.7678 13.9738 10.5126C13.9738 10.2575 14.1978 10.0505 14.4737 10.0505H15.0155V9.4582C15.0155 9.20514 15.2206 9 15.4737 9C15.7267 9 15.9319 9.20514 15.9319 9.4582V10.0505H16.5108C16.766 10.0505 16.973 10.2574 16.973 10.5126C16.973 10.7679 16.766 10.9748 16.5108 10.9748H15.9319V11.521C15.9319 11.7993 15.7266 12.0252 15.4737 12.0252ZM9.36149 9.96628C9.14714 9.96628 8.97317 9.75923 8.97317 9.5041C8.97317 9.24897 9.14714 9.04191 9.36149 9.04191H12.5099C12.7651 9.04191 12.972 9.24884 12.972 9.5041C12.972 9.75936 12.7651 9.96628 12.5099 9.96628H9.36149ZM8.97317 11.5209C8.97317 11.7761 9.14714 11.9831 9.36149 11.9831H12.5099C12.7651 11.9831 12.972 11.7762 12.972 11.5209C12.972 11.2657 12.7651 11.0588 12.5099 11.0588H9.36149C9.14714 11.0588 8.97317 11.2658 8.97317 11.5209ZM9.40451 14C9.1664 14 8.97314 13.7929 8.97314 13.5378C8.97314 13.2827 9.1664 13.0756 9.40451 13.0756H16.5087C16.7639 13.0756 16.9709 13.2825 16.9709 13.5378C16.9709 13.793 16.7639 14 16.5087 14H9.40451Z"
+                                fill="url(#paint0_linear)"
+                                className={classNames(style.svgIcon, 'svgIcon')}
+                            />
+                            <defs>
+                                <linearGradient
+                                    id="paint0_linear"
+                                    x1="5.77319"
+                                    y1="13.7235"
+                                    x2="5.90227"
+                                    y2="12.4266"
+                                    gradientUnits="userSpaceOnUse"
+                                >
+                                    <stop stopColor="#2A1F84" />
+                                    <stop offset="1" stopColor="#221876" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </li>
+                    <li className={style.aside__historyLink}>
                         <div
                             className={classNames(
                                 style.asideLink,
@@ -178,7 +228,9 @@ class Aside extends Component {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <span className={style.asideLink__text}>{t('aside.history')}</span>
+                            <span className={style.asideLink__text}>
+                                {t('aside.history')}
+                            </span>
                         </div>
                         <div id="subMenu" className={submenuStyle}>
                             <NavLink
@@ -249,11 +301,13 @@ class Aside extends Component {
 Aside.defaultProps = {
     t: () => {},
     onClickAside: () => {},
+    history: {},
 };
 
 Aside.propTypes = {
     t: PropTypes.func,
     onClickAside: PropTypes.func,
+    history: PropTypes.object,
 };
 
 const mapStateToProps = state => {
