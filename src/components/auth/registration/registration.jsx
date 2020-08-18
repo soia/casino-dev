@@ -10,6 +10,7 @@ import { termOfServicePath, privacyPolicyPath } from '../../../constants';
 import { countries } from '../../../helpers/countries';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
+import closeIcon from '../../assets/images/close-white.svg';
 import Field from '../../small-components/field';
 import eye from '../../assets/images/white-eye.svg';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
@@ -510,6 +511,16 @@ class Registration extends PureComponent {
                 onRequestClose={this.closeModal}
             >
                 <h3 className={style.registration__title}>{t('header.registration')}</h3>
+                <div
+                    className={style.registration__closeWrapper}
+                    onClick={this.closeModal}
+                >
+                    <img
+                        className={style.registration__closeWrapper_close}
+                        src={closeIcon}
+                        alt="closeIcon"
+                    />
+                </div>
                 <form className={style.registration__form} autoComplete="off">
                     <div className={style.registration__inputWrapper}>
                         <Field

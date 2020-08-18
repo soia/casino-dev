@@ -4,6 +4,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
+import closeIcon from '../../assets/images/close-white.svg';
 import Field from '../../small-components/field';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
 import style from './password-recovery.module.scss';
@@ -156,7 +157,21 @@ class PasswordRecovery extends PureComponent {
                 style={customStyles}
                 onRequestClose={this.closeModal}
             >
-                <h3 className={style.signIn__title}>{t('auth.passwordRecovery')}</h3>
+                <h3
+                    className={style.signIn__title}
+                >
+                    {t('auth.passwordRecovery')}
+                </h3>
+                <div
+                    className={style.signIn__closeWrapper}
+                    onClick={this.closeModal}
+                >
+                    <img
+                        className={style.signIn__closeWrapper_close}
+                        src={closeIcon}
+                        alt="closeIcon"
+                    />
+                </div>
                 <form className={style.signIn__form} autoComplete="off">
                     <div className={style.signIn__inputWrapper}>
                         <Field

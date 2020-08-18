@@ -6,6 +6,7 @@ import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
 import Field from '../../small-components/field';
 import eye from './images/eye.svg';
+import closeIcon from '../../assets/images/close-white.svg';
 import ModalWindow from '../../small-components/modal-window/modal-widow';
 import style from './login.module.scss';
 
@@ -287,6 +288,16 @@ class Login extends PureComponent {
                 onRequestClose={this.closeModal}
             >
                 <h3 className={style.signIn__title}>{t('header.signIn')}</h3>
+                <div
+                    className={style.signIn__closeWrapper}
+                    onClick={this.closeModal}
+                >
+                    <img
+                        className={style.signIn__closeWrapper_close}
+                        src={closeIcon}
+                        alt="closeIcon"
+                    />
+                </div>
                 <form className={style.signIn__form} autoComplete="off">
                     <div className={style.signIn__inputWrapper}>
                         <Field
