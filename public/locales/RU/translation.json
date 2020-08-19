@@ -21,7 +21,8 @@
         "twoFactorAuth": "Двухфакторная аутентификация",
         "authenticator": "Аутентификатор",
         "EnterGoogleAuthenticatorCode": "Введите 6-значный код в приложении Google Authenticator.",
-        "googleAuthenticationCode": "Код аутентификации Google"
+        "googleAuthenticationCode": "Код аутентификации Google",
+        "authorizationSuccessful": "Успешная авторизация"
     },
     "general": {
         "selectFromList": "Выберите из списка",

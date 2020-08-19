@@ -21,7 +21,8 @@
         "twoFactorAuth": "Two factor authentication",
         "authenticator": "Authenticator",
         "EnterGoogleAuthenticatorCode": "Enter the 6-digit code in your Google Authenticator app.",
-        "googleAuthenticationCode": "Google Authentication Code"
+        "googleAuthenticationCode": "Google Authentication Code",
+        "authorizationSuccessful": "Authorization successful"
     },
     "general": {
         "selectFromList": "Select from the list",

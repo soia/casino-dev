@@ -221,6 +221,7 @@ class Login extends PureComponent {
     };
 
     loginSubmit = async () => {
+        const { t } = this.props;
         await this.validateFields();
         const {
             email, userPasswordLogin, passwordErrors, emailErrors,
@@ -242,7 +243,7 @@ class Login extends PureComponent {
             && !Object.keys(copyPasswordErrors).length
         ) {
             if (email && userPasswordLogin) {
-                dispatch(loginAction(email, userPasswordLogin, history));
+                dispatch(loginAction(email, userPasswordLogin, history, t));
             }
         }
     };
@@ -253,7 +254,6 @@ class Login extends PureComponent {
     };
 
     openPasswordRecovery = () => {
-        console.log('sdfksgnsfkgnjdfngj');
         const { dispatch } = this.props;
         dispatch(authModalActions.openPasswordRecovery());
     }
