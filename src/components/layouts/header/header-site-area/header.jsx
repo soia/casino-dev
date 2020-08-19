@@ -16,7 +16,7 @@ import style from './header.module.scss';
 import './header.scss';
 import 'antd/dist/antd.css';
 
-const Header = ({ dispatch }) => {
+const Header = ({ dispatch, loggedIn }) => {
     const { t } = useTranslation();
 
     const [shouldHideHeader, setShouldHideHeader] = useState(false);
@@ -85,28 +85,32 @@ const Header = ({ dispatch }) => {
                     </Link>
                 </ReactWOW>
                 <div className={style.header__rightSide}>
-                    <div className={style.header__rightSide_buttonWrapper}>
-                        <ReactWOW
-                            disabled={!(window.innerWidth > 767)}
-                            animation="fadeInDown"
-                            delay="0.01s"
-                        >
-                            <Button
-                                className={style.header__login}
-                                onClick={openLogin}
-                                type="button"
-                            >
-                                <span className={style.buttonText}>{t('header.signIn')}</span>
-                            </Button>
-                            <Button
-                                onClick={openSignUp}
-                                type="button"
-                                className={style.header__signUp}
-                            >
-                                <span className={style.buttonText}>{t('header.registration')}</span>
-                            </Button>
-                        </ReactWOW>
-                    </div>
+                    {loggedIn ? null
+                        : (
+                            <div className={style.header__rightSide_buttonWrapper}>
+                                <ReactWOW
+                                    disabled={!(window.innerWidth > 767)}
+                                    animation="fadeInDown"
+                                    delay="0.01s"
+                                >
+                                    <Button
+                                        className={style.header__login}
+                                        onClick={openLogin}
+                                        type="button"
+                                    >
+                                        <span className={style.buttonText}>{t('header.signIn')}</span>
+                                    </Button>
+                                    <Button
+                                        onClick={openSignUp}
+                                        type="button"
+                                        className={style.header__signUp}
+                                    >
+                                        <span className={style.buttonText}>{t('header.registration')}</span>
+                                    </Button>
+                                </ReactWOW>
+                            </div>
+                        )
+                    }
                     <ReactWOW
                         disabled={!(window.innerWidth > 767)}
                         animation="fadeInDown"
@@ -146,19 +150,23 @@ const Header = ({ dispatch }) => {
 const mapStateToProps = state => {
     const {
         authModal: { login },
+        authentication: { loggedIn },
     } = state;
 
     return {
         login,
+        loggedIn,
     };
 };
 
 Header.defaultProps = {
     dispatch: () => {},
+    loggedIn: false,
 };
 
 Header.propTypes = {
     dispatch: PropTypes.func,
+    loggedIn: PropTypes.bool,
 };
 
 export default compose(connect(mapStateToProps))(Header);
