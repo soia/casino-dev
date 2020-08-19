@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import SelectLanguage from '../../../language';
 import { compose } from '../../../../utils';
@@ -12,10 +13,9 @@ import {
 } from '../../../../constants/pathLocation';
 import logo from '../../../assets/images/logoBlueText.svg';
 import mobileLogo from '../../../assets/images/mobile-logo.svg';
-import avatar from './avatar.png';
 import style from './header-personal-area.module.scss';
 
-const HeaderPersonalArea = () => {
+const HeaderPersonalArea = ({ user: { avatar, full_name: name } }) => {
     const { t } = useTranslation();
     return (
         <header className={style.header}>
@@ -59,10 +59,10 @@ const HeaderPersonalArea = () => {
                     <Img
                         className={style.header__rightSide_logo}
                         src={avatar}
-                        userName="Aquaman Washington"
+                        userName={name}
                     />
                     <p className={style.header__rightSide_name}>
-                        Aquaman <br /> Washington
+                        {name}
                     </p>
                 </Link>
             </div>
@@ -72,12 +72,21 @@ const HeaderPersonalArea = () => {
 
 const mapStateToProps = state => {
     const {
-        authentication: { loggingIn },
+        authentication: { loggingIn, user },
     } = state;
 
     return {
         loggingIn,
+        user,
     };
+};
+
+HeaderPersonalArea.defaultProps = {
+    user: {},
+};
+
+HeaderPersonalArea.propTypes = {
+    user: PropTypes.object,
 };
 
 export default compose(connect(mapStateToProps))(HeaderPersonalArea);

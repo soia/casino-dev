@@ -14,7 +14,7 @@ const loginAction = (email, password, history, t) => {
 
         login(email, password, history).then(
             user => {
-                dispatch(success(user));
+                dispatch(success(user.data));
                 dispatch(alertActions.success('Authorization successful'));
                 dispatch(authModalActions.closeModal());
                 history.push(`${personalAreaPath}${profileDataPath}`);

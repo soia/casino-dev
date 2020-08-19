@@ -17,12 +17,11 @@ import { compose } from '../../../../utils';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 import SelectLanguage from '../../../language';
 import logo from '../../../assets/images/logo.svg';
-import avatar from '../header-personal-area/avatar.png';
 import style from './header.module.scss';
 import './header.scss';
 import 'antd/dist/antd.css';
 
-const Header = ({ dispatch, loggingIn }) => {
+const Header = ({ dispatch, loggingIn, user: { avatar, full_name: name } }) => {
     const { t } = useTranslation();
 
     const [shouldHideHeader, setShouldHideHeader] = useState(false);
@@ -104,10 +103,10 @@ const Header = ({ dispatch, loggingIn }) => {
                                 <Img
                                     className={style.header__rightSide_logo}
                                     src={avatar}
-                                    userName="Aquaman Washington"
+                                    userName={name}
                                 />
                                 <p className={style.header__rightSide_name}>
-                                Aquaman <br /> Washington
+                                    {name}
                                 </p>
                             </Link>
                         </ReactWOW>
@@ -178,23 +177,26 @@ const Header = ({ dispatch, loggingIn }) => {
 const mapStateToProps = state => {
     const {
         authModal: { login },
-        authentication: { loggingIn },
+        authentication: { loggingIn, user },
     } = state;
 
     return {
         login,
         loggingIn,
+        user,
     };
 };
 
 Header.defaultProps = {
     dispatch: () => {},
     loggingIn: false,
+    user: {},
 };
 
 Header.propTypes = {
     dispatch: PropTypes.func,
     loggingIn: PropTypes.bool,
+    user: PropTypes.object,
 };
 
 export default compose(connect(mapStateToProps))(Header);
