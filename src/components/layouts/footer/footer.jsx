@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import ReactWOW from 'react-wow';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { message } from 'antd';
+import { store } from 'react-notifications-component';
 import {
     termOfServicePath,
     privacyPolicyPath,
@@ -21,7 +21,18 @@ const Footer = ({ location: { pathname } }) => {
     const { t } = useTranslation();
 
     const comingSoon = () => {
-        message.success('Coming Soon!', 2);
+        store.addNotification({
+            message: 'Coming soon!',
+            type: 'default',
+            insert: 'top',
+            container: 'top-right',
+            animationIn: ['animated', 'slideInRight'],
+            animationOut: ['animated', 'zoomOut'],
+            dismiss: {
+                duration: 3000,
+                pauseOnHover: true,
+            },
+        });
     };
 
     const pathName = pathname;

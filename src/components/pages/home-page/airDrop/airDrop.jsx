@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import ReactWOW from 'react-wow';
 import { useTranslation } from 'react-i18next';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { message } from 'antd';
-
+import { store } from 'react-notifications-component';
 import airDropBg from './images/airDropBg.svg';
 import airDrop1 from './images/airDrop1.svg';
 import airDrop2 from './images/airDrop2.svg';
@@ -23,7 +22,19 @@ const AirDrop = () => {
     };
 
     const copied = () => {
-        message.success(t('general.сopiedToClipboard'), 2);
+        store.addNotification({
+            title: t('general.successNotification'),
+            message: t('general.сopiedToClipboard'),
+            type: 'success',
+            insert: 'top',
+            container: 'top-right',
+            animationIn: ['animated', 'slideInRight'],
+            animationOut: ['animated', 'zoomOut'],
+            dismiss: {
+                duration: 3000,
+                pauseOnHover: true,
+            },
+        });
     };
 
     return (

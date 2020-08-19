@@ -177,8 +177,31 @@ input[type='number'] {
 }
 
 .notification-item {
-    background: linear-gradient(172.75deg, #FAD961 -7.82%, #F76B1C 99.05%);
+    // background: #B4B1D5;
     border-left: none !important;
+}
+
+#root .react-notification-root {
+    z-index: 99999;
+    .notification-content {
+        min-height: 4.24vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .notification-default {
+        border-left: 8px solid #2A1F84;
+    }
+
+    .notification-success {
+        border-left: 8px solid #96DF6A;
+    }
+}
+
+.notification-message,
+.notification-title {
+    font-family: $Montserrat-Medium;
 }
 
 // react-notification

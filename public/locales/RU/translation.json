@@ -63,7 +63,8 @@
         "withdrawalRequest": "Запрос на вывод",
         "max": "Maкс",
         "back": "Назад",
-        "apply": "Применить"
+        "apply": "Применить",
+        "successNotification": "Успешно!"
     },
     "firstScreen": {
         "title": "Game token",
