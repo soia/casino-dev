@@ -1,9 +1,10 @@
 import { message } from 'antd';
+import { store } from 'react-notifications-component';
 import { registration } from '../services/auth.service';
 import { alertActions } from './alert.actions';
 import { USER_CONSTANTS } from '../constants';
 
-const registrationAction = user => {
+const registrationAction = (user, t) => {
     const request = payload => ({
         type: USER_CONSTANTS.REGISTER_REQUEST,
         payload,
@@ -26,6 +27,18 @@ const registrationAction = user => {
             response => {
                 dispatch(success(response));
                 dispatch(alertActions.success('Registration successful'));
+                store.addNotification({
+                    message: t('auth.registrationSuccessful'),
+                    type: 'success',
+                    insert: 'top',
+                    container: 'top-right',
+                    animationIn: ['animated', 'slideInRight'],
+                    animationOut: ['animated', 'zoomOut'],
+                    dismiss: {
+                        duration: 3000,
+                        pauseOnHover: true,
+                    },
+                });
             },
             error => {
                 dispatch(failure(error.toString()));

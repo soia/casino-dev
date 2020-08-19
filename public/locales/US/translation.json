@@ -22,7 +22,8 @@
         "authenticator": "Authenticator",
         "EnterGoogleAuthenticatorCode": "Enter the 6-digit code in your Google Authenticator app.",
         "googleAuthenticationCode": "Google Authentication Code",
-        "authorizationSuccessful": "Authorization successful"
+        "authorizationSuccessful": "Authorization successful",
+        "registrationSuccessful": "Registration successful"
     },
     "general": {
         "selectFromList": "Select from the list",

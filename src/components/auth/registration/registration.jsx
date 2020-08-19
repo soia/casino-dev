@@ -402,6 +402,7 @@ class Registration extends PureComponent {
     registratiOnSubmit = async event => {
         event.preventDefault();
         await this.validateFields();
+        const { t } = this.props;
         const {
             user: {
                 email,
@@ -447,7 +448,7 @@ class Registration extends PureComponent {
                 email,
                 password: userPasswordRegistration,
             };
-            dispatch(registrationAction(user, dispatch));
+            dispatch(registrationAction(user, dispatch, t));
         }
     };
 
