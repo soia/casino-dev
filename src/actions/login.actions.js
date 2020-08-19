@@ -34,6 +34,19 @@ const loginAction = (email, password, history, t) => {
             error => {
                 dispatch(failure(error.toString()));
                 dispatch(alertActions.error(error.toString()));
+
+                store.addNotification({
+                    message: error.response.data.message,
+                    type: 'danger',
+                    insert: 'top',
+                    container: 'top-right',
+                    animationIn: ['animated', 'slideInRight'],
+                    animationOut: ['animated', 'zoomOut'],
+                    dismiss: {
+                        duration: 3000,
+                        pauseOnHover: true,
+                    },
+                });
             },
         );
     };

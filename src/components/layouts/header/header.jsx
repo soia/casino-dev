@@ -23,20 +23,20 @@ const Header = () => {
 
 const mapStateToProps = state => {
     const {
-        authentication: { loggedIn },
+        authentication: { loggingIn },
     } = state;
 
     return {
-        loggedIn,
+        loggingIn,
     };
 };
 
 Header.defaultProps = {
-    loggedIn: false,
+    loggingIn: false,
 };
 
 Header.propTypes = {
-    loggedIn: PropTypes.bool,
+    loggingIn: PropTypes.bool,
 };
 
 export default compose(

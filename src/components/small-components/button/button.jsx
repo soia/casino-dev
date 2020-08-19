@@ -23,7 +23,7 @@ const Button = props => {
                 style={style}
                 onClick={onClick}
             >
-                {loading ? <Spin size="medium" /> : children}
+                {loading ? <Spin size="default" /> : children}
             </button>
         </Fragment>
     );

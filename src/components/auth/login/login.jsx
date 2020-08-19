@@ -21,6 +21,8 @@ class Login extends PureComponent {
         history: {},
         login: false,
         signUp: false,
+        loading: false,
+        loggingIn: false,
     };
 
     static propTypes = {
@@ -29,6 +31,8 @@ class Login extends PureComponent {
         history: PropTypes.object,
         login: PropTypes.bool,
         signUp: PropTypes.bool,
+        loading: PropTypes.bool,
+        loggingIn: PropTypes.bool,
     };
 
     state = {
@@ -46,6 +50,27 @@ class Login extends PureComponent {
         },
         type: 'password',
     };
+
+    componentDidUpdate(prevProps) {
+        const { loggingIn } = this.props;
+
+        if (loggingIn && loggingIn !== prevProps.loggingIn) {
+            this.setState({
+                email: '',
+                userPasswordLogin: '',
+                emailErrors: {
+                    emailLengthError: '',
+                    emailCharactersError: '',
+                },
+                passwordErrors: {
+                    passwordCharactersError: '',
+                    passwordLengthError: '',
+                    passwordDigitError: '',
+                    passwordLettersError: '',
+                },
+            });
+        }
+    }
 
     inputOnchange = event => {
         const { name, value } = event.target;
@@ -271,7 +296,9 @@ class Login extends PureComponent {
     };
 
     render() {
-        const { t, login, signUp } = this.props;
+        const {
+            t, login, signUp, loading,
+        } = this.props;
         const {
             email, emailErrors, userPasswordLogin, passwordErrors, type,
         } = this.state;
@@ -350,6 +377,7 @@ class Login extends PureComponent {
                             className={style.signIn__submitBtn}
                             type="button"
                             onClick={this.loginSubmit}
+                            loading={loading}
                         >
                             <span className={style.buttonText}>
                                 {t('header.signIn')}
@@ -371,11 +399,14 @@ class Login extends PureComponent {
 const mapStateToProps = state => {
     const {
         authModal: { login, signUp },
+        authentication: { loggingIn, loading },
     } = state;
 
     return {
         login,
         signUp,
+        loading,
+        loggingIn,
     };
 };
 

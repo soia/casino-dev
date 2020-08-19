@@ -5,8 +5,8 @@ import { Redirect } from 'react-router-dom';
 import { compose } from '../../../utils';
 import PersonalAreaContainer from './personal-area-container';
 
-const PersonalArea = ({ loggedIn }) => {
-    if (loggedIn) {
+const PersonalArea = ({ loggingIn }) => {
+    if (loggingIn) {
         return <PersonalAreaContainer />;
     }
 
@@ -15,19 +15,19 @@ const PersonalArea = ({ loggedIn }) => {
 
 const mapStateToProps = state => {
     const {
-        authentication: { loggedIn },
+        authentication: { loggingIn },
     } = state;
 
     return {
-        loggedIn,
+        loggingIn,
     };
 };
 
 PersonalArea.defaultProps = {
-    loggedIn: false,
+    loggingIn: false,
 };
 
 PersonalArea.propTypes = {
-    loggedIn: PropTypes.bool,
+    loggingIn: PropTypes.bool,
 };
 export default compose(connect(mapStateToProps))(PersonalArea);

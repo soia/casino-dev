@@ -1,8 +1,8 @@
-import { message } from 'antd';
 import { store } from 'react-notifications-component';
 import { registration } from '../services/auth.service';
 import { alertActions } from './alert.actions';
 import { USER_CONSTANTS } from '../constants';
+import { authModalActions } from './authModal.actions';
 
 const registrationAction = (user, t) => {
     const request = payload => ({
@@ -27,6 +27,7 @@ const registrationAction = (user, t) => {
             response => {
                 dispatch(success(response));
                 dispatch(alertActions.success('Registration successful'));
+                dispatch(authModalActions.openLogin());
                 store.addNotification({
                     message: t('auth.registrationSuccessful'),
                     type: 'success',
@@ -43,7 +44,18 @@ const registrationAction = (user, t) => {
             error => {
                 dispatch(failure(error.toString()));
                 dispatch(alertActions.error(error.toString()));
-                message.error('Username or email already exist', 2);
+                store.addNotification({
+                    message: error.response.data.message,
+                    type: 'danger',
+                    insert: 'top',
+                    container: 'top-right',
+                    animationIn: ['animated', 'slideInRight'],
+                    animationOut: ['animated', 'zoomOut'],
+                    dismiss: {
+                        duration: 3000,
+                        pauseOnHover: true,
+                    },
+                });
             },
         );
     };

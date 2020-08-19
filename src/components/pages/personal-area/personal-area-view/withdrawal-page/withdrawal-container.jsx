@@ -190,11 +190,11 @@ WithdrawalContainer.propTypes = {
 
 const mapStateToProps = state => {
     const {
-        authentication: { loggedIn },
+        authentication: { loggingIn },
     } = state;
 
     return {
-        loggedIn,
+        loggingIn,
     };
 };
 

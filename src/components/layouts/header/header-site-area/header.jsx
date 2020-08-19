@@ -22,7 +22,7 @@ import style from './header.module.scss';
 import './header.scss';
 import 'antd/dist/antd.css';
 
-const Header = ({ dispatch, loggedIn }) => {
+const Header = ({ dispatch, loggingIn }) => {
     const { t } = useTranslation();
 
     const [shouldHideHeader, setShouldHideHeader] = useState(false);
@@ -91,7 +91,7 @@ const Header = ({ dispatch, loggedIn }) => {
                     </Link>
                 </ReactWOW>
                 <div className={style.header__rightSide}>
-                    {loggedIn ? (
+                    {loggingIn ? (
                         <ReactWOW
                             disabled={!(window.innerWidth > 767)}
                             animation="fadeInDown"
@@ -178,23 +178,23 @@ const Header = ({ dispatch, loggedIn }) => {
 const mapStateToProps = state => {
     const {
         authModal: { login },
-        authentication: { loggedIn },
+        authentication: { loggingIn },
     } = state;
 
     return {
         login,
-        loggedIn,
+        loggingIn,
     };
 };
 
 Header.defaultProps = {
     dispatch: () => {},
-    loggedIn: false,
+    loggingIn: false,
 };
 
 Header.propTypes = {
     dispatch: PropTypes.func,
-    loggedIn: PropTypes.bool,
+    loggingIn: PropTypes.bool,
 };
 
 export default compose(connect(mapStateToProps))(Header);
