@@ -5,7 +5,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import backgroundImage from './images/left-aside-image.svg';
+import logoutAction from '../../../../../actions/logout.actions';
 import { compose } from '../../../../../utils';
 import {
     personalAreaPath,
@@ -13,7 +13,7 @@ import {
     historyPath,
     profileDataPath,
 } from '../../../../../constants';
-
+import backgroundImage from './images/left-aside-image.svg';
 import style from './aside.module.scss';
 import './aside.scss';
 
@@ -35,7 +35,8 @@ class Aside extends Component {
     };
 
     logout = () => {
-        console.log('logout');
+        const { dispatch, history } = this.props;
+        dispatch(logoutAction(history));
     };
 
     mobileHistoryTab = event => {
@@ -301,12 +302,14 @@ class Aside extends Component {
 Aside.defaultProps = {
     t: () => {},
     onClickAside: () => {},
+    dispatch: () => {},
     history: {},
 };
 
 Aside.propTypes = {
     t: PropTypes.func,
     onClickAside: PropTypes.func,
+    dispatch: PropTypes.func,
     history: PropTypes.object,
 };
 
