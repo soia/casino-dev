@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import ReactNotification, { store } from 'react-notifications-component';
+import { store } from 'react-notifications-component';
 import { message } from 'antd';
 import ErrorIndicator from '../../../error-page/error-indicator';
 import Spinner from '../../../../spinner';
@@ -430,7 +430,6 @@ export class ProfileDataContainer extends Component {
                 {errorMessage}
                 {spinner}
                 {content}
-                <ReactNotification />
             </Fragment>
         );
     }

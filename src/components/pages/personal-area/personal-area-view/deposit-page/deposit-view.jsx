@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import QRCode from 'qrcode.react';
 import { Link } from 'react-router-dom';
-import { message } from 'antd';
+import { store } from 'react-notifications-component';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { personalAreaPath, balancePath } from '../../../../../constants';
 import leftArrow from '../../../../assets/images/left-arrow.svg';
@@ -13,6 +13,22 @@ import './deposit.scss';
 
 const DepositView = () => {
     const { t } = useTranslation();
+
+    const onCopy = () => {
+        store.addNotification({
+            title: t('general.successNotification'),
+            message: t('general.сopiedToClipboard'),
+            type: 'success',
+            insert: 'top',
+            container: 'top-right',
+            animationIn: ['animated', 'slideInRight'],
+            animationOut: ['animated', 'zoomOut'],
+            dismiss: {
+                duration: 3000,
+                pauseOnHover: true,
+            },
+        });
+    };
     const qrCodeValue = 'HUBGVYFCTDXR GCJKLNM:NOJIBYUVTCRYVUYBIU';
 
     return (
@@ -58,8 +74,7 @@ const DepositView = () => {
                         />
                         <CopyToClipboard
                             text={qrCodeValue}
-                            onCopy={() => message.success(t('general.сopiedToClipboard'), 2)
-                            }
+                            onCopy={onCopy}
                         >
                             <div className={style.depositContainer__qrCodeValueBtn}>
                                 <span className={style.buttonText}>
