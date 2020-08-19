@@ -3,7 +3,7 @@
 
 .signIn {
     &__title {
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 2.1vw;
         color: #fff;
         text-align: center;
@@ -68,7 +68,7 @@
     }
 
     &__forgotPassword {
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 0.8vw;
         color: #fff;
         cursor: pointer;
@@ -89,7 +89,7 @@
     }
 
     &__registration {
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 1vw;
         color: #fff;
         text-align: center;
@@ -122,7 +122,7 @@
         font-size: 1vw;
         line-height: 1.4vw;
         outline: none;
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
 
         @media only screen and (min-width: 500px) and (max-width: 1024px) {
             width: 31vw;
@@ -141,7 +141,7 @@
         }
 
         &::placeholder {
-            font-family: $CoreSansGRegular;
+            font-family: $Montserrat-Medium;
             font-size: 1vw;
             line-height: 3.8vw;
             color: #fff;
@@ -172,7 +172,7 @@
 
     &__submitBtn {
         @include beveledButton;
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 1vw;
         color: #fff;
         background: linear-gradient(172.75deg, #FAD961 -7.82%, #F76B1C 99.05%);

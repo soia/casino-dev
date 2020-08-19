@@ -20,6 +20,12 @@ const openPasswordRecovery = () => {
     };
 }
 
+const openTwoFa = () => {
+    return {
+        type: AUTH_MODAL.TWO_FA,
+    };
+}
+
 const closeModal = () => {
     return {
         type: AUTH_MODAL.CLOSE_AUTH_MODAL,
@@ -31,4 +37,5 @@ export const authModalActions = {
     openSignUp,
     openPasswordRecovery,
     closeModal,
+    openTwoFa,
 };

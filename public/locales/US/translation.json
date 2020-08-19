@@ -17,7 +17,11 @@
         "termsOfLicenseAgreement": "terms of the license agreement",
         "iHaveReadAndFullyUnderstand": "I have read and fully understand",
         "privacyPolicyCheckbox": "privacy policy",
-        "passwordRecovery": "Password recovery"
+        "passwordRecovery": "Password recovery",
+        "twoFactorAuth": "Two factor authentication",
+        "authenticator": "Authenticator",
+        "EnterGoogleAuthenticatorCode": "Enter the 6-digit code in your Google Authenticator app.",
+        "googleAuthenticationCode": "Google Authentication Code"
     },
     "general": {
         "selectFromList": "Select from the list",
@@ -153,7 +157,8 @@
         "only_latin_letters_and_numbers_allowed": "Only latin letters and numbers are allowed.",
         "password_does_not_match": "Password does not match",
         "need_to_agree": "Confirm terms of use",
-        "minimumWithdrawalAmount": "Minimum withdrawal amount"
+        "minimumWithdrawalAmount": "Minimum withdrawal amount",
+        "min_length": "Min length {{digit}}"
     },
     "aside": {
         "balance": "Balance",

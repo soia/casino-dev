@@ -17,7 +17,11 @@
         "termsOfLicenseAgreement": "условия лицензионного соглашения",
         "iHaveReadAndFullyUnderstand": "Я прочитал(-а) и полностью понимаю",
         "privacyPolicyCheckbox": "политику конфиденциальности",
-        "passwordRecovery": "Восстановление пароля"
+        "passwordRecovery": "Восстановление пароля",
+        "twoFactorAuth": "Двухфакторная аутентификация",
+        "authenticator": "Аутентификатор",
+        "EnterGoogleAuthenticatorCode": "Введите 6-значный код в приложении Google Authenticator.",
+        "googleAuthenticationCode": "Код аутентификации Google"
     },
     "general": {
         "selectFromList": "Выберите из списка",
@@ -150,7 +154,8 @@
         "only_latin_letters_and_numbers_allowed": "Разрешены только латинские буквы и цифры.",
         "password_does_not_match": "Пароль не совпадает",
         "need_to_agree": "Подтвердить условия использования",
-        "minimumWithdrawalAmount": "Минимальная сумма вывод"
+        "minimumWithdrawalAmount": "Минимальная сумма вывод",
+        "min_length": "Мин. Длина {{digit}}"
     },
     "aside": {
         "balance": "Баланс",

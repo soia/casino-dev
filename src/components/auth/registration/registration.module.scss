@@ -3,8 +3,8 @@
 
 .registration {
     &__title {
-        font-family: $CoreSansGRegular;
-        font-size: 30px;
+        font-family: $Montserrat-Medium;
+        font-size: $desctop25px;
         color: #fff;
         text-align: center;
 
@@ -71,7 +71,7 @@
         &_invalid {
             margin-top: 0.5vw;
             color: $red;
-            font-family: $CoreSansGRegular;
+            font-family: $Montserrat-Medium;
             font-weight: 400;
             font-size: 0.8vw;
             width: 100%;
@@ -118,7 +118,7 @@
     }
 
     &__alreadyHaveAccount {
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 1vw;
         color: #fff;
         text-align: center;
@@ -142,7 +142,7 @@
     }
 
     &__label {
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 0.7vw;
         margin-left: 2vw;
         color: #fff;
@@ -174,7 +174,7 @@
         font-size: 1vw;
         line-height: 1.4vw;
         outline: none;
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 1vw;
         line-height: 3.8vw;
         color: #fff;
@@ -195,7 +195,7 @@
         }
 
         &::placeholder {
-            font-family: $CoreSansGRegular;
+            font-family: $Montserrat-Medium;
             font-size: 1vw;
             line-height: 3.8vw;
             color: #fff;
@@ -239,7 +239,7 @@
 
         &_title,
         &_link {
-            font-family: $CoreSansGRegular;
+            font-family: $Montserrat-Medium;
             font-size: 0.8vw;
             color: #fff;
 
@@ -288,7 +288,7 @@
 
     &__submitBtn {
         @include beveledButton;
-        font-family: $CoreSansGRegular;
+        font-family: $Montserrat-Medium;
         font-size: 1vw;
         color: #fff;
         background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);

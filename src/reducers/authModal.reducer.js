@@ -7,6 +7,7 @@ export function authModal(state, action) {
             login: false,
             signUp: false,
             passwordRecovery: false,
+            twoFa: false,
         };
     }
     switch (action.type) {
@@ -15,6 +16,7 @@ export function authModal(state, action) {
                 login: true,
                 signUp: false,
                 passwordRecovery: false,
+                twoFa: false,
             };
 
         case AUTH_MODAL.OPEN_SIGNUP:
@@ -22,6 +24,7 @@ export function authModal(state, action) {
                 login: false,
                 signUp: true,
                 passwordRecovery: false,
+                twoFa: false,
             };
 
         case AUTH_MODAL.OPEN_PASSWORD_RECOVERY:
@@ -29,13 +32,23 @@ export function authModal(state, action) {
                 login: false,
                 signUp: false,
                 passwordRecovery: true,
+                twoFa: false,
             };
+
+            case AUTH_MODAL.TWO_FA:
+                return {
+                    login: false,
+                    signUp: false,
+                    passwordRecovery: false,
+                    twoFa: true,
+                };
 
         case AUTH_MODAL.CLOSE_AUTH_MODAL:
             return {
                 login: false,
                 signUp: false,
                 passwordRecovery: false,
+                twoFa: false,
             };
 
         default:

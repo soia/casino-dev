@@ -1,7 +1,7 @@
 @import '../../assets/styles/variables';
 @import '../../assets/styles/mixin';
 
-.signIn {
+.twoFa {
     &__title {
         font-family: $Montserrat-Medium;
         font-size: $desctop25px;
@@ -16,6 +16,32 @@
         @media only screen and (max-width: 499px) {
             font-size: 7vw;
             margin-bottom: 4vw;
+        }
+    }
+
+    &__infoWapper {
+        display: flex;
+        margin-bottom: $desctop68px;
+
+        &_img {
+            width: 6.67vw;
+            height: 6.67vw;
+            margin-right: $desctop25px;
+        }
+
+        &_title {
+            font-family: $Montserrat-Medium;
+            font-size: $desctop25px;
+            line-height: $desctop32px;
+            color: #fff;
+            margin-bottom: $desctop10px;
+        }
+
+        &_subTitle {
+            font-family: $Montserrat-Medium;
+            font-size: $desctop14px;
+            line-height: $desctop25px;
+            color: #fff;
         }
     }
 
@@ -48,29 +74,6 @@
         font-family: $Montserrat-Medium;
         font-size: 0.8vw;
         color: #fff;
-    }
-
-    &__signIn {
-        font-family: $Montserrat-Medium;
-        font-size: 1vw;
-        color: #fff;
-        text-align: center;
-        cursor: pointer;
-        width: fit-content;
-        margin: 0 auto;
-        border-bottom: 0.056vw solid transparent;
-
-        &:hover {
-            border-bottom: 0.056vw solid #fff;
-        }
-
-        @media only screen and (min-width: 500px) and (max-width: 1024px) {
-            font-size: 1.2vw;
-        }
-
-        @media only screen and (max-width: 499px) {
-            font-size: 3vw;
-        }
     }
 
     &__input {
@@ -116,6 +119,25 @@
                 font-size: $mobile12px;
                 line-height: $mobile15px;
             }
+        }
+    }
+
+    &__label {
+        font-family: $Montserrat-Medium;
+        font-size: $desctop12px;
+        margin-left: 2vw;
+        color: #fff;
+
+        @media only screen and (min-width: 500px) and (max-width: 1024px) {
+            font-size: 1vw;
+        }
+
+        @media only screen and (max-width: 499px) {
+            margin-bottom: 1.5vw;
+
+            font-size: $mobile10px;
+            line-height: $mobile12px;
+            padding-left: $mobile20px;
         }
     }
 

@@ -6,6 +6,7 @@ import Footer from '../layouts/footer';
 import PasswordRecovery from '../auth/password-recovery';
 import Login from '../auth/login';
 import Registration from '../auth/registration';
+import TwoFa from '../auth/two-fa';
 import {
     HomePage,
     PageNotFound,
@@ -16,7 +17,10 @@ import {
     PasswordRecoveryPage,
 } from '../pages';
 import {
-    termOfServicePath, privacyPolicyPath, personalAreaPath, passwordRecoveryPath,
+    termOfServicePath,
+    privacyPolicyPath,
+    personalAreaPath,
+    passwordRecoveryPath,
 } from '../../constants';
 import '../assets/styles/reset.scss';
 import '../assets/styles/search-select.scss';
@@ -42,11 +46,16 @@ const App = () => {
             <Login />
             <Registration />
             <PasswordRecovery />
+            <TwoFa />
             <Switch>
                 <Route path="/" component={HomePage} exact />
                 <Route path={termOfServicePath} component={TermOfUse} exact />
                 <Route path={privacyPolicyPath} component={PrivacyPolicy} exact />
-                <Route path={passwordRecoveryPath} component={PasswordRecoveryPage} exact />
+                <Route
+                    path={passwordRecoveryPath}
+                    component={PasswordRecoveryPage}
+                    exact
+                />
                 <Route path={personalAreaPath} component={PersonalArea} />
                 <Route component={PageNotFound} />
             </Switch>
