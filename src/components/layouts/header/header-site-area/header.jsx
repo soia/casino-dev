@@ -6,12 +6,18 @@ import { useTranslation } from 'react-i18next';
 import Burger from 'react-css-burger';
 import ReactWOW from 'react-wow';
 import { Drawer } from 'antd';
+import {
+    personalAreaPath,
+    profileDataPath,
+} from '../../../../constants/pathLocation';
+import Img from '../../../small-components/img/img';
 import { authModalActions } from '../../../../actions/authModal.actions';
 import Button from '../../../small-components/button';
 import { compose } from '../../../../utils';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 import SelectLanguage from '../../../language';
 import logo from '../../../assets/images/logo.svg';
+import avatar from '../header-personal-area/avatar.png';
 import style from './header.module.scss';
 import './header.scss';
 import 'antd/dist/antd.css';
@@ -85,32 +91,54 @@ const Header = ({ dispatch, loggedIn }) => {
                     </Link>
                 </ReactWOW>
                 <div className={style.header__rightSide}>
-                    {loggedIn ? null
-                        : (
-                            <div className={style.header__rightSide_buttonWrapper}>
-                                <ReactWOW
-                                    disabled={!(window.innerWidth > 767)}
-                                    animation="fadeInDown"
-                                    delay="0.01s"
+                    {loggedIn ? (
+                        <ReactWOW
+                            disabled={!(window.innerWidth > 767)}
+                            animation="fadeInDown"
+                            delay="0.01s"
+                        >
+                            <Link
+                                to={`${personalAreaPath}${profileDataPath}`}
+                                className={style.header__logoWrapper}
+                            >
+                                <Img
+                                    className={style.header__rightSide_logo}
+                                    src={avatar}
+                                    userName="Aquaman Washington"
+                                />
+                                <p className={style.header__rightSide_name}>
+                                Aquaman <br /> Washington
+                                </p>
+                            </Link>
+                        </ReactWOW>
+                    ) : (
+                        <div className={style.header__rightSide_buttonWrapper}>
+                            <ReactWOW
+                                disabled={!(window.innerWidth > 767)}
+                                animation="fadeInDown"
+                                delay="0.01s"
+                            >
+                                <Button
+                                    className={style.header__login}
+                                    onClick={openLogin}
+                                    type="button"
                                 >
-                                    <Button
-                                        className={style.header__login}
-                                        onClick={openLogin}
-                                        type="button"
-                                    >
-                                        <span className={style.buttonText}>{t('header.signIn')}</span>
-                                    </Button>
-                                    <Button
-                                        onClick={openSignUp}
-                                        type="button"
-                                        className={style.header__signUp}
-                                    >
-                                        <span className={style.buttonText}>{t('header.registration')}</span>
-                                    </Button>
-                                </ReactWOW>
-                            </div>
-                        )
-                    }
+                                    <span className={style.buttonText}>
+                                        {t('header.signIn')}
+                                    </span>
+                                </Button>
+                                <Button
+                                    onClick={openSignUp}
+                                    type="button"
+                                    className={style.header__signUp}
+                                >
+                                    <span className={style.buttonText}>
+                                        {t('header.registration')}
+                                    </span>
+                                </Button>
+                            </ReactWOW>
+                        </div>
+                    )}
                     <ReactWOW
                         disabled={!(window.innerWidth > 767)}
                         animation="fadeInDown"
