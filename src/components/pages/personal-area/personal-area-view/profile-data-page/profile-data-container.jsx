@@ -353,10 +353,11 @@ export class ProfileDataContainer extends Component {
         }
     };
 
-    submitGenerateCode = () => {
+    copyTwoFaCode = () => {
+        const { t } = this.props;
         store.addNotification({
-            title: 'Success!',
-            message: 'Coming soon!',
+            title: t('general.successNotification'),
+            message: t('general.сopiedToClipboard'),
             type: 'success',
             insert: 'top',
             container: 'top-right',
@@ -420,7 +421,7 @@ export class ProfileDataContainer extends Component {
                 submitChangeName={this.submitChangeName}
                 submitNewPassword={this.submitNewPassword}
                 submitTwoFACode={this.submitTwoFACode}
-                submitGenerateCode={this.submitGenerateCode}
+                copyTwoFaCode={this.copyTwoFaCode}
             />
         ) : null;
 

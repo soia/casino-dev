@@ -77,7 +77,8 @@
     }
 
     &__input,
-    &__inputNickname {
+    &__inputNickname,
+    &__codeInput {
         display: flex;
         width: 18vw;
         height: 2.5vw;
@@ -110,6 +111,10 @@
                 line-height: $mobile15px;
             }
         }
+    }
+
+    &__codeInput {
+        width: 33vw;
     }
 
     &__inputNickname {
@@ -165,6 +170,63 @@
                 rgba(250, 217, 97, 0.8) -7.82%,
                 rgba(247, 107, 28, 0.8) 99.05%
             );
+        }
+    }
+
+    &__qrCodeValueWrapper {
+        display: flex;
+        align-items: flex-end;
+        margin: 0 0 1.5vw;
+        position: relative;
+        width: fit-content;
+
+        @media only screen and (max-width: 499px) {
+            width: 100%;
+        }
+    }
+
+    &__qrCodeValueBtn {
+        @include beveledButton;
+        min-width: $desctop60px;
+        height: 2.5vw;
+        font-family: $Montserrat-Medium;
+        font-size: 0.9vw;
+        color: #fff;
+        background: linear-gradient(172.75deg, #fad961 -7.82%, #f76b1c 99.05%);
+        margin-left: 3vw;
+        transition: transform 0.25s;
+        position: absolute;
+        right: 1px;
+        bottom: 1px;
+
+        @media only screen and (max-width: 499px) {
+            width: 27vw;
+            height: $mobile35px;
+            font-size: $mobile8px;
+            line-height: $mobile11px;
+            border-radius: 0.9vw;
+            right: 1px;
+            bottom: 1px;
+            text-transform: uppercase;
+            width: 11vw;
+        }
+
+        &:hover {
+            background: linear-gradient(
+                172.75deg,
+                rgba(250, 217, 97, 0.8) -7.82%,
+                rgba(247, 107, 28, 0.8) 99.05%
+            );
+        }
+
+        svg {
+            width: $desctop13px;
+            height: $desctop13px;
+
+            @media only screen and (max-width: 499px) {
+                width: $mobile12px;
+                height: $mobile13px;
+            }
         }
     }
 }

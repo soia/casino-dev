@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
+import ReactNotification from 'react-notifications-component';
 import {
     personalAreaPath,
     balancePath,
@@ -39,6 +40,7 @@ const PersonalAreaView = () => (
                 exact
             />
         </Switch>
+        <ReactNotification />
     </div>
 );
 
