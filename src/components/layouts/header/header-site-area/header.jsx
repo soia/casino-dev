@@ -96,14 +96,14 @@ const Header = ({ dispatch }) => {
                                 onClick={openLogin}
                                 type="button"
                             >
-                                <span>{t('header.signIn')}</span>
+                                <span className={style.buttonText}>{t('header.signIn')}</span>
                             </Button>
                             <Button
                                 onClick={openSignUp}
                                 type="button"
                                 className={style.header__signUp}
                             >
-                                <span>{t('header.registration')}</span>
+                                <span className={style.buttonText}>{t('header.registration')}</span>
                             </Button>
                         </ReactWOW>
                     </div>

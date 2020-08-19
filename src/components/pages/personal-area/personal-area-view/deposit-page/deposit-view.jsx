@@ -62,7 +62,7 @@ const DepositView = () => {
                             }
                         >
                             <div className={style.depositContainer__qrCodeValueBtn}>
-                                <span>
+                                <span className={style.buttonText}>
                                     <svg
                                         width="13"
                                         height="13"

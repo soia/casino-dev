@@ -90,7 +90,7 @@ const WorkPrinciples = () => {
                                             className={style.allGames__wrapper_button}
                                             type="button"
                                         >
-                                            <span>{t('allGames.play')}</span>
+                                            <span className={style.buttonText}>{t('allGames.play')}</span>
                                         </Button>
                                     </div>
                                 );

@@ -104,7 +104,7 @@ const ProfileDataView = ({
                             inputColor="#B0AED3"
                         />
                         <button type="submit" className={style.profileData__changeBtn}>
-                            <span>{t('general.apply')}</span>
+                            <span className={style.buttonText}>{t('general.apply')}</span>
                         </button>
                     </div>
                 </form>
@@ -124,7 +124,7 @@ const ProfileDataView = ({
                                     style.twoFactorAuth__statusWrapper_statusEnabled
                                 }
                             >
-                                <span> {t('general.enabled')}</span>
+                                <span className={style.buttonText}> {t('general.enabled')}</span>
                             </div>
                         ) : (
                             <div
@@ -132,7 +132,7 @@ const ProfileDataView = ({
                                     style.twoFactorAuth__statusWrapper_statusTurnedOff
                                 }
                             >
-                                <span> {t('general.turnedOff')}</span>
+                                <span className={style.buttonText}> {t('general.turnedOff')}</span>
                             </div>
                         )}
                     </div>
@@ -154,7 +154,7 @@ const ProfileDataView = ({
                                 }
                                 onClick={submitGenerateCode}
                             >
-                                <span>{t('general.generateCode')}</span>
+                                <span className={style.buttonText}>{t('general.generateCode')}</span>
                             </div>
                             <CopyToClipboard
                                 text={qrCodeValue}
@@ -184,7 +184,7 @@ const ProfileDataView = ({
                                 type="submit"
                                 className={style.twoFactorAuth__switchQrCodeBtn}
                             >
-                                <span>{t('general.enable')}</span>
+                                <span className={style.buttonText}>{t('general.enable')}</span>
                             </button>
                         </form>
                     </div>
@@ -251,7 +251,7 @@ const ProfileDataView = ({
                         className={style.resetPasswordContainer__saveBtn}
                         onClick={submitNewPassword}
                     >
-                        <span>{t('general.apply')}</span>
+                        <span className={style.buttonText}>{t('general.apply')}</span>
                     </div>
                 </div>
             </div>

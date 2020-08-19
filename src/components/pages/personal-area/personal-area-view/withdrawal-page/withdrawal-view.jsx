@@ -80,7 +80,7 @@ const WithdrawalView = ({
                             className={style.withdrawal__maxBtn}
                             onClick={setMaxAmount}
                         >
-                            <span>{t('general.max')}</span>
+                            <span className={style.buttonText}>{t('general.max')}</span>
                         </button>
                     </div>
                     <div className={style.withdrawal__inputWrapper}>
@@ -105,7 +105,7 @@ const WithdrawalView = ({
                     className={style.withdrawal__submitBtn}
                     onClick={submit}
                 >
-                    <span>{t('general.withdrawalRequest')}</span>
+                    <span className={style.buttonText}>{t('general.withdrawalRequest')}</span>
                 </button>
             </div>
         </div>

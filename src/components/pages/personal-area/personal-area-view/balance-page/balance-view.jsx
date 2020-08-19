@@ -28,13 +28,13 @@ const BalanceView = () => {
                         to={`${personalAreaPath}${depositPath}`}
                         className={style.balance__buttonWrapper_deposit}
                     >
-                        <span>{t('general.topUpMyBalance')}</span>
+                        <span className={style.buttonText}>{t('general.topUpMyBalance')}</span>
                     </Link>
                     <Link
                         to={`${personalAreaPath}${withdrawalPath}`}
                         className={style.balance__buttonWrapper_withdrawal}
                     >
-                        <span>{t('general.iWantToWithdraw')}</span>
+                        <span className={style.buttonText}>{t('general.iWantToWithdraw')}</span>
                     </Link>
                 </div>
             </div>

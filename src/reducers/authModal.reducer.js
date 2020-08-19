@@ -4,7 +4,7 @@ import { AUTH_MODAL } from '../constants';
 export function authModal(state, action) {
     if (state === undefined) {
         return {
-            login: true,
+            login: false,
             signUp: false,
             passwordRecovery: false,
             twoFa: false,

@@ -309,7 +309,7 @@ class PasswordRecovery extends Component {
                         className={style.resetPasswordContainer__saveBtn}
                         onClick={this.submitNewPassword}
                     >
-                        <span>{t('general.apply')}</span>
+                        <span className={style.buttonText}>{t('general.apply')}</span>
                     </div>
                 </div>
             </div>

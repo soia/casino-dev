@@ -29,7 +29,7 @@ const HeaderPersonalArea = () => {
             </div>
             <div className={style.header__buttonWrapper}>
                 <Link to={`${personalAreaPath}${depositPath}`} className={style.deposit}>
-                    <span>{t('general.deposit')}</span>
+                    <span className={style.buttonText}>{t('general.deposit')}</span>
                 </Link>
             </div>
             <div className={style.header__rightSide}>
