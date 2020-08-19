@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Burger from 'react-css-burger';
 import ReactWOW from 'react-wow';
+import { Drawer } from 'antd';
 import { authModalActions } from '../../../../actions/authModal.actions';
 import Button from '../../../small-components/button';
 import { compose } from '../../../../utils';
@@ -50,6 +51,25 @@ const Header = ({ dispatch }) => {
 
     const openSignUp = () => {
         dispatch(authModalActions.openSignUp());
+    };
+
+    let drawerWidth;
+    let drawerPaddingTop;
+    if (window.innerWidth < 500) {
+        drawerWidth = '100vw';
+        drawerPaddingTop = '35vw';
+    } else if (window.innerWidth > 499 && window.innerWidth < 1050) {
+        drawerWidth = '50vw';
+        drawerPaddingTop = '10vw';
+    }
+
+    const mobileMenuBody = {
+        backgroundColor: '#FAFBFF',
+        padding: `${drawerPaddingTop} 0 0 0`,
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        height: 'inherit',
     };
 
     return (
@@ -106,6 +126,17 @@ const Header = ({ dispatch }) => {
                         marginTop="0"
                         scale={0.65}
                     />
+                    <Drawer
+                        placement="right"
+                        closable={false}
+                        onClose={() => toggleBurger()}
+                        visible={activeBurger}
+                        bodyStyle={mobileMenuBody}
+                        height="100vh"
+                        width={drawerWidth}
+                    >
+                        <p style={{ textAlign: 'center' }}>Жду дизайн!</p>
+                    </Drawer>
                 </div>
             </div>
         </header>
