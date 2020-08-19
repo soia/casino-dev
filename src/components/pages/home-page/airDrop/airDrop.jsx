@@ -57,7 +57,7 @@ const AirDrop = () => {
                                 onCopy={() => copied()}
                             >
                                 <div className={style.airDrop__referalField_copy}>
-                                    copy
+                                    <span>copy</span>
                                 </div>
                             </CopyToClipboard>
                         </div>

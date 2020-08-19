@@ -11,7 +11,6 @@ import { compose } from '../../../../utils';
 import useDocumentScrollThrottled from './useDocumentScrollThrottled';
 import SelectLanguage from '../../../language';
 import logo from '../../../assets/images/logo.svg';
-import rectangleGrey from '../../../assets/images/rectangle-grey.svg';
 import style from './header.module.scss';
 import './header.scss';
 import 'antd/dist/antd.css';
@@ -45,12 +44,6 @@ const Header = ({ dispatch }) => {
     const shadowStyle = minHeight && shouldShowShadow ? 'shadow' : '';
     const hiddenStyle = minHeight && shouldHideHeader ? 'hidden' : '';
 
-    const regtangleButtonStyle = {
-        backgroundImage: `url(${rectangleGrey})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
-    };
-
     const openLogin = () => {
         dispatch(authModalActions.openLogin());
     };
@@ -72,28 +65,28 @@ const Header = ({ dispatch }) => {
                     </Link>
                 </ReactWOW>
                 <div className={style.header__rightSide}>
-                    <ReactWOW
-                        disabled={!(window.innerWidth > 767)}
-                        animation="fadeInDown"
-                        delay="0.01s"
-                    >
-                        <Button
-                            className={style.header__login}
-                            onClick={openLogin}
-                            type="button"
-                            style={regtangleButtonStyle}
+                    <div className={style.header__rightSide_buttonWrapper}>
+                        <ReactWOW
+                            disabled={!(window.innerWidth > 767)}
+                            animation="fadeInDown"
+                            delay="0.01s"
                         >
-                            {t('header.signIn')}
-                        </Button>
-                        <Button
-                            onClick={openSignUp}
-                            type="button"
-                            className={style.header__signUp}
-                            style={regtangleButtonStyle}
-                        >
-                            {t('header.registration')}
-                        </Button>
-                    </ReactWOW>
+                            <Button
+                                className={style.header__login}
+                                onClick={openLogin}
+                                type="button"
+                            >
+                                <span>{t('header.signIn')}</span>
+                            </Button>
+                            <Button
+                                onClick={openSignUp}
+                                type="button"
+                                className={style.header__signUp}
+                            >
+                                <span>{t('header.registration')}</span>
+                            </Button>
+                        </ReactWOW>
+                    </div>
                     <ReactWOW
                         disabled={!(window.innerWidth > 767)}
                         animation="fadeInDown"
@@ -130,13 +123,11 @@ const mapStateToProps = state => {
 };
 
 Header.defaultProps = {
-    dispatch: () => { },
+    dispatch: () => {},
 };
 
 Header.propTypes = {
     dispatch: PropTypes.func,
 };
 
-export default compose(
-    connect(mapStateToProps),
-)(Header);
+export default compose(connect(mapStateToProps))(Header);

@@ -19,8 +19,9 @@
 
     &__login,
     &__signUp {
+        @include beveledButton;
         font-family: $DrukTextWide-Bold;
-        border: none;
+        border: $desctop1px solid #C5C3DF;
         background-color: transparent;
         width: 11.5vw;
         height: $desctop48px;
@@ -30,8 +31,12 @@
         line-height: $desctop12px;
         text-align: center;
         letter-spacing: $desctop1px;
-        text-transform: uppercase;
-        color: #B0AED3;
+        color: #C5C3DF;
+
+        &:hover {
+            background-color: #C5C3DF;
+            color: #2A1F84;
+        }
     }
 
     &__login {
@@ -85,6 +90,15 @@
 
         @media only screen and (max-width: 767px) {
             display: none;
+        }
+
+        &_buttonWrapper {
+            display: flex;
+            transform: skew(-15deg);
+
+            span {
+                transform: skew(15deg);
+            }
         }
     }
 }
