@@ -24,6 +24,8 @@ class Registration extends PureComponent {
         dispatch: () => {},
         login: false,
         signUp: false,
+        registering: false,
+        loading: false,
     };
 
     static propTypes = {
@@ -31,6 +33,8 @@ class Registration extends PureComponent {
         dispatch: PropTypes.func,
         login: PropTypes.bool,
         signUp: PropTypes.bool,
+        registering: PropTypes.bool,
+        loading: PropTypes.bool,
     };
 
     state = {
@@ -59,6 +63,39 @@ class Registration extends PureComponent {
         termOfServiceError: '',
         type: 'password',
     };
+
+    componentDidUpdate(prevProps) {
+        const { registering } = this.props;
+
+        if (registering && registering !== prevProps.registering) {
+            this.setState({
+                user: {
+                    country: '',
+                    confirmPassword: '',
+                    email: '',
+                    userPasswordRegistration: '',
+                    termOfService: false,
+                },
+                confirmPasswordErrors: {
+                    confirmPasswordCharactersError: '',
+                },
+                countryErrors: '',
+                emailErrors: {
+                    emailLengthError: '',
+                    emailCharactersError: '',
+                },
+                passwordErrors: {
+                    passwordCharactersError: '',
+                    passwordLengthError: '',
+                    passwordDigitError: '',
+                    passwordUpperCaseLetter: '',
+                    passwordLettersError: '',
+                },
+                termOfServiceError: '',
+                type: 'password',
+            });
+        }
+    }
 
     location = value => {
         this.setState(state => ({
@@ -448,7 +485,7 @@ class Registration extends PureComponent {
                 email,
                 password: userPasswordRegistration,
             };
-            dispatch(registrationAction(user, dispatch, t));
+            dispatch(registrationAction(user, t));
         }
     };
 
@@ -485,7 +522,9 @@ class Registration extends PureComponent {
 
 
     render() {
-        const { t, signUp, login } = this.props;
+        const {
+            t, signUp, login, loading,
+        } = this.props;
         const {
             emailErrors,
             passwordErrors,
@@ -659,6 +698,7 @@ class Registration extends PureComponent {
                             className={style.registration__submitBtn}
                             type="button"
                             onClick={this.registratiOnSubmit}
+                            loading={loading}
                         >
                             <span className={style.buttonText}>{t('auth.createAccount')}</span>
                         </Button>
@@ -678,11 +718,14 @@ class Registration extends PureComponent {
 const mapStateToProps = state => {
     const {
         authModal: { signUp, login },
+        registration: { registering, loading },
     } = state;
 
     return {
         signUp,
         login,
+        registering,
+        loading,
     };
 };
 

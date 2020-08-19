@@ -6,12 +6,19 @@ export function registration(state = {}, action) {
     switch (action.type) {
         case USER_CONSTANTS.REGISTER_REQUEST:
             return {
-                registering: true,
+                registering: false,
+                loading: true,
             };
         case USER_CONSTANTS.REGISTER_SUCCESS:
-            return {};
+            return {
+                registering: true,
+                loading: false,
+            };
         case USER_CONSTANTS.REGISTER_FAILURE:
-            return {};
+            return {
+                registering: false,
+                loading: false,
+            };
         default:
             return state;
     }
