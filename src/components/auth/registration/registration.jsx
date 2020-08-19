@@ -6,6 +6,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import SelectSearch from 'react-select-search';
 import { Checkbox } from 'antd';
+import Button from '../../small-components/button';
 import registrationAction from '../../../actions/registration.actions';
 import { termOfServicePath, privacyPolicyPath } from '../../../constants';
 import { countries } from '../../../helpers/countries';
@@ -653,13 +654,13 @@ class Registration extends PureComponent {
                         </span>
                     </div>
                     <div className={style.registration__submitBtnWrapper}>
-                        <button
+                        <Button
                             className={style.registration__submitBtn}
                             type="button"
                             onClick={this.registratiOnSubmit}
                         >
-                            <span>{t('auth.createAccount')}</span>
-                        </button>
+                            <span className={style.buttonText}>{t('auth.createAccount')}</span>
+                        </Button>
                     </div>
                     <div
                         onClick={this.openLogin}

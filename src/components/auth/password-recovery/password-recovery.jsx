@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import Button from '../../small-components/button';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
 import closeIcon from '../../assets/images/close-white.svg';
@@ -187,13 +188,13 @@ class PasswordRecovery extends PureComponent {
                         />
                     </div>
                     <div className={style.signIn__submitBtnWrapper}>
-                        <button
+                        <Button
                             className={style.signIn__submitBtn}
                             type="button"
                             onClick={this.submit}
                         >
-                            <span>{t('general.send')}</span>
-                        </button>
+                            <span className={style.buttonText}>{t('general.send')}</span>
+                        </Button>
                     </div>
                     <div onClick={this.openSignIn} className={style.signIn__signIn}>
                         {t('header.signIn')}

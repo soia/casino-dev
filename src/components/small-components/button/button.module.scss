@@ -1,1 +1,8 @@
 @import "../../assets/styles/variables";
+
+.button {
+    &__loading {
+        user-select: none;
+        pointer-events: none;
+    }
+}

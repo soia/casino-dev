@@ -204,3 +204,19 @@ input[type='number'] {
 }
 
 // react-notification
+
+// ant-spin
+
+.ant-spin-dot-spin {
+    display: flex;
+}
+
+.ant-spin-dot-item {
+    background-color: #2A1F84;
+}
+
+button .ant-spin-spinning {
+    transform: skew(15deg);
+}
+
+// ant-spin

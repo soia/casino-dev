@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import Button from '../../small-components/button';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
 import closeIcon from '../../assets/images/close-white.svg';
@@ -165,13 +166,13 @@ class TwoFa extends PureComponent {
                         />
                     </div>
                     <div className={style.twoFa__submitBtnWrapper}>
-                        <button
+                        <Button
                             className={style.twoFa__submitBtn}
                             type="button"
                             onClick={this.submit}
                         >
-                            <span>{t('general.send')}</span>
-                        </button>
+                            <span className={style.buttonText}>{t('general.send')}</span>
+                        </Button>
                     </div>
                 </form>
             </ModalWindow>

@@ -3,7 +3,7 @@
         "about": "About",
         "contact": "Contacts",
         "signIn": "Sign in",
-        "registration": "Registration"
+        "registration": "Sign up"
     },
     "auth": {
         "typeEmail": "Type email",

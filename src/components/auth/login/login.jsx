@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { authModalActions } from '../../../actions/authModal.actions';
 import { compose } from '../../../utils';
+import Button from '../../small-components/button';
 import Field from '../../small-components/field';
 import loginAction from '../../../actions/login.actions';
 import eye from './images/eye.svg';
@@ -345,15 +346,15 @@ class Login extends PureComponent {
                         {t('auth.forgotPassword')}
                     </div>
                     <div className={style.signIn__submitBtnWrapper}>
-                        <button
+                        <Button
                             className={style.signIn__submitBtn}
                             type="button"
                             onClick={this.loginSubmit}
                         >
-                            <span>
+                            <span className={style.buttonText}>
                                 {t('header.signIn')}
                             </span>
-                        </button>
+                        </Button>
                     </div>
                     <div
                         onClick={this.openSignUp}

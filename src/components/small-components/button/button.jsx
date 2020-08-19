@@ -1,17 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Spin } from 'antd';
+import classNames from 'classnames';
+import styles from './button.module.scss';
 
 const Button = props => {
     const {
-        id,
-        type,
-        value,
-        onClick,
-        name,
-        className,
-        disabled,
-        children,
-        style,
+        id, type, value, onClick, name, className, children, style, loading,
     } = props;
 
     return (
@@ -19,14 +14,16 @@ const Button = props => {
             <button
                 id={id}
                 type={type}
-                disabled={disabled}
+                disabled={loading}
                 name={name}
                 value={value}
-                className={className}
+                className={classNames(
+                    loading ? (styles.button__loading, className) : className,
+                )}
                 style={style}
                 onClick={onClick}
             >
-                {children}
+                {loading ? <Spin size="medium" /> : children}
             </button>
         </Fragment>
     );
@@ -37,7 +34,7 @@ Button.defaultProps = {
     value: '',
     name: '',
     className: '',
-    disabled: false,
+    loading: false,
     children: '',
     style: {},
     onClick: () => {},
@@ -47,7 +44,7 @@ Button.propTypes = {
     id: PropTypes.string,
     type: PropTypes.string.isRequired,
     value: PropTypes.string,
-    disabled: PropTypes.bool,
+    loading: PropTypes.bool,
     onClick: PropTypes.func,
     name: PropTypes.string,
     style: PropTypes.object,
